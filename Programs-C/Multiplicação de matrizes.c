@@ -29,14 +29,29 @@ int main(){
     //system("cls");
     printf("\n\n");
 
+    
+    printf("\n X[%d][%d]\n",n, m);
+    for(i = 0; i < n; i++){
+        for(j = 0; j < m; j++)
+            printf("%3d ",X[i][j]);
+        printf("\n");
+    }
+    
+    
+    printf("\n Y[%d][%d]\n",M, r);
+    for(i = 0; i < M; i++){
+        for(j = 0; j < r; j++)
+            printf("%3d ",Y[i][j]);
+        printf("\n");
+    }
+    
     for(i = 0; i < n; i++){
         for(j = 0; j < r; j++){
             Z[i][j]=0;
             for(k = 0; k < M; k++)
-                s += X[i][k] * Y[k][j];
-                  
-            Z[i][j]=s;
-            s=0;
+                s += X[i][k] * Y[k][j];  
+            Z[i][j] = s;
+            s = 0;
         }
     }
     printf("\n\n");
@@ -46,7 +61,7 @@ int main(){
     for(i = 0; i < n; i++){
         for(j = 0; j < r; j++)
             printf("%3d ",Z[i][j]);
-    printf("\n");
+        printf("\n");
     }
     return 0;
 }
