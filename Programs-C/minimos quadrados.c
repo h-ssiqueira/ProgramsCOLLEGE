@@ -3,8 +3,7 @@
 #include <math.h>
 #define n 8
 
-int main()
-{
+int main(){
     float xi[n],yi[n],somax1=0,somay1=0,x2i[n],y2i[n],somax2i=0,somay2i=0,xy[n],somaxy=0;
     for(int i=0;i<n;i++){
     printf("\nXi[%d]: ",i+1);

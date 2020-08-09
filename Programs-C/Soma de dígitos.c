@@ -7,33 +7,32 @@ int sumd(int a){
         return (a%10)+sumd((a/=10));
 }
 
-int main()
-{
+int main(){
     int boo, n, soma=0;
 
     do{
-    printf("\nInsira um valor inteiro positivo: ");
-    scanf("%d", &n);
+        printf("\nInsira um valor inteiro positivo: ");
+        scanf("%d", &n);
     }while(n<0);
 
     do{
-    printf("\nInsira: \n0 para calcular de forma iterativa.\n1 para calcular de forma recursiva.\n-> ");
-    scanf("%d",&boo);
+        printf("\nInsira: \n0 para calcular de forma iterativa.\n1 para calcular de forma recursiva.\n-> ");
+        scanf("%d",&boo);
     }while(boo!=0 && boo!=1);
 
     system("cls");
 
-switch(boo){
-    case 0:
-        while(n>0){
-            soma+=n%10;
-            n/=10;
-        }
-        break;
+    switch(boo){
+        case 0:
+            while(n>0){
+                soma+=n%10;
+                n/=10;
+            }
+            break;
 
-    case 1:
-        soma=sumd(n);
-        break;
+        case 1:
+            soma=sumd(n);
+            break;
     }
 
     printf("Soma = %d", soma);

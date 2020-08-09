@@ -3,8 +3,7 @@
 #include <math.h>
 #define h 0.1
 
-int main()
-{
+int main(){
     float x,A,a,b,fab=0,soma=0,y,y2;
     int i,n;
 
@@ -19,7 +18,7 @@ int main()
     printf("\n\nI\t\tXi\t\tf(x)\t\t2f(x)");
 
     for(i=0;i<=n;i++){
-        y = x+(1/x);// insira a função aqui #########
+        y = x+(1/x);// insira a funï¿½ï¿½o aqui #########
         y2 = 2*y;
         if(i==0 || i==n)
             fab+=y;

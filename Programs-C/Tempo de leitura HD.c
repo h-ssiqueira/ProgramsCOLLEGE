@@ -2,8 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 // Todos os valores em ms
-int main()
-{
+int main(){
     float TL, seek, lag, BTT, t, by, trilhas, setor, arm, spb, st, rpm;
 
     printf("\n Insira a quantidade de trilhas e setores por trilha (trilhas,setor) = ");

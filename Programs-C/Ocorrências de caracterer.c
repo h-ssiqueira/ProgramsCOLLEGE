@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-int main()
-{
+int main(){
     char x, frase[21];
     int n=0, i;
 

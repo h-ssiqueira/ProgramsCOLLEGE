@@ -1,15 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
-int main()
-{
+int main(){
     int n, i, p=0, sp=0, v=0;
     printf("\n Insira o tamanho da string = ");
     scanf("%d", &n);
+    //getchar();
     char c[n];
     fflush(stdin);
     printf("\n Insira a string = ");
-    scanf("%[^\n]", c);
+    scanf("%[^\n]s", c);
     for(i=0;i<n;i++){
         if(c[i]==',')
             v++;

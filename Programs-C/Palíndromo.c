@@ -10,8 +10,7 @@ int palindrome(char correct[],int length,int count){
                     else return 0;
 }
 
-int main()
-{
+int main(){
     int length,count=0,i,j;
     char phrase[max],correct[max]={0};
 

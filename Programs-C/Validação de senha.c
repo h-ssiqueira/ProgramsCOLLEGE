@@ -39,7 +39,7 @@ como forte (11-12 caracteres com letras minúsculas e maiúsculas, símbolos e n
 
 */
 
-int main(){
+/*
     int mi = 0,ma = 0,n = 0,s = 0,i,l;
     char senha[13];
     printf("\n\tDigite a senha: ");

@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-int main()
-{
+int main(){
     char frase[100];
     int v=0, i, n;
     printf("\n Insira a frase = ");

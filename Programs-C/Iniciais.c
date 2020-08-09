@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-int main()
-{
+int main(){
     char nome[101], in[50]={0};
     int i, j;
 
@@ -12,7 +11,7 @@ int main()
 
     for(i=0, j=1;i<strlen(nome);i++){
         if(nome[i]==32)
-        in[j++]=nome[++i];
+            in[j++]=nome[++i];
     }
     strupr(in);
     printf("%s\n%s", nome, in);

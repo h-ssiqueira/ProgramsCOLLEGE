@@ -3,19 +3,18 @@
 #include <ctype.h>
 
 int calculo(float a, char b){
-float pi;
-if(toupper(b)=='M')
-    pi = 72.7 * a - 58;
+    float pi;
+    if(toupper(b)=='M')
+        pi = 72.7 * a - 58;
 
-else
-    pi = 62.1 * a - 44.7;
+    else
+        pi = 62.1 * a - 44.7;
 
 
-return pi;
+    return pi;
 }
 
-int main()
-{
+int main(){
     float alt, peso;
     char s;
 
