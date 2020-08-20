@@ -4,7 +4,7 @@
 int main(){
     float C, F, K;
     int x;
-    printf("\n Criado por Henrique Sartori Siqueira. Copyright %c 2019 Henrique Sartori Siqueira. Todos os direitos reservados. \n \n", 184);
+
     do{
         do{
             printf("\n Insira:\n 0 para fechar o programa.\n 1 para converter Celsius para Fahrenheit e Kelvin.\n 2 para converter Kelvin para Celsius e Fahrenheit.\n 3 para converter Fahrenheit para Celsius e Kelvin.\n -> ");

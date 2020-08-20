@@ -3,8 +3,7 @@
 #include <math.h>
 #define PI 3.14
 #define R3 1.73
-int main()
-{
+int main(){
     float L, B, H, R, b, D, d;
     int x, y;
 

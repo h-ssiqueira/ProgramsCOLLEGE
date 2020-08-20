@@ -3,7 +3,6 @@
 #include <math.h>
 int main(){
     float x1, x2, y1, y2, z1, z2, d;
-    printf("\n Criado por Henrique Sartori Siqueira. Copyright %c 2019 Henrique Sartori Siqueira. Todos os direitos reservados. \n \n", 184);
     do{
         printf("\n Insira as coordenadas do primeiro ponto (x1,y1,z1), com par%cnteses e separados por v%crgulas, sem espa%cos\n p1 = ", 136, 161, 135);
         scanf("(%f,%f,%f)", &x1, &y1, &z1);

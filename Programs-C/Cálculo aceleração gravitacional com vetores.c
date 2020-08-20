@@ -3,9 +3,9 @@
 #include <math.h>
 #define G 0.0000000000667
 
-typedef struct {
-double massa;
-float x,y,z,*dis,**ver; //coordenadas, vetor de distancia [n-1], e matriz dos versores [n-1][3]
+typedef struct{
+    double massa;
+    float x,y,z,*dis,**ver; //coordenadas, vetor de distancia [n-1], e matriz dos versores [n-1][3]
 }vetor;
 
 

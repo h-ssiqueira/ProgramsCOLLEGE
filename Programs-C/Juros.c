@@ -7,9 +7,6 @@ int main(){
     int x;
     double J, M, C, i, n;
 
-    printf("\n Criado por Henrique Sartori Siqueira. Copyright %c 2019 Henrique Sartori Siqueira. Todos os direitos reservados. \n \n", 184);
-    printf("\n Bem-vindo(a) a este programa. Ele realiza o c%clculo das vari%cveis das f%crmulas dos juros compostos e simples. \n", 160, 160, 162);
-
     do{
         printf("\n Insira 1 para juros simples. \n Insira 2 para juros compostos. \n -> ");
         scanf("%d", &x);

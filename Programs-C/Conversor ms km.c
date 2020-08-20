@@ -4,7 +4,7 @@
 int main(){
     float ms, km;
     int x;
-    printf("\n Criado por Henrique Sartori Siqueira. Copyright %c 2019 Henrique Sartori Siqueira. Todos os direitos reservados. \n \n", 184);
+    
     do{
         printf("\n Insira 0 para finalizar o programa.\n Insira 1 para converter m/s para km/h.\n Insira 2 para converter km/h para m/s.\n -> ");
         scanf("%d", &x);

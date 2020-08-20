@@ -5,7 +5,6 @@ int main(){
 
     float op1, op2, res;
     char opc;
-    //printf("\n Criado por Henrique Sartori Siqueira. Copyright © 2019 Henrique Sartori Siqueira. Todos os direitos reservados. \n \n");
 
     printf("\n Coloque numero operando numero ou 0=0 para finalizar = ");
     scanf("%f%c%f", &op1,&opc,&op2);

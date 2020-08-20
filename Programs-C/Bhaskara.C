@@ -6,9 +6,6 @@ int main(){
 
     float a, b, c, x, x1, x2, delta, xv, yv;
 
-    printf("\n Criado por Henrique Sartori Siqueira. Copyright %c 2019 Henrique Sartori Siqueira. Todos os direitos reservados. \n \n", 184);
-    printf("\n Bem-vindo(a) a este programa! Ele realiza o c%clculo das ra%czes da fun%c%co quadr%ctica, bem como seus v%crtices. \n Para finalizar o programa, insira '0' para o valor de 'a'. \n", 160, 161, 135, 198, 160, 130);
-
     do{
 
 		printf("\n Insira o valor de a (ax%c+bx+c) -> ", 253);

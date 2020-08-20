@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main()
-{
+int main(){
     int i, j, k, N, a;
 
     printf("\n Digite o tamanho do vetor = ");

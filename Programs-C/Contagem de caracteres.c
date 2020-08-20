@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
-int main()
-{
+int main(){
     int i, n, space=0, lower=0, upper=0, digit=0, num=0, alpha=0;
     printf("\n Insira o tamanho da frase/palavra = ");
     scanf("%d", &n);
