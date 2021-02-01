@@ -189,7 +189,7 @@ int main(){
     printf("\n\tTotal de ocorrencias de 25 = %d",ocorrencias(A,25));
     printf("\n\tSoma de elementos pares: %d",soma_par(A));
     */
-    RemoveA(&A,15);
+    if(BuscaA(A,15))RemoveA(&A,15);
     //RemoveA(&A,22);
     
     //printf("\n\tmenor = %d",menor(A));

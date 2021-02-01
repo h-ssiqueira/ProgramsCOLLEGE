@@ -1,3 +1,7 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <stdbool.h>
+
 typedef struct arvore{
 	int valor;
 	struct arvore *dir;
@@ -15,18 +19,17 @@ bool VaziaA(Arv *A){
 }
 
 void InsereA(Arv **A, int n){
-    /*
-	Arv *novo = (Arv*)malloc(sizeof(Arv)); 
-	novo->valor = n; 
-	novo->dir = NULL; 
-	novo->esq = NULL; 
+	Arv *novo = (Arv*)malloc(sizeof(Arv));
+	novo->valor = n;
+	novo->dir = NULL;
+	novo->esq = NULL;
 	if(VaziaA(*A)) //caso seja o primeiro elemento na arvore
 		(*A) = novo;
 	else{
-        
+
 		Arv *pai = (*A);
 		bool flag = true;
-		
+
 		while(flag){
 			if(pai->valor < n){ //se o valor inserido for menor que o pai
 				if(pai->dir == NULL){ //caso não haja folha na direita
@@ -46,7 +49,7 @@ void InsereA(Arv **A, int n){
 			}
 		}
     }
-    */
+    /*
     if(VaziaA(*A)){
         (*A) = (Arv*)malloc(sizeof(Arv));
         if(VaziaA(*A)) return;
@@ -59,6 +62,7 @@ void InsereA(Arv **A, int n){
         else// if(n > (*A)->valor)
             InsereA(&(*A)->dir,n);
     }
+	*/
 }
 
 bool BuscaA(Arv *A, int n){
@@ -110,10 +114,10 @@ void RemoveA(Arv **A,int n){
 	if(*A){
         Arv *aux;
         if(n < (*A)->valor){ //se o valor for menor ele se dirige a esquerda
-            aux = (*A)->esq; 
+            aux = (*A)->esq;
             if((aux->dir != NULL) || (aux->esq != NULL))//verifica se o prox da esquerda possui filhos
                 RemoveA(&(*A)->esq,n);
-            else{ 
+            else{
                 if(aux->valor == n){//se nao possuir ele confere se o valor eh igual e desaloca
                     free(aux);
                     aux = NULL;
@@ -125,7 +129,7 @@ void RemoveA(Arv **A,int n){
             aux = (*A)->dir;
             if((aux->dir != NULL) || (aux->esq != NULL))//verifica se o prox da direita possui filhos
                 RemoveA(&(*A)->dir,n);
-            else{ 
+            else{
                 if(aux->valor == n){//se nao possuir ele confere se o valor eh igual e desaloca
                     free(aux);
                     aux = NULL;
@@ -142,13 +146,13 @@ void RemoveA(Arv **A,int n){
             if((*A)->esq == NULL){//se possuir filho na direita
                 (*A) = (*A)->dir;
                 free(aux);
-            }                
+            }
             else{//possui filhos
                 aux = MaEsq(&(*A)->esq); //funçao que retorna o modulo que sera trocado (maior valor da esquerda com seu filho da direita se existir)
                 //aux = MeDir(&(*A)->dir); //funçao que retorna o modulo que sera trocado (menor valor da direita com seu filho da esquerda se existir)
-                aux->esq = (*A)->esq; //(*A)->esq contem o maior nº da subarvore esquerda ou NULL    
+                aux->esq = (*A)->esq; //(*A)->esq contem o maior nº da subarvore esquerda ou NULL
                 aux->dir = (*A)->dir; //anexa o da direita fazendo o ramo da arvore "cair"
-                free(*A);  
+                free(*A);
                 (*A) = aux;
             }
         }
