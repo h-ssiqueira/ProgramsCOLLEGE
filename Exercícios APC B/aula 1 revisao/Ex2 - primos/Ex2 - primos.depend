@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1565733422 source:e:\apc b\lista 1 revisao\ex2 - primos\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+

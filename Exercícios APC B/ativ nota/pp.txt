@@ -1,0 +1,119 @@
+//Henrique Sartori Siqueira 19240472
+
+//Exercício 1
+#include <stdio.h>
+#include <stdlib.h>
+
+int P(int N){
+    if(N==0) return 0;
+        else if(N==1) return 1;
+            else return 2*P(N-1)+P(N-2);
+}
+
+int main()
+{
+    int N;
+    printf("Insira N: ");
+    scanf("%d",&N);
+
+    printf("Numero de Pell: %d",P(N));
+    return 0;
+}
+
+___________________________________________________________
+//Exercício 2
+#include <stdio.h>
+#include <stdlib.h>
+#define max 10
+#define tri 4
+
+void ler(float m[][max]){
+    int i,j;
+    for(i=0;i<max;i++){
+        for(j=0;j<max;j++){
+        printf("Dpto no. %d. %d trimestre: ",(i+1),(j+1));
+        scanf("%f",&m[i][j]);
+        fflush(stdin);
+        }
+    }
+}
+
+int desp(float m[][max],float *desp){ // item 2
+    int k,i,j;
+    float aux;
+    for(i=0;i<max;i++){
+        for(j=0,aux=0;j<max;j++){
+            aux+=m[i][j];
+        }
+        if(aux>*desp){
+            *desp=aux;
+            k=i+1;
+        }
+    }
+
+return k;
+}
+
+float media(float m[][max],int *maior){ //item 3
+float med=0;
+int i;
+    for(i=0;i<max;i++)
+        med+=m[i][tri]; // define = 4 = 5º tri
+    med/=max;
+    for(i=0;i<max;i++){
+        if(m[i][tri]>med) *maior+=1;
+    }
+return med;
+}
+
+int main()
+{
+    int x=0,dpto;
+    float m[max][max],maiordes,medmaior;
+
+    ler(m);
+
+    dpto=desp(m,&maiordes);
+    printf("Dpto com maior despesas: %d\tCom:%.2f\n",dpto,maiordes);
+
+    medmaior = media(m,&x);
+    printf("Valor da media %.3f e quantidade de dptos: %d",medmaior,x);
+
+    return 0;
+}
+
+________________________________________________________________________
+//Exercício 3
+#include <stdio.h>
+#include <stdlib.h>
+#define N 60
+
+int med(int v[]){
+
+int x=0,i,media=0;
+    for(i=0;i<N;i++)
+        media+=v[i];
+media/=N;
+    for(i=0;i<N;i++){
+        if(media==v[i])
+            x++;
+    }
+
+return x;
+}
+
+int main()
+{
+    int v[N],valor;
+
+    for(int i=0;i<N;i++){
+    printf("Insira para [%d]: ",i);
+    scanf("%d",&v[i]);
+    }
+
+    valor = med(v);
+
+    printf("%d valore(s) iguais a media",valor);
+
+    return 0;
+}

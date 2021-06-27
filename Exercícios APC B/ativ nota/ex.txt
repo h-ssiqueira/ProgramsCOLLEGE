@@ -1,0 +1,100 @@
+//Henrique Sartori Siqueira 19240472
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <string.h>
+#define tam 100
+
+typedef struct cadastro{
+char nome[20],cpf[12],sexo;
+float altura,peso;
+}cadastro;
+
+void ler(cadastro info[]){
+for(int i=0;i<tam;i++){
+    printf("\nInsira nome: ");
+    gets(info[i].nome);
+    fflush(stdin);
+    printf("\nInsira altura: ");
+    scanf("%f",&info[i].altura);
+    fflush(stdin);
+    printf("\nInsira peso: ");
+    scanf("%f",&info[i].peso);
+    fflush(stdin);
+    printf("\nInsira CPF: ");
+    gets(info[i].cpf);
+    fflush(stdin);
+    printf("\nInsira sexo(m/f): ");
+    scanf("%c",&info[i].sexo);
+    fflush(stdin);
+}
+
+}
+
+float imc(cadastro info[]){
+float med=0,aux=0;
+
+for(int i=0;i<tam;i++){
+    aux=(info[i].peso/pow(info[i].altura,2));
+    med+=aux;
+}
+
+med/=tam;
+
+return med;
+}
+
+int alta(cadastro info[]){
+    int a=0;
+    for(int i=0;i<tam;i++){
+        if(info[a].altura<info[i].altura)
+        a=i;
+    }
+
+return a;
+}
+
+int ppeso(cadastro info[],float x){
+int n=0;
+for(int i=0;i<tam;i++){
+    if(x<info[i].peso)
+    n++;
+}
+
+return n;
+}
+
+int lcpf(cadastro info[], char busca[]){
+int i,aux;
+for(i=0;i<tam;i++){
+    aux=strcmp(busca,info[i].cpf);
+    if(aux==0)
+        break;
+}
+
+return i;
+}
+
+int main()
+{
+    cadastro info[tam];
+    char ncpf[12];
+    int a,b;
+    float x;
+    ler(info);
+    printf("\nInsira peso a ser procurado: ");
+    scanf("%f",&x);
+    a = alta(info);
+    printf("\nInsira CPF a ser procurado: ");
+    fflush(stdin);
+    gets(ncpf);
+    fflush(stdin);
+    b = lcpf(info,ncpf);
+    printf("\nMedia de IMC = %.2f",imc(info));
+    printf("\npessoa mais alta: %s",info[a].nome);
+    printf("\n%d pessoas possuem o peso maior que %.2f",ppeso(info,x),x);
+    printf("\n Pessoa com cpf %s e: %s %c",ncpf,info[b].nome,info[b].sexo);
+
+    return 0;
+}
+//Henrique Sartori Siqueira 19240472

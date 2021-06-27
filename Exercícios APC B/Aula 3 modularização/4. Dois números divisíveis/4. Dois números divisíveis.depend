@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1566491558 source:d:\apc b\4. dois números divisíveis\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+

@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1558989802 source:e:\exercícios apc\lista 8 vetor de string\6) verificação de palavras\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

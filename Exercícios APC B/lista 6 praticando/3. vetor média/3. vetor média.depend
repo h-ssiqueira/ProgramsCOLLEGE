@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1569514750 source:d:\apc b\3. vetor média\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+

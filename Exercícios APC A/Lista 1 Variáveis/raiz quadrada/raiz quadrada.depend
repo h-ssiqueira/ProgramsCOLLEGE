@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1553108012 source:e:\exercícios apc\raiz quadrada\main.c
+	<stdio.h>
+	<math.h>
+	<stdlib.h>
+

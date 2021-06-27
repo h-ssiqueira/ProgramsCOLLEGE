@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1570657284 source:f:\apc b\lista 7 recursão e estruturas\2. palíndromo\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

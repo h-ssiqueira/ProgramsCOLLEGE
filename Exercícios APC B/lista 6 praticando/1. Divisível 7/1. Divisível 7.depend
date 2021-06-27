@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1569513152 source:d:\apc b\1. divisível 7\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+

@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1558304962 source:e:\exercícios apc\lista 6 string\4) soma de strings\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+

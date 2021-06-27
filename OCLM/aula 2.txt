@@ -1,0 +1,65 @@
+Registradores do 8086
+
+	AX
+    AH   |  AL
+  8 bits  8 bits
+	BX
+    BH   |  BL
+  8 bits  8 bits
+	CX
+    CH   |  CL
+  8 bits  8 bits
+	DX
+    DH   |  DL
+  8 bits  8 bits
+
+
+PROGRAMA BÁSICO
+
+TITLE	Nome
+.MODEL	SMALL
+.STACK	100h
+.DATA	
+	nome tipo valor
+	nota DB(1 byte/ ou DW -> 2 bytes) 5(?->sem valor)
+
+.CODE
+
+END
+
+
+Entrada e saída 
+1. Ler um caracter:	(catacter lido é armazenado em AL)
+MOV AH,1
+INT 21h
+
+2. Exibir um caracter:
+MOV AH,2
+MOV DL,(caracter)
+INT 21h
+OBS: o caracter exibido é armazenado em AL
+
+3. Exibir uma string 
+.DATA
+	STR1 DB "String $"
+.CODE
+	MOV AX,@DATA 	} Uma vez no inicio do programa
+	MOV DS,AX	}
+	
+	MOV AH,9
+	LEA DX,STR1
+	INT 21h
+
+4. Encerra o programa:
+MOV AH,4Ch
+INT 21h
+
+5. Soma:
+ADD AL,BL (AL=destino)
+ADD AL,32
+
+6. Subtração:
+SUB AL,BL -> AL=AL-BL
+SUB AL,32 -> AL=AL-32
+
+INT 21h -> Solicita ao DOS uma operação de entrada/saída

@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1566494792 source:d:\apc b\5. mês\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+

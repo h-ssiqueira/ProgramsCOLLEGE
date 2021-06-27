@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1554482512 source:e:\exercícios apc\soma raizes\main.c
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+

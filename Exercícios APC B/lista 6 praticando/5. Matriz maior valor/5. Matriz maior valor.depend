@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1569517198 source:d:\apc b\5. matriz maior valor\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+

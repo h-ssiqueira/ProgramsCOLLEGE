@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1558532068 source:e:\exercícios apc\lista 6 string\5.1)comparação de strings\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

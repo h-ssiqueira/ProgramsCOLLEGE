@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1569513514 source:d:\apc b\2. busca vetor\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+

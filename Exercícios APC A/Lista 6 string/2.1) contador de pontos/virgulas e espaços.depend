@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1558533610 source:e:\exercícios apc\lista 6 string\virgulas e espaços\2.1) contador de pontos\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+

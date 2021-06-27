@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1558987290 source:e:\exercícios apc\lista 8 vetor de string\3) conversão char para int\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1569515538 source:d:\apc b\4. vetor maior que a média\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+

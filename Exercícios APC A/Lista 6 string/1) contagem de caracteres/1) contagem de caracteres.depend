@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1558199108 source:e:\exercícios apc\lista 6 string\1) contagem de caracteres\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+
