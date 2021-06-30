@@ -1,0 +1,33 @@
+# do exp1.do
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:15:23 on Mar 02,2020
+# vlog -work work exp1.vo 
+# -- Compiling module exp1
+# -- Compiling module hard_block
+# 
+# Top level modules:
+# 	exp1
+# End time: 16:15:23 on Mar 02,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:15:23 on Mar 02,2020
+# vlog -work work Waveform.vwf.vt 
+# -- Compiling module exp1_vlg_vec_tst
+# 
+# Top level modules:
+# 	exp1_vlg_vec_tst
+# End time: 16:15:23 on Mar 02,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -novopt -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.exp1_vlg_vec_tst 
+# Start time: 16:15:24 on Mar 02,2020
+# Loading work.exp1_vlg_vec_tst
+# Loading work.exp1
+# Loading work.hard_block
+# Loading cycloneive_ver.cycloneive_io_obuf
+# Loading cycloneive_ver.cycloneive_io_ibuf
+# Loading cycloneive_ver.cycloneive_lcell_comb
+# after#24
+# ** Note: $finish    : Waveform.vwf.vt(56)
+#    Time: 1 us  Iteration: 0  Instance: /exp1_vlg_vec_tst
+# End time: 16:15:25 on Mar 02,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0

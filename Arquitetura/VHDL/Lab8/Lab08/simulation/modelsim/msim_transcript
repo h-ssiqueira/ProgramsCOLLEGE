@@ -1,0 +1,48 @@
+# Reading D:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
+# do BancoRegistradores_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying D:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {D:/Arquitetura/Quartus/Lab08/REGS.vhdl}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:58:43 on Sep 26,2020
+# vcom -reportprogress 300 -93 -work work D:/Arquitetura/Quartus/Lab08/REGS.vhdl 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity REGS
+# -- Compiling architecture options of REGS
+# End time: 18:58:43 on Sep 26,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim work.regs
+# vsim work.regs 
+# Start time: 18:58:46 on Sep 26,2020
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.regs(options)
+wave create -driver freeze -pattern constant -value 0 -starttime 0ns -endtime 1000ns sim:/regs/RegWrite
+# Editable Wave items are not compatible with the wave window's standard undo-redo.  Standard undo-redo has been disabled.
+wave create -driver freeze -pattern constant -value 0 -starttime 0ns -endtime 1000ns sim:/regs/load
+wave create -driver freeze -pattern constant -value 0 -starttime 0ns -endtime 1000ns sim:/regs/reset
+wave create -driver freeze -pattern constant -value 00 -range 1 0 -starttime 0ns -endtime 1000ns sim:/regs/regA
+wave create -driver freeze -pattern constant -value 00 -range 1 0 -starttime 0ns -endtime 1000ns sim:/regs/writeR
+wave create -driver freeze -pattern constant -value 00000110 -range 7 0 -starttime 0ns -endtime 1000ns sim:/regs/data
+add wave -position insertpoint  \
+sim:/regs/Rdata1
+add wave -position insertpoint  \
+sim:/regs/R0
+wave edit change_value -start 0ns -end 100ns -value 1 Edit:/regs/load
+wave edit change_value -start 200ns -end 300ns -value 1 Edit:/regs/RegWrite
+wave edit change_value -start 400ns -end 500ns -value 1 Edit:/regs/reset
+run -all
+# End time: 19:08:19 on Sep 26,2020, Elapsed time: 0:09:33
+# Errors: 0, Warnings: 0

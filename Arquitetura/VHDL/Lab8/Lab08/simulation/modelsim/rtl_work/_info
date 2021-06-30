@@ -1,0 +1,49 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/Arquitetura/Quartus/Lab08/simulation/modelsim
+Eregs
+Z1 w1601157485
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z4 8D:/Arquitetura/Quartus/Lab08/REGS.vhdl
+Z5 FD:/Arquitetura/Quartus/Lab08/REGS.vhdl
+l0
+L5
+Vl7fLfHQCb6<oh^l[jb6kN2
+!s100 ?n3b^=Q@e4Y1K]83K0W3d2
+Z6 OV;C;10.5b;63
+31
+Z7 !s110 1601157523
+!i10b 1
+Z8 !s108 1601157523.000000
+Z9 !s90 -reportprogress|300|-93|-work|work|D:/Arquitetura/Quartus/Lab08/REGS.vhdl|
+Z10 !s107 D:/Arquitetura/Quartus/Lab08/REGS.vhdl|
+!i113 1
+Z11 o-93 -work work
+Z12 tExplicit 1 CvgOpt 0
+Aoptions
+R2
+R3
+DEx4 work 4 regs 0 22 l7fLfHQCb6<oh^l[jb6kN2
+l15
+L13
+Veg9XnVljC]83ZWjL9[K8A0
+!s100 BnEVjReen4`Ni`j9F^ljA0
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12

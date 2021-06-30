@@ -1,0 +1,17 @@
+|exp1
+f1 <= a.DB_MAX_OUTPUT_PORT_TYPE
+a => f1.DATAIN
+a => inst.IN0
+f2 <= b.DB_MAX_OUTPUT_PORT_TYPE
+b => f2.DATAIN
+b => inst1.IN0
+f3 <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+c => inst4.IN0
+c => inst3.IN1
+c => inst2.IN0
+f4 <= inst9.DB_MAX_OUTPUT_PORT_TYPE
+d => inst7.IN2
+d => inst8.IN2
+d => inst6.IN2
+
+

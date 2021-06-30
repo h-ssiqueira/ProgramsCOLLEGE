@@ -1,0 +1,61 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "switch1",
+					"strict" : false
+				},
+				{
+					"name" : "switch2",
+					"strict" : false
+				},
+				{
+					"name" : "switch3",
+					"strict" : false
+				},
+				{
+					"name" : "dirA[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dirA[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dirB[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sensor3",
+					"strict" : false
+				},
+				{
+					"name" : "sensor1",
+					"strict" : false
+				},
+				{
+					"name" : "clock",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "sensor2",
+					"strict" : false
+				},
+				{
+					"name" : "sensor4",
+					"strict" : false
+				},
+				{
+					"name" : "sensor5",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,215 @@
+$comment
+	File created using the following command:
+		vcd file Exp2.msim.vcd -direction
+$end
+$date
+	Fri Mar 27 13:16:43 2020
+$end
+$version
+	ModelSim Version 10.5b
+$end
+$timescale
+	1ps
+$end
+
+$scope module exp2_vhd_vec_tst $end
+$var wire 1 ! A $end
+$var wire 1 " E $end
+$var wire 1 # output $end
+$var wire 1 $ P $end
+$var wire 1 % S $end
+
+$scope module i1 $end
+$var wire 1 & gnd $end
+$var wire 1 ' vcc $end
+$var wire 1 ( unknown $end
+$var wire 1 ) devoe $end
+$var wire 1 * devclrn $end
+$var wire 1 + devpor $end
+$var wire 1 , ww_devoe $end
+$var wire 1 - ww_devclrn $end
+$var wire 1 . ww_devpor $end
+$var wire 1 / ww_S $end
+$var wire 1 0 ww_E $end
+$var wire 1 1 ww_A $end
+$var wire 1 2 ww_P $end
+$var wire 1 3 ww_output $end
+$var wire 1 4 \output~output_o\ $end
+$var wire 1 5 \E~input_o\ $end
+$var wire 1 6 \S~input_o\ $end
+$var wire 1 7 \A~input_o\ $end
+$var wire 1 8 \P~input_o\ $end
+$var wire 1 9 \output~0_combout\ $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0!
+0"
+1#
+0$
+0%
+0&
+1'
+x(
+1)
+1*
+1+
+1,
+1-
+1.
+0/
+00
+01
+02
+13
+14
+05
+06
+07
+08
+19
+$end
+#50000
+1!
+11
+17
+09
+04
+03
+0#
+#100000
+0!
+1"
+01
+10
+15
+07
+#150000
+1!
+11
+17
+#200000
+0!
+0"
+1$
+01
+00
+12
+18
+05
+07
+#250000
+1!
+11
+17
+#300000
+0!
+1"
+01
+10
+15
+07
+#350000
+1!
+11
+17
+#400000
+0!
+0"
+0$
+1%
+01
+00
+02
+1/
+16
+08
+05
+07
+#450000
+1!
+11
+17
+#500000
+0!
+1"
+01
+10
+15
+07
+19
+14
+13
+1#
+#550000
+1!
+11
+17
+#600000
+0!
+0"
+1$
+01
+00
+12
+18
+05
+07
+09
+04
+03
+0#
+#650000
+1!
+11
+17
+#700000
+0!
+1"
+01
+10
+15
+07
+19
+14
+13
+1#
+#750000
+1!
+11
+17
+#800000
+0!
+0"
+0$
+0%
+01
+00
+02
+0/
+06
+08
+05
+07
+#850000
+1!
+11
+17
+09
+04
+03
+0#
+#900000
+0!
+1"
+01
+10
+15
+07
+#950000
+1!
+11
+17
+#1000000

@@ -1,8 +1,8 @@
 # Organização de Computadores e Linguagem de Montagem
 
-Códigos fonte e executáveis dos exercícios das listas e atividades realizadas durante o semestre para a disciplina com o auxílio do software DOSBox com o compilador (TASM - Turbo Assembler), linker (TLINK - Turbo Linker) e debugger (TD - Turbo Debugger).
+Códigos e executáveis dos exercícios das listas e atividades realizadas durante o semestre para a disciplina com o auxílio do software DOSBox com o compilador (TASM - Turbo Assembler), linker (TLINK - Turbo Linker) e debugger (TD - Turbo Debugger).
 
-Engloba os conceitos básicos da linguagem ```Assembly X86```.
+Engloba os conceitos básicos da linguagem ***```Assembly X86```***.
 
 Para executar algum programa é necessário o software DOSBox com os seguintes comandos:
 
@@ -29,14 +29,18 @@ TLINK <PROGRAMA>.O
 ```
 Nota: para que haja a compilação e o link do programa, o compilador (TASM) e o linker (TLINK) devem estar no mesmo diretório que o programa que será compilado e linkado. Bem como o debugger (TD).
 
-## [Atividade 1](/ativ1/LOC-Atividade1.pdf)
-## [Atividade 2](/ativ2/LOC-Atividade2.pdf)
-## [Atividade 3](/ativ3/LOC-Atividade3.pdf)
-## [Atividade 4](/ativ4/LOC-Atividade4.pdf)
-## [Atividade 5](/ativ5/LOC-Atividade5.pdf)
-## [Atividade 6](/ATIV6/LOC-Atividade6.pdf)
-## [Atividade 7](/ativ7/LOC-Atividade7.pdf)
-## [Atividade 8](/ativ8/LOC-Atividade8.pdf)
-## [Extras](/EXTRAS)
-## [Lista 1](/lista_1/OC-Lista1.pdf)
-## [Lista 2](/lista_2/OC-Lista2.pdf)
+## Laboratórios
+* [Atividade 1](/OCLM/ativ1/LOC-Atividade1.pdf)
+* [Atividade 2](/OCLM/ativ2/LOC-Atividade2.pdf)
+* [Atividade 3](/OCLM/ativ3/LOC-Atividade3.pdf)
+* [Atividade 4](/OCLM/ativ4/LOC-Atividade4.pdf)
+* [Atividade 5](/OCLM/ativ5/LOC-Atividade5.pdf)
+* [Atividade 6](/OCLM/ATIV6/LOC-Atividade6.pdf)
+* [Atividade 7](/OCLM/ativ7/LOC-Atividade7.pdf)
+* [Atividade 8](/OCLM/ativ8/LOC-Atividade8.pdf)
+## [Extras](/OCLM/EXTRAS)
+* [Interrupções DOS](/OCLM/Interrupções%20DOS.png)
+* [Teoria](/OCLM/aula%202.txt)
+## Listas
+* [Lista 1](/OCLM/lista_1/OC-Lista1.pdf)
+* [Lista 2](/OCLM/lista_2/OC-Lista2.pdf)

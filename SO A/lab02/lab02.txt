@@ -1,0 +1,25 @@
+Q1.A
+
+cd - -> Retorna ao diretório que o usuário estava anteriormente e mostra o caminho até ele do diretório raiz do sistema até o usuário (pwd).
+
+cd ~ -> Retorna ao diretório raiz do usuário (/home/user).
+
+cd / -> Direciona para o diretório raiz do sistema (/).
+
+cd .. -> Retorna um diretório em relação ao caminho, ou seja, se o usuário está em /home/user e utilizar o comando, ele será direcionado para /home.
+
+grep -> Filtra as linhas de um arquivo que contêm o termo que está sendo buscado.
+
+grep -R -> Procura nos arquivos que contêm o termo que está sendo buscado dentro de um diretório.
+
+| -> Redireciona a saída de um comando para outro.
+
+
+Q1.B
+Dentro do diretório / se situa todos os arquivos do sistema operacional, enquanto no diretório /proc/ se situa as informações do hardware que suporta o sistema operacional.
+
+Q2.A
+A diferença entre os códigos assembly é de que o registrador "rax" equivale ao registrador "%eax", além dos números contidos no assembly gerado estarem em base hexadecimal, bem como há a tradução do código texto para hexadecimal, representado na coluna a esquerda do código texto. Assim, o código gerado é ainda mais uma aproximação do que o computador processa durante a execução de um código, pois além dos números estarem em base hexadecimal, há a indicação e tradução das linhas de comando para que a máquina possa executar sem a necessidade de compilar novamente o código. Também a sessão de texto no código, onde está situada a string a ser printada, apresenta um código gerado pelo compilador que representa a coleta dos intervalos de bytes que representam a mensagem original, mas em sequência na memória codificada em ascii hexadecimal com seus respectivos endereços.
+
+Q2.B
+É perceptível a diferença entre os dois códigos, sendo que o gerado pelo compilador através da compilação do .c é de um tamanho e complexidade muito maior se comparado com o código em assembly original ou até mesmo o assembly gerado pela primeira compilação, isso provavelmente indica o nível de abstração que é de se gerar uma mesma saída de tela utilizando diferentes linguagens de programação, pois em assembly, por exemplo, não há o vínculo de bibliotecas como há na programação em C/C++, fazendo com que haja mais abstração para que o programador faça programas mais complexos sem que haja a preocupação de escrever uma linha de código com o código correto do syscall, ou até mesmo a quantia certa de caracteres que a string contêm. Assim, mesmo com o objetivo idêntico, o código em .c por parecer que haja menos linhas que o código em assembly, é totalmente o oposto, evidenciado após a compilação. Portamto, quanto maior o nível de abstração, maior será o requesito de desempenho se houver a comparação de dois programas robustos com o mesmo objectivo porém em diferentes linguagens de programação (e em diferentes níveis de abstração).

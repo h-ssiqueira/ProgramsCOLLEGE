@@ -1,0 +1,10 @@
+|Exp2
+S => output.IN0
+S => output.IN0
+E => output.IN1
+E => output.IN1
+A => output.IN1
+P => output.IN1
+output << output.DB_MAX_OUTPUT_PORT_TYPE
+
+

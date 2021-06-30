@@ -1,0 +1,73 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/temp/Experimento1-1/simulation/qsim
+vexp1
+Z1 !s110 1583176523
+!i10b 1
+!s100 ?YD6QZ1Gf>GMLI@UD=^FW1
+IWDj32]jMc91S8[XEHF4Jg2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1583176518
+Z4 8exp1.vo
+Z5 Fexp1.vo
+L0 31
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1583176523.000000
+Z8 !s107 exp1.vo|
+Z9 !s90 -work|work|exp1.vo|
+!i113 1
+Z10 o-work work
+Z11 tCvgOpt 0
+vexp1_vlg_vec_tst
+R1
+!i10b 1
+!s100 ^QT0B>A[E@KDLXLD4;>AZ3
+I;DaW?@NZcXb[JcZI=LMJ;3
+R2
+R0
+w1583176517
+8Waveform.vwf.vt
+FWaveform.vwf.vt
+L0 29
+R6
+r1
+!s85 0
+31
+R7
+!s107 Waveform.vwf.vt|
+!s90 -work|work|Waveform.vwf.vt|
+!i113 1
+R10
+R11
+vhard_block
+R1
+!i10b 1
+!s100 @n>CJfN?VUOM<6H@bcABB2
+IUZjNYnWO@g;f[Jz[@i^DO2
+R2
+R0
+R3
+R4
+R5
+L0 224
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11

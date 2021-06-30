@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1583596460 source:e:\estruturas a\ex4\main.c
+	<stdio.h>
+	<stdlib.h>
+	"pilha.h"
+
+1583168476 e:\estruturas a\ex4\pilha.h
+
+1583771326 source:d:\estruturas a\pilha vetor\ex4\main.c
+	<stdio.h>
+	<stdlib.h>
+	"pilha.h"
+
+1583168476 d:\estruturas a\pilha vetor\ex4\pilha.h
+

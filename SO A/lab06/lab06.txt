@@ -1,0 +1,49 @@
+Inicialmente é necessário esboçar o programa de forma simples de modo que haverá 3 funções principais e 2 threads.
+
+A primeira função será responsável por alocar (criar) grafos distintos, e jogá-los em um buffer de tamanho 10, com N nós (processos) e K recursos, sendo que N deve ser um número entre 10 e 100 e K um número entre N e 2N. Esta mesma função será executada em uma das threads.
+
+A segunda função lerá cada um dos grafos e imprimirá aqueles que possuirem deadlock, ou seja, um ciclo. Mas antes da impressão, esta mesma função chamará um procedimento auxiliar para detectar deadlock (terceira função). Esta segunda função será executada na thread restante.
+
+A terceira função será responsável por detectar um ciclo no grafo passado por parâmetro e retornar verdadeiro se houver ciclos (deadlock) ou falso, caso contrário.
+
+
+
+As funções necessárias para a manipulação do grafo seriam a de alocação dos nós e arestas (primeira função), a desalocação (liberação de memória) que conta com duas funções, uma para desalocar somente um grafo (uso da thread) e outra para desalocar todo o buffer (fim do programa), o percorrimento do mesmo (segunda e terceira função), exibir o grafo (auxiliar da segunda função).
+
+Para facilitar a visualização, a função de alocação será dividida em outras 3 funções, sendo que inicialmente há a criação da fila principal de grafos, sendo ela o buffer. A cada grafo criado, cria-se também os seus respectivos nós a partir de outra função auxiliar. Com os nós criados, há a criação das arestas de cada grafo. Assim, a cada loop da função haverá a criação de um grafo aleatório diferente.
+
+Após diversas tentativas para encontrar um erro em que o programa não aceitava outra adição de um grafo após a remoção de um (exemplo: buffer com 10 grafos já alocados, 1 é desalocado e há tentativa de adicionar mais 1 ao buffer, porém sem sucesso), houve a constatação da utilização do malloc em que o mesmo que estava causando este erro, ao trocar por calloc o programa funcionou normalmente.
+
+O grafo não permite nós em loop, mas permite arestas paralelas
+
+Para a aplicação de threads, é necessário que as funções presentes nas threads se situem em loop para que a criação e o consumo dos grafos sejam constantes, porém com um valor delimitado igual a ambos para que não haja interação infinita entre eles.
+
+____________________________________________________
+|    Grau de saída (d⁺) por nó      |Chance de ciclo|
+|-----------------------------------|---------------|
+|1 ou 2	                            |100%           |
+|0 a 3                              |~90%           |
+|0 a 5                              |~85% - 90%     |
+|Total de arestas atualizado*       |~20 - 30%      |
+|Total de arestas (em um único nó)  |0%             |
+|___________________________________|_______________|
+
+* -> Número aleatório entre 0 e o total de arestas restantes (anteriormente gerada entre N e 2N), porém cada aresta inserida reduz em um o número total de arestas.
+
+
+A análise de ciclos depende do número de arestas de cada nó, ou seja, caso haja 1 ou 2 arestas por nó, o grafo sempre terá ciclos (100% de chance), à medida que este intervalo se torna maior, as chances de ciclo se reduzem, até que um único nó tenha todas as arestas do grafo, isto é, a chance de ciclos seria de 0%, pois os demais nós seriam vértices isolados.
+
+Também, caso não sejam utilizados mutexes para as threads, haveria uma produção menor de grafos com relação ao valor delimitado pelos loops das threads, ou seja, haveria espera ativa da thread para que a outra pudesse consumir ou alocar grafos.
+
+Atualização:
+
+Com o número de arestas reduzidos para o número aleatório de nós gerado ou menor, há a possibilidade de atribuir 1 aresta para cada nó, fazendo com que possa ocorrer um ciclo caso haja ou um número igual de arestas e nós ou um caminho que contenha um ciclo, que desprezaria alguns dos nós do grafo por não conter arestas. Com a modificação, as chances de ocorrer um ciclo considerando apenas 1 aresta origem de um nó seria em torno de 30%-35%, enquanto se gerar um número aleatório entre 0 e o número de arestas restantes a serem implementadas (com isso um nó poderia ser origem de mais de uma aresta) seria em torno de 6%-8% e se considerar um máximo de 2 arestas, seria em torno de 10%-12%.
+
+____________________________________________________
+|    Grau de saída (d⁺) por nó      |Chance de ciclo|
+|-----------------------------------|---------------|
+|Máximo 2 arestas                   |~10% - 12%     |
+|Total de arestas atualizado*       |~6% - 8%       |
+|1 aresta                           |~30 - 35%      |
+|___________________________________|_______________|
+* -> Número aleatório entre 0 e o total de arestas restantes (anteriormente gerada entre 2 e o número gerado entre 2 e 100), porém cada aresta inserida reduz em um o número total de arestas.

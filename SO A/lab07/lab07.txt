@@ -1,0 +1,25 @@
+O gerenciamento de memória usando listas encadeadas demanda alocações de memória em que, a cada alocação, haverá a atualização de um nó da lista bem como pode haver também a criação de outro nó na lista dependendo do tamanho disponível de memória, assim como na liberação de memória, pode haver a atualização do nó da lista em questão (indicando memória livre), como também a junção de dois nós indicando a combinação de duas áreas livres contínuas.
+
+Cada nó da lista encadeada presente na memória necessita de 4 posições na memória, em que:
+    1º -> Livre (-1) ou ocupado (1).
+    2º -> Ponteiro (número da posição) indicando o início da região.
+    3º -> Tamanho da região.
+    4º -> Ponteiro (número da posição) para o próximo nó da lista.
+_____________________________________________________
+|              |          |           |              |
+|  Disponível  |  Início  |  Tamanho  |  Próximo nó  |
+|______________|__________|___________|______________|
+
+Para a alocação de uma região de memória é necessário atualizar o nó da lista da região antiga, indicando a região como alocada e alocar a região (posições com valor 2), porém ao final dela cria-se outro nó para indicar uma nova região livre (fragmentação da memória), caso a região disponível e o tamanho necessário para alocar sejam iguais ou tiverem uma diferença de até 5 posições (para acabar a região de memória), o nó da lista encadeada é somente atualizado sua disponibilidade ocasionando, assim, uma fragmentação interna, pois não há possibilidade de alocar uma nova região sendo que um novo nó da lista ocupa um espaço de 4 posições e o tamanho mínimo de uma nova região é de 1 posição. No entanto, esta fragmentação interna pode ser de, no máximo, 4 posições. Tal fragmentação interna pode ser denotada a partir de posições com valor 0 na região alocada.
+
+Para a liberação da memória, há a possibilidade do usuário selecionar uma área da memória para desalocar. Há quatro situações de liberação de memória:
+	1ª - Liberação sem áreas livres adjacentes.
+	2ª - Liberação com a área da direita livre.
+	3ª - Liberação com a área da esquerda livre.
+	4ª - Liberação com ambas as áreas adjacentes livres.
+
+Nas situações 2, 3 e 4 há necessidade de juntar as áreas livres em apenas uma, fazendo com que um nó da lista (situações 2 e 3) seja excluído ou que dois nós da lista (situação 4) sejam excluídos, havendo 8 posições a mais de espaço livre em memória.
+
+Atualização:
+
+Ambos os programas realizam o gerenciamento da mesma maneira, sendo o nó da lista seguido da partição alocada, seguido de outro nó da lista, porém a diferença é que um programa ocupa 4 posições da memória por nó e o outro ocupa apenas 2 posições da memória por nó (subdividindo o inteiro por 2 shorts). Também ambos os programas utilizam a política de alocação do primeiro ajuste.

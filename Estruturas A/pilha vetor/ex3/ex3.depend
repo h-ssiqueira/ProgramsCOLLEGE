@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1583597752 source:e:\estruturas a\ex3\main.c
+	<stdio.h>
+	<stdlib.h>
+	"pilha.h"
+
+1583168476 e:\estruturas a\ex3\pilha.h
+

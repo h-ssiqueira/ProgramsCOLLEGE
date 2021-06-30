@@ -1,0 +1,107 @@
+Q1. Explique com suas palavras o que os comandos pwd, hostname, rm, rm -r, ls, mkdir, echo, ">>", ">", cd, cat e touch fazem:
+
+pwd -> Demonstra o caminho do diretório inicial (raiz) até o diretório atual.
+
+hostname -> Retorna o nome da máquina que está sendo utilizada.
+
+rm -> Remove algum arquivo.
+
+rm -r -> Remove uma pasta.
+
+ls -> Mostra os arquivos e pastas existentes no diretório atual (similar ao comando "dir", porém não demonstra a diferença entre arquivos e pastas como o comando "ls" demosntra).
+
+mkdir -> Cria uma nova pasta.
+
+echo -> Exibe a mensagem na tela ou em um arquivo.
+
+">>" -> Junta o conteúdo do arquivo com um novo conteúdo.
+
+">" -> Substitui o conteúdo existente de um arquivo por um novo conteúdo.
+
+cd -> Muda de pasta.
+
+cat -> Exibe o conteúdo de um arquivo.
+
+touch -> Cria um arquivo.
+
+
+Q2.1. O que aconteceu quando você executou lote.sh?
+
+O programa criou o arquivo main.cpp, com a função do cálculo da séries de Taylor, compilou, gerando um arquivo a.out e executou para as 20 primeiras séries, logo em seguida exibiu o diretório atual do terminal como mostrado a seguir:
+Executando o programa: ./a.out
+- Calculando pi usando séries de Taylor; n = 20
+pi(0) = 0
+pi(1) = 4
+pi(2) = 2.666666666666667
+pi(3) = 3.4666666666666668
+pi(4) = 2.8952380952380956
+pi(5) = 3.3396825396825403
+pi(6) = 2.9760461760461765
+pi(7) = 3.2837384837384844
+pi(8) = 3.0170718170718178
+pi(9) = 3.2523659347188767
+pi(10) = 3.0418396189294032
+pi(11) = 3.2323158094055939
+pi(12) = 3.0584027659273332
+pi(13) = 3.2184027659273333
+pi(14) = 3.0702546177791854
+pi(15) = 3.2081856522619439
+pi(16) = 3.0791533941974278
+pi(17) = 3.2003655154095489
+pi(18) = 3.0860798011238346
+pi(19) = 3.1941879092319425
+a.out  arquivo	Desktop  Documents  Downloads  lote.sh	main.cpp  Music  Pictures  Public  Templates  Videos
+
+
+Q2.1. Execute o comando ./a.out 30 no terminal. O que aconteceu?
+
+O terminal executou o arquivo objeto criado a partir da compilação para as 30 primeiras séries de Taylor como demonstrado a seguir:
+Executando o programa: ./a.out
+- Calculando pi usando séries de Taylor; n = 30
+pi(0) = 0
+pi(1) = 4
+pi(2) = 2.666666666666667
+pi(3) = 3.4666666666666668
+pi(4) = 2.8952380952380956
+pi(5) = 3.3396825396825403
+pi(6) = 2.9760461760461765
+pi(7) = 3.2837384837384844
+pi(8) = 3.0170718170718178
+pi(9) = 3.2523659347188767
+pi(10) = 3.0418396189294032
+pi(11) = 3.2323158094055939
+pi(12) = 3.0584027659273332
+pi(13) = 3.2184027659273333
+pi(14) = 3.0702546177791854
+pi(15) = 3.2081856522619439
+pi(16) = 3.0791533941974278
+pi(17) = 3.2003655154095489
+pi(18) = 3.0860798011238346
+pi(19) = 3.1941879092319425
+pi(20) = 3.0916238066678399
+pi(21) = 3.1891847822775961
+pi(22) = 3.0961615264636424
+pi(23) = 3.1850504153525314
+pi(24) = 3.0999440323738079
+pi(25) = 3.1815766854350325
+pi(26) = 3.1031453128860127
+pi(27) = 3.1786170109992202
+pi(28) = 3.1058897382719475
+pi(29) = 3.1760651768684385
+
+
+Q2.3. Para que servem os parâmetros argc e argv dentro do arquivo main.cpp?
+
+O parâmetro argc indica a quantidade de strings contidas em argv e este indica as strings geradas no momento de execução do programa no terminal, no exemplo, argv[0] seria ./a.out e argv[1] seria o número 30.
+
+Q2.4. Por que o programa retorna 1 (return 1) na função main?
+
+Porque se não houver o segundo argumento da função main que indica a quantidade de vezes que a série terá o programa finaliza sem calcular pi na função, se o programa calculasse traria um erro por conta do valor inexistente.
+
+Q2.5.1. Quanto tempo o programa demorou para terminar?
+
+O programa levou um tempo de 14,28 segundos para executar (Tempo total: 0:14.28s).
+
+Q2.5.2. Compile novamente o programa C++ usando "g++ -Ofast main.cpp". Quanto tempo o programa demorou para terminar?
+
+O programa levou um tempo de 3,26 segundos para executar (Tempo total: 0:03.26s).

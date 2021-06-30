@@ -1,0 +1,49 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Helayne.DESKTOP-UMFI8VM/Downloads/Exp2/simulation/modelsim
+Eexp2
+Z1 w1585327204
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z4 8C:/Users/Helayne.DESKTOP-UMFI8VM/Downloads/Exp2/Exp2.vhd
+Z5 FC:/Users/Helayne.DESKTOP-UMFI8VM/Downloads/Exp2/Exp2.vhd
+l0
+L6
+VHdj38oYj?>aHcg<1<D4Q42
+!s100 J=?h8kb:mX<YXi6R3S;IJ2
+Z6 OV;C;10.5b;63
+31
+Z7 !s110 1585327357
+!i10b 1
+Z8 !s108 1585327356.000000
+Z9 !s90 -reportprogress|300|-93|-work|work|C:/Users/Helayne.DESKTOP-UMFI8VM/Downloads/Exp2/Exp2.vhd|
+Z10 !s107 C:/Users/Helayne.DESKTOP-UMFI8VM/Downloads/Exp2/Exp2.vhd|
+!i113 1
+Z11 o-93 -work work
+Z12 tExplicit 1 CvgOpt 0
+Artl
+R2
+R3
+DEx4 work 4 exp2 0 22 Hdj38oYj?>aHcg<1<D4Q42
+l23
+L20
+VJAUeE:L6V<IMGP:iYMkB11
+!s100 g::LZgA<gf2?ZjR^:mm880
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12

@@ -1,0 +1,15 @@
+vendor_name = ModelSim
+source_file = 1, C:/Users/gabi/Desktop/Exp3/Exp3.vhd
+source_file = 1, c:/intelfpga_lite/18.1/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
+source_file = 1, c:/intelfpga_lite/18.1/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
+source_file = 1, c:/intelfpga_lite/18.1/quartus/libraries/vhdl/ieee/timing_b.vhd
+source_file = 1, c:/intelfpga_lite/18.1/quartus/libraries/vhdl/ieee/timing_p.vhd
+source_file = 1, C:/Users/gabi/Desktop/Exp3/db/Exp3.cbx.xml
+design_name = hard_block
+design_name = Exp3
+instance = comp, \output~output\, output~output, Exp3, 1
+instance = comp, \P4~input\, P4~input, Exp3, 1
+instance = comp, \P1~input\, P1~input, Exp3, 1
+instance = comp, \P2~input\, P2~input, Exp3, 1
+instance = comp, \P3~input\, P3~input, Exp3, 1
+instance = comp, \output~0\, output~0, Exp3, 1

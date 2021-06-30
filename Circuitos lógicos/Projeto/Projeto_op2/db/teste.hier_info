@@ -1,0 +1,44 @@
+|teste
+reset => state~3.DATAIN
+clock => state~1.DATAIN
+sensor1 => Mux7.IN5
+sensor1 => Mux8.IN5
+sensor1 => Selector2.IN7
+sensor1 => Selector4.IN1
+sensor2 => Selector0.IN5
+sensor2 => Selector1.IN4
+sensor2 => Mux0.IN4
+sensor2 => Mux1.IN4
+sensor2 => Mux9.IN4
+sensor2 => Mux10.IN4
+sensor2 => Selector3.IN1
+sensor2 => Selector7.IN2
+sensor3 => Mux4.IN4
+sensor3 => Mux5.IN4
+sensor3 => Mux6.IN4
+sensor3 => Mux2.IN4
+sensor3 => Mux3.IN4
+sensor3 => Mux7.IN4
+sensor3 => Mux8.IN4
+sensor3 => Selector4.IN5
+sensor4 => Mux9.IN5
+sensor4 => Mux10.IN5
+sensor4 => Selector3.IN5
+sensor4 => Mux4.IN5
+sensor4 => Mux5.IN5
+sensor4 => Mux6.IN5
+sensor5 => Selector5.IN5
+sensor5 => Mux2.IN5
+sensor5 => Mux3.IN5
+sensor5 => Mux0.IN5
+sensor5 => Mux1.IN5
+sensor5 => state.DATAB
+switch1 << WideOr8.DB_MAX_OUTPUT_PORT_TYPE
+switch2 << WideOr8.DB_MAX_OUTPUT_PORT_TYPE
+switch3 << WideOr9.DB_MAX_OUTPUT_PORT_TYPE
+dirA[0] << dirA[0].DB_MAX_OUTPUT_PORT_TYPE
+dirA[1] << WideOr10.DB_MAX_OUTPUT_PORT_TYPE
+dirB[0] << <GND>
+dirB[1] << dirB.DB_MAX_OUTPUT_PORT_TYPE
+
+

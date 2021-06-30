@@ -1,0 +1,46 @@
+Q1.A.
+&& -> Faz a junção de dois comandos em uma mesma linha de execução do terminal.
+
+mv -> Move um arquivo/diretório de posição ou até mesmo faz a renomeação deste arquivo/diretório.
+
+man -> Mostra o manual relacionado com a biblioteca/função descrita após o comando (ex: "man gettimeofday").
+
+dir -> Mostra sem detalhes (sem utilização de cores para denotar a diferença de arquivos/pastas) dos arquivos e pastas do diretório.
+
+vdir -> Lista os arquivos e pastas do diretório demonstrando os detalhes de modificações e assinatura do usuário (modificado por). Realiza o mesmo comando que "ls -l", exceto a utilização de cores.
+
+ls -la -> Exibe todos os arquivos e pastas, denotando com cores as diferenças entre pastas e arquivos. Também há colunas que denotam as informações referentes aos arquivos/diretórios, sendo a data/hora de modificação, proprietário, bem como lista os arquivos iniciados com '.', sendo normalmente ocultados do usuário.
+
+nano -> Abre o editor de texto nano.
+
+Q1.B.
+Para editar um arquivo já existente, basta executar o comando "nano <nome do arquivo>", porém há a necessidade de estar no diretório para executar este comando. Ou abrir o editor de texto nano e pressionar ctrl+R e depois ctrl+T para localizar o arquivo no diretório que o mesmo se encontra. Após realizar as edições do arquivo, deve-se salvar o arquivo com ctrl+O e ctrl+T para localizar o arquivo novamente e sobrescrever a versão antiga pela nova.
+
+Q2.
+Existem 128 combinações de cores para se usar, sendo 16 cores diferentes para texto e 8 para plano de fundo:
+
+Cor				Binário
+Preto			0000
+Azul			0001
+Verde			0010
+Ciano			0011
+Vermelho		0100
+Magenta			0101
+Castanho		0110
+Cinza claro		0111
+Cinza escuro	1000
+Azul claro		1001
+Luz verde		1010
+Ciano claro		1011
+Luz vermelha	1100
+Magenta claro	1101
+Amarelo			1110
+Branco			1111
+
+A representação se faz a partir da cor de fundo (4 bits = 1 nibble), seguido da cor da letra (4 bits = 1 nibble) e depois o caracter em ascii (8 bits = = 2 nibbles).
+
+Q3.
+O formato imagem (.img) não é aceito, pois por se tratar de uma imagem de boot e não necessitar de um sistema operacional para sua execução, não haveria necessidade de traduzir parte do código para o sistema operacional, ou seja, em um código assembly normal, haveria seções de texto e dados que necessitariam ser modificadas para que o SO interpretasse de maneira correta, como este tipo de código não possui tais seções e a mensagem que será exibida deve ser posta caracter por caracter, não há a possibilidade de realizar objdump -D.
+
+Q4.
+Ao executar o comando ndisasm, há a exibição das linhas de código do arquivo na memória, ou seja, demonstra como está distribuído os endereços de memória relativos a imagem de boot, nos quais se armazenam cada instrução em assembly e seu respectivo código para iniciar o boot da máquina. Para o restante das linhas que não são utilizadas, as mesmas são substituidas por "add [bx+si],al", sendo esta instrução o código 0000. A diferença entre o objdump -D e ndisasm é de que o objdump -D realiza a descrição de códigos executáveis para o sistema operacional, ou seja, demonstra como está o arquivo binário para que o sistema execute corretamente as instruções escritas. O ndisasm é responsável por listar as instruções e seus respectivos códigos, independente se o arquivo é um código, uma imagem ou um objeto, até mesmo um .out.

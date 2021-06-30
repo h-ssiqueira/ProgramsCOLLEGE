@@ -1,0 +1,53 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/intelFPGA_lite/18.1/simulation/modelsim
+Eteste
+Z1 w1591399066
+Z2 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z3 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z4 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z5 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z6 8D:/intelFPGA_lite/18.1/teste.vhd
+Z7 FD:/intelFPGA_lite/18.1/teste.vhd
+l0
+L7
+V4LPF2E`CaNi<?f@7Y]2c:3
+!s100 L_YHiOzM[EA^A^4]jYF<k0
+Z8 OV;C;10.5b;63
+31
+Z9 !s110 1591400966
+!i10b 1
+Z10 !s108 1591400966.000000
+Z11 !s90 -reportprogress|300|-93|-work|work|D:/intelFPGA_lite/18.1/teste.vhd|
+Z12 !s107 D:/intelFPGA_lite/18.1/teste.vhd|
+!i113 1
+Z13 o-93 -work work
+Z14 tExplicit 1 CvgOpt 0
+Aa
+R2
+R3
+R4
+R5
+DEx4 work 5 teste 0 22 4LPF2E`CaNi<?f@7Y]2c:3
+l23
+L16
+Voi07^[]OZ3Ea8hIaHd[9K2
+!s100 =gdL:SDARL55^XeV;JV>o1
+R8
+31
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+R14

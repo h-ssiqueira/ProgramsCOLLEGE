@@ -1,0 +1,83 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+
+ENTITY REGS IS
+	PORT( RegWrite					:IN	STD_LOGIC; -- sinal do controlador
+			regA, regB,writeR		:IN	STD_LOGIC_VECTOR(1 DOWNTO 0); -- Controle dos registradores a serem usados
+			data						:IN	STD_LOGIC_VECTOR(7 DOWNTO 0); -- Informações a serem escritas em um registrador
+			Rdata1, Rdata2			:OUT STD_LOGIC_VECTOR(7 DOWNTO 0)); -- saída de informações dos registradores
+END REGS;
+	
+	ARCHITECTURE options OF REGS IS
+	sIGNAL R0, R1, R2, R3			:	STD_LOGIC_VECTOR(7 DOWNTO 0); -- Registradores
+	BEGIN
+	PROCESS (RegWrite, regA, regB, writeR, data, Rdata1, Rdata2)
+	BEGIN
+		cASE RegWrite IS
+			WHEN "0" => -- Sem escrita
+				CASE regA IS
+					WHEN "00" =>
+						Rdata1 <= R0;
+					WHEN "01" =>
+						Rdata1 <= R1;
+					WHEN "10" =>
+						Rdata1 <= R2;
+					WHEN "11" =>
+						Rdata1 <= R3;
+				END CASE;
+				CASE regB IS
+					WHEN "00" =>
+						Rdata2 <= R0;
+					WHEN "01" =>
+						Rdata2 <= R1;
+					WHEN "10" =>
+						Rdata2 <= R2;
+					WHEN "11" =>
+						Rdata2 <= R3;
+				END CASE;
+			WHEN "1" => -- Com escrita
+				CASE writeR IS
+					WHEN "00" =>
+						R0 <= data;
+					WHEN "01" =>
+						R1 <= data;
+					WHEN "10" =>
+						R2 <= data;
+					WHEN "11" =>
+						R3 <= data;
+				END CASE;
+		END CASE;
+	END PROCESS;
+	END options;
+				
+		--	WHEN "10" => -- ADD
+			--	Result <= ('0' & X) + Y + Cin;									-- Realiza a soma e guarda em uma variável auxiliar de 1 bit adicional
+				
+			--	S <= Result(7 DOWNTO 0);											-- Guarda a soma no output
+				
+				--Cout <= Result(8);													-- Verifica se houve Cout
+				--Over <= Result(8) XOR X(7) XOR Y(7) XOR Result(7);			-- Verifica se houve Overflow
+				
+			--	IF ((X + Y) = 0) THEN												-- Verifica se o resultado da operação é 0
+					--Zero <= '1';
+			--	ELSE 
+					--Zero <= '0';
+			--	END IF;
+				
+			--WHEN "11" => -- SUB
+				--S <= X - Y;
+				
+				--Cout <= Result(8);													-- Verifica se houve Cout
+				--Over <= Result(8) XOR X(7) XOR Y(7) XOR Result(7);			-- Verifica se houve Overflow
+				
+				--IF ((X - Y) = 0) THEN												-- Verifica se o resultado da operação é 0
+					--Zero <= '1';
+			--	ELSE 
+				--	Zero <= '0';
+				--END IF;
+				
+			--WHEN OTHERS => NULL;
+		--END CASE; 
+	--END PROCESS;
+	--END options;

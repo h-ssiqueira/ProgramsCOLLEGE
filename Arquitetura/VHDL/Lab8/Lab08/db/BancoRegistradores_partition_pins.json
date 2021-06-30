@@ -1,0 +1,141 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "Rdata1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Rdata1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Rdata1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Rdata1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Rdata1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Rdata1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Rdata1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Rdata1[7]",
+					"strict" : false
+				},
+				{
+					"name" : "Rdata2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Rdata2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Rdata2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Rdata2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Rdata2[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Rdata2[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Rdata2[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Rdata2[7]",
+					"strict" : false
+				},
+				{
+					"name" : "regA[0]",
+					"strict" : false
+				},
+				{
+					"name" : "regA[1]",
+					"strict" : false
+				},
+				{
+					"name" : "RegWrite",
+					"strict" : false
+				},
+				{
+					"name" : "regB[0]",
+					"strict" : false
+				},
+				{
+					"name" : "regB[1]",
+					"strict" : false
+				},
+				{
+					"name" : "data[0]",
+					"strict" : false
+				},
+				{
+					"name" : "writeR[1]",
+					"strict" : false
+				},
+				{
+					"name" : "writeR[0]",
+					"strict" : false
+				},
+				{
+					"name" : "load",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "data[1]",
+					"strict" : false
+				},
+				{
+					"name" : "data[2]",
+					"strict" : false
+				},
+				{
+					"name" : "data[3]",
+					"strict" : false
+				},
+				{
+					"name" : "data[4]",
+					"strict" : false
+				},
+				{
+					"name" : "data[5]",
+					"strict" : false
+				},
+				{
+					"name" : "data[6]",
+					"strict" : false
+				},
+				{
+					"name" : "data[7]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

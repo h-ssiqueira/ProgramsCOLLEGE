@@ -1,0 +1,73 @@
+# Reading D:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
+# do Lab06_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying D:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {D:/Arquitetura/Quartus/Lab06/adder8b.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 09:56:07 on Sep 17,2020
+# vcom -reportprogress 300 -93 -work work D:/Arquitetura/Quartus/Lab06/adder8b.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_SIGNED
+# -- Compiling entity ULA
+# -- Compiling architecture options of ULA
+# End time: 09:56:07 on Sep 17,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim work.ula
+# vsim work.ula 
+# Start time: 09:56:10 on Sep 17,2020
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_signed(body)
+# Loading work.ula(options)
+force -freeze sim:/ula/Cin 0 0
+force -freeze sim:/ula/X 00000101 0
+force -freeze sim:/ula/Y 00000110 0
+add wave -position insertpoint  \
+sim:/ula/ALUop
+add wave -position insertpoint  \
+sim:/ula/Cin
+add wave -position insertpoint  \
+sim:/ula/X
+add wave -position insertpoint  \
+sim:/ula/Y
+add wave -position insertpoint  \
+sim:/ula/S
+add wave -position insertpoint  \
+sim:/ula/Cout
+add wave -position insertpoint  \
+sim:/ula/Over
+add wave -position insertpoint  \
+sim:/ula/Zero
+wave create -driver freeze -pattern constant -value 0 -starttime 0ns -endtime 500ns sim:/ula/Cin
+# Editable Wave items are not compatible with the wave window's standard undo-redo.  Standard undo-redo has been disabled.
+wave create -driver freeze -pattern constant -value 00 -range 1 0 -starttime 0ns -endtime 500ns sim:/ula/ALUop
+wave create -driver freeze -pattern constant -value 00000101 -range 7 0 -starttime 0ns -endtime 500ns sim:/ula/X
+wave create -driver freeze -pattern constant -value 00000110 -range 7 0 -starttime 0ns -endtime 500ns sim:/ula/Y
+add wave -position insertpoint  \
+sim:/ula/S
+add wave -position insertpoint  \
+sim:/ula/Cout
+add wave -position insertpoint  \
+sim:/ula/Over
+add wave -position insertpoint  \
+sim:/ula/Zero
+wave edit change_value -start 100ns -end 200ns -value 01 Edit:/ula/ALUop
+wave edit change_value -start 200ns -end 300ns -value 10 Edit:/ula/ALUop
+wave edit change_value -start 300ns -end 400ns -value 11 Edit:/ula/ALUop
+run -all
+# End time: 10:41:47 on Sep 17,2020, Elapsed time: 0:45:37
+# Errors: 0, Warnings: 0

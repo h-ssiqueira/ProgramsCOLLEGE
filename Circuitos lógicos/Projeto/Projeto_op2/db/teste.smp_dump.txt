@@ -1,0 +1,12 @@
+
+State Machine - |teste|state
+Name state.STARTING state.Bset2 state.Bset state.ABout state.Bstop state.Astop state.Bin state.Ain state.Aback 
+state.Aback 0 0 0 0 0 0 0 0 0 
+state.Ain 0 0 0 0 0 0 0 1 1 
+state.Bin 0 0 0 0 0 0 1 0 1 
+state.Astop 0 0 0 0 0 1 0 0 1 
+state.Bstop 0 0 0 0 1 0 0 0 1 
+state.ABout 0 0 0 1 0 0 0 0 1 
+state.Bset 0 0 1 0 0 0 0 0 1 
+state.Bset2 0 1 0 0 0 0 0 0 1 
+state.STARTING 1 0 0 0 0 0 0 0 1 

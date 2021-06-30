@@ -1,0 +1,79 @@
+MemTotal:        1004808 kB
+MemFree:          123388 kB
+MemAvailable:     376952 kB
+Buffers:           32176 kB
+Cached:           338760 kB
+SwapCached:          756 kB
+Active:           371888 kB
+Inactive:         369192 kB
+Active(anon):     152576 kB
+Inactive(anon):   231804 kB
+Active(file):     219312 kB
+Inactive(file):   137388 kB
+Unevictable:          16 kB
+Mlocked:              16 kB
+SwapTotal:        459260 kB
+SwapFree:         448712 kB
+Dirty:                 0 kB
+Writeback:             0 kB
+AnonPages:        369608 kB
+Mapped:           108328 kB
+Shmem:             14236 kB
+KReclaimable:      48768 kB
+Slab:              95576 kB
+SReclaimable:      48768 kB
+SUnreclaim:        46808 kB
+KernelStack:        4556 kB
+PageTables:         8384 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:      961664 kB
+Committed_AS:    2009996 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:       27864 kB
+VmallocChunk:          0 kB
+Percpu:              628 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+ShmemHugePages:        0 kB
+ShmemPmdMapped:        0 kB
+FileHugePages:         0 kB
+FilePmdMapped:         0 kB
+CmaTotal:              0 kB
+CmaFree:               0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+Hugetlb:               0 kB
+DirectMap4k:      116672 kB
+DirectMap2M:      931840 kB
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 58
+model name	: Intel(R) Core(TM) i5-3330 CPU @ 3.00GHz
+stepping	: 9
+microcode	: 0x19
+cpu MHz		: 2993.200
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 1
+core id		: 0
+cpu cores	: 1
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq monitor ssse3 cx16 pcid sse4_1 sse4_2 x2apic popcnt aes xsave avx rdrand hypervisor lahf_lm pti fsgsbase md_clear flush_l1d
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs itlb_multihit srbds
+bogomips	: 5986.40
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+

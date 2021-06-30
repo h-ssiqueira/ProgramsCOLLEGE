@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1581371260 source:e:\estruturas a\revisão\ex6\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1581372510 source:d:\estruturas a\revisão\ex6\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

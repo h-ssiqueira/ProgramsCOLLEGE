@@ -1,0 +1,8 @@
+|Exp3
+P1 => output.IN0
+P2 => output.IN1
+P3 => output.IN1
+P4 => output.IN1
+output <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+

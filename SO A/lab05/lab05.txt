@@ -1,0 +1,17 @@
+A solução do problema do jantar dos filósofos abrange a utilização de semáforos para tratar as possíveis condições de corrida, entre threads, que podem ocorrer na execução do programa, ou seja, haveria a possibilidade de haver refeição de dois filósofos vizinhos simultaneamente, o que seria praticamente impossível segundo o problema descrito, pois cada filósofo se alimenta apenas com a utilização de dois garfos presentes na esquerda e na direita de seu prato, sendo que um dos garfos seria do prato do filósofo ao lado.
+
+Como o estado de um filósofo é descrito por pensar, fome ou comendo, há a necessidade da criação de um vetor dinâmico representando estes estados de cada um, bem como outro vetor de mesmo tamanho, porém com a identificação de cada thread, assim como um vetor com as threads propriamente ditas. Porém, para a implementação do semáforo, é necessário a utilização de mutex, sendo a exclusão mútua, que realiza a verificação do acesso à memória por parte das threads, isto é, ela faz com que apenas uma thread acesse a região crítica por vez, isso previne problemas de sincronização de variáveis compartilhadas ou até mesmo condições não determinísticas.
+
+O programa requere a inserção do número de filósofos e do tempo em que os mesmos levam para pensar e comer, em que estes tempos são aleatoriamente selecionados graças a função "srand(time(NULL))" que, através do horário do sistema faz com que gere um número aleatório em toda execução do programa. Sem a utilização desta função, haveria a geração dos mesmos números sempre.
+
+Exemplo de execução:
+
+./philosophers.o 4 5 10 2 8
+
+Onde:
+    4 representa o número de filósofos.
+    5 e 10 representam, respectivamente, o tempo mínimo e máximo para pensar.
+    2 e 8 representam, respectivamente, o tempo mínimo e máximo para comer.
+
+Atualização:
+	Faltou o vetor de mutexes para cada filósofo, isso impede que haja a execução desnecessária dos demais filósofos enquanto um está comendo
