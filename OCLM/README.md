@@ -44,3 +44,4 @@ Nota: para que haja a compilação e o link do programa, o compilador (TASM) e o
 ## Listas
 * [Lista 1](/OCLM/lista_1/OC-Lista1.pdf)
 * [Lista 2](/OCLM/lista_2/OC-Lista2.pdf)
+## [Terceiro projeto](/Engenharia%20reversa/LOC-Desafio.pdf)

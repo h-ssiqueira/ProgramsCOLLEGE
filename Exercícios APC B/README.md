@@ -19,7 +19,7 @@ Alguns exercícios realizados para corretude dos códigos escritos em teoria.
 * [Lista 3](/Exercícios%20APC%20B/LISTA%203%20ESTRUTURAS/LISTA_03_ESTRUTURAS.pdf) - [Estruturas](/Exercícios%20APC%20B/LISTA%203%20ESTRUTURAS/)
 * [Lista 4](/Exercícios%20APC%20B/Lista%204%20modularização/AULA_PRÁTICA_04_MODULARIZAÇÃO.pdf) - [Modularização](/Exercícios%20APC%20B/Lista%204%20modularização/)
 * [Lista 5](/Exercícios%20APC%20B/Lista%205%20recursão/AULA_PRÁTICA_05_RECURSÃO.pdf) - [Recursão](/Exercícios%20APC%20B/Lista%205%20recursão/)
-* [Lista 6](/Exercícios%20APC%20B/lista%206%20praticando/AULA_PRÁTICA_06_PRATICANDO.pdf) - [Praticando](/lista%206%20praticando/)
+* [Lista 6](/Exercícios%20APC%20B/lista%206%20praticando/AULA_PRÁTICA_06_PRATICANDO.pdf) - [Praticando](/Exercícios%20APC%20B/lista%206%20praticando/)
 * [Lista 7](/Exercícios%20APC%20B/lista%207%20recursão%20e%20estruturas/AULA_PRÁTICA_07_RECURSÃO_ESTRUTURAS.pdf) - [Recursão e estruturas](/Exercícios%20APC%20B/lista%207%20recursão%20e%20estruturas/)
 * [Lista 8](/Exercícios%20APC%20B/Lista%208%20Union/AULA_PRÁTICA_08_ESTRUTURA_UNIAO.pdf) - [Union](/Exercícios%20APC%20B/Lista%208%20Union/)
 * [Lista 9](/Exercícios%20APC%20B/Lista%209%20arquivo/AULA_PRÁTICA_09_ARQUIVOS.pdf) - [Arquivo](/Exercícios%20APC%20B/Lista%209%20arquivo/)
