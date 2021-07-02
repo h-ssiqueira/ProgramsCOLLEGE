@@ -1,3 +1,4 @@
+![GitHub repo size](https://img.shields.io/github/repo-size/h-ssiqueira/PROGRAMSCOLLEGE)
 # Descrição
 Códigos realizados durante os semestres nas disciplinas de laboratórios de programação durante o curso de graduação de Engenharia de Computação.
 
