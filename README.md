@@ -51,10 +51,16 @@ Disciplina de **Sistemas Operacionais A**, exercida no primeiro semestre de 2021
 Disciplina de **Engenharia de Software**, exercida no primeiro semestre de 2021, utilizando as linguagens de programação ***```JAVA```***, ***```SQL```*** e ***```C```***. O [projeto](https://github.com/h-ssiqueira/Academia_Cobra_Kai/blob/main/PROJETO.pdf) encontra-se [neste repositório](https://github.com/h-ssiqueira/Academia_Cobra_Kai).
 
 ## AATG
-Disciplina de **Análise de Algoritmos e Teoria dos Grafos**, exercida no primeiro semestre de 2021, utilizando a ***```linguagem C```***. O [projeto](https://github.com/h-ssiqueira/Rotas_de_viagem/blob/master/README.md) encontra-se [neste repositório](https://github.com/h-ssiqueira/Rotas_de_viagem).
+Disciplina de **Análise de Algoritmos e Teoria dos Grafos**, exercida no primeiro semestre de 2021, utilizando a ***```linguagem C```***. O [projeto](https://github.com/h-ssiqueira/Rotas_de_viagem/blob/master/README.md) encontra-se [neste repositório](https://github.com/h-ssiqueira/Rotas_de_viagem). Código extra: [Algoritmo de Warshall](/extra/Programs-C/Data%20Structures/warshall.c)
 
 ## [Extra](/extra/)
 Códigos adicionais.
 * [Programas C](/extra/Programs-C/)
 	* [Estrutura de dados](/extra/Programs-C/Data%20Structures/)
+	* [Tempo de leitura de um HD](/extra/Programs-C/Tempo%20de%20leitura%20HD.c) (Disciplina de Introdução à Computação)
+	* [Multiplicação de matrizes](/extra/Programs-C/Multiplicação%20de%20matrizes.c) (Disciplina de Álgebra Linear e Vetores)
+	* [Cálculo da aceleração gravitacional com vetores](/extra/Programs-C/Cálculo%20aceleração%20gravitacional%20com%20vetores,c) (Disciplina de Física B)
+	* [Mínimos quadrados](/extra/Programs-C/mínimos%20Quadrados.c) (Disciplina de Laboratório de Física A)
+	* [Soma de Riemann](/extra/Programs-C/Soma%20de%20Riemann.c) (Disciplina de Cálculo B)
+	* [Mínimos quadrados](/extra/Programs-C/mínimos%20Quadrados%20simplificado.c) (Disciplina de Laboratório de Física B)
 * [Programas Python](/extra/Programs-Python/)
