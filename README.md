@@ -1,12 +1,22 @@
 ![GitHub repository size](https://img.shields.io/github/repo-size/h-ssiqueira/PROGRAMSCOLLEGE?label=Repository%20Size&style=for-the-badge)
+
+![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)
+![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)
+
+![VS Code](https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
+![Notepad++](https://img.shields.io/badge/Notepad++-90E59A.svg?style=for-the-badge&logo=notepad%2B%2B&logoColor=black)
+
+![C](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
+
 # Descrição
-Códigos realizados durante os semestres nas disciplinas de laboratórios de programação durante o curso de graduação de Engenharia de Computação.
+Códigos realizados para as disciplinas de laboratórios de programação durante o curso de graduação de Engenharia de Computação.
 
 # Sumário
 * [Algoritmos e Programação de Computadores A](#APC-A)
 * [Algoritmos e Programação de Computadores B](#APC-B)
 * [Análise de Algoritmos e Teoria dos Grafos](#AATG)
-* [Arquitetuta de Computadores](#AC)
+* [Arquitetura de Computadores](#AC)
 * [Circuitos Lógicos](#CL)
 * [Engenharia de Software](#ES)
 * [Estruturas e Recuperação de Dados A](#ERD-A)
@@ -54,7 +64,7 @@ Disciplina de **Engenharia de Software**, exercida no primeiro semestre de 2021,
 Disciplina de **Análise de Algoritmos e Teoria dos Grafos**, exercida no primeiro semestre de 2021, utilizando a ***```linguagem C```***. O [projeto](https://github.com/h-ssiqueira/Rotas_de_viagem/blob/master/) encontra-se [neste repositório](https://github.com/h-ssiqueira/Rotas_de_viagem). Código extra: [Algoritmo de Warshall](/extra/Programs-C/Data%20Structures/warshall.c)
 
 ## [Extra](/extra/)
-Códigos adicionais.
+Códigos adicionais e/ou utilizados em outras disciplinas.
 * [Programas C](/extra/Programs-C/)
 	* [Estrutura de dados](/extra/Programs-C/Data%20Structures/)
 	* [Tempo de leitura de um HD](/extra/Programs-C/Tempo%20de%20leitura%20HD.c) (Disciplina de Introdução à Computação)
