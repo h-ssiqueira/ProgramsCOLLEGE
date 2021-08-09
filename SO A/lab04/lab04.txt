@@ -11,3 +11,6 @@ No caso de 8 caracteres de letras minúsculas, se executado sem a utilização d
 Porém, se utilizar o recurso de variável global booleana há a consequência de região crítica do código fazendo com que as demais threads possam continuar executando, assim o uso do "exit(0)" é o mais correto a ser utilizado. Após testes foi notado que ao utilizar -O3 ou -Ofast na compilação do programa utilizando região crítica, o programa ao executar continuou sua execução das threads mesmo após ter encontrado a chave secreta.
 
 Além disso, houve a necessidade de colocar um sleep entre cada execução de thread para que houvesse a correta passagem do parâmetro da cadeia de caracteres, pois caso não houvesse a mesma, haveria valores distintos do previsto assim como poderia haver um número menor de threads do que o esperado. Entretanto, mesmo com a função sleep, há a correta passagem de valores de caracteres para a função de força bruta, mas o "printf" que indicaria a quantidade de instruções feitas (em centenas de milhões) indica o valor incorreto desta mesma cadeia de caracteres.
+
+Atualização pós matéria
+O parágrafo anterior denota o valor "incorreto" exibido no printf, no entanto, o valor estava correto por não haver alocação da string presente na função de cada uma das threads, fazendo com que o valor presente em todas elas fossem iguais ao valor na main.

@@ -81,10 +81,11 @@ bool SecretKeyTest(char *key){
 }
 
 void *SecretKeySearch(void *args){
-	char key[SIZE_KEY], *arg = (char *)args;
+	char key[SIZE_KEY], *arg = calloc(4,sizeof(char));
+	strcpy(arg,(char *)args);
 	int i;
 	long count = 0;
-	printf("%s\t%s\n",(char *)args,arg); // Strings condizem
+	//printf("%s\t%s\n",(char *)args,arg); // Strings condizem
 	key[SIZE_KEY] ^= key[SIZE_KEY];
 	key[0] = arg[0] + 32;
     for(i = SIZE_KEY-1; i > 0; i--)
@@ -98,14 +99,17 @@ void *SecretKeySearch(void *args){
 			key[i--] -= 26;
 			key[i]++;
 		}
-		if(key[0] == arg[1] + 33 || key[0] >= 123)
+		if(key[0] == arg[1] + 33 || key[0] >= 123){
+			free(arg);
             return 0;
+		}
 		count++;
 
 		if(count % 1000000000 == 0){
-			printf("Thread %s: %ld hundred million tries done\n",arg,count / 1000000000); // O nome da thread não condiz com o armazenado em arg ou args (primeiro print desta função)
+			printf("Thread %s: %ld hundred million tries done\n",arg+2,count / 1000000000); // O nome da thread não condiz com o armazenado em arg ou args (primeiro print desta função)
 		}
 
 	}
+	free(arg);
 	exit(0);
 }
