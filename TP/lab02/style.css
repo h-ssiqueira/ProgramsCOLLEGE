@@ -18,8 +18,8 @@ p{
 }
 
 h3{
-    text-align: center;
     cursor: text;
+    text-align: center;
 }
 
 hr{
@@ -34,9 +34,9 @@ img{
 
 .title{
     background-image: url(imgs/banner.jpg);
-    text-align: center;
     color: #00008B;
     display: block;
+    text-align: center;
 }
 
 .content{
@@ -46,26 +46,26 @@ img{
 }
 
 .divright{
-    float: right;
-    width: 40%;
-    height: 100%;
-    text-align: center;
     background-color: #7cbbe6;
     border: 2px solid black;
+    float: right;
+    height: 100%;
+    text-align: center;
+    width: 40%;
 }
 
 .divright img{
-    width: 70%;
     border: 1px solid black;
+    width: 70%;
 }
 
 .divleft{
-    float: left;
-    width: 59%;
-    height: 25%;
-    text-align: center;
     background-color: #528cb8;
     border: 2px solid black;
+    float: left;
+    height: 25%;
+    text-align: center;
+    width: 59%;
 }
 
 .divleft iframe{
@@ -98,11 +98,45 @@ img{
 }
 
 .more{
-    position: unset;
     float: none;
+    position: unset;
     text-align: center;
 }
 
 .more a{
     text-align: center;
+}
+
+blockquote.twitter-tweet{
+    display: inline-block;
+    font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 16px;
+    border-color: #eee #ddd #bbb;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+    margin: 10px 5px;
+    padding: 0 16px 16px 16px;
+    max-width: 468px;
+}
+
+blockquote.twitter-tweet p{
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 20px;
+}
+
+blockquote.twitter-tweet a{
+    color: inherit;
+    font-weight: normal;
+    text-decoration: none;
+    outline: 0 none;
+}
+
+blockquote.twitter-tweet a:hover,
+blockquote.twitter-tweet a:focus{
+    text-decoration: underline;
 }
