@@ -1,0 +1,108 @@
+body{
+    background-color: #4E697E;
+    border-left: 0px;
+    border-right: 0px;
+    cursor: default;
+}
+
+h1{
+    cursor: text;
+}
+
+h2{
+    cursor: text;
+}
+
+p{
+    cursor: text;
+}
+
+h3{
+    text-align: center;
+    cursor: text;
+}
+
+hr{
+    background-color: black;
+    border-width: 0px;
+    height: 2px;
+}
+
+img{
+    width: 5%;
+}
+
+.title{
+    background-image: url(imgs/banner.jpg);
+    text-align: center;
+    color: #00008B;
+    display: block;
+}
+
+.content{
+    display: inline-block;
+    height: 100%;
+    position: initial;
+}
+
+.divright{
+    float: right;
+    width: 40%;
+    height: 100%;
+    text-align: center;
+    background-color: #7cbbe6;
+    border: 2px solid black;
+}
+
+.divright img{
+    width: 70%;
+    border: 1px solid black;
+}
+
+.divleft{
+    float: left;
+    width: 59%;
+    height: 25%;
+    text-align: center;
+    background-color: #528cb8;
+    border: 2px solid black;
+}
+
+.divleft iframe{
+    border: 1px solid black;
+}
+
+.myButton{
+	background:linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+	background-color:#79bbff;
+	border-radius:15px;
+	border:1px solid #337bc4;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	font-weight:bold;
+	padding:12px 17px;
+    position: relative;
+	text-decoration:none;
+	text-shadow:2px 0px 0px #528ecc;
+}
+.myButton:hover{
+	background:linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
+	background-color:#378de5;
+}
+.myButton:active{
+	position:relative;
+	top:1px;
+}
+
+.more{
+    position: unset;
+    float: none;
+    text-align: center;
+}
+
+.more a{
+    text-align: center;
+}

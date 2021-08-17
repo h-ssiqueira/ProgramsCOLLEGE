@@ -63,6 +63,11 @@ Disciplina de **Engenharia de Software**, exercida no primeiro semestre de 2021,
 ## AATG
 Disciplina de **Análise de Algoritmos e Teoria dos Grafos**, exercida no primeiro semestre de 2021, utilizando a ***```linguagem C```***. O [projeto](https://github.com/h-ssiqueira/Rotas_de_viagem/blob/master/) encontra-se [neste repositório](https://github.com/h-ssiqueira/Rotas_de_viagem). Código extra: [Algoritmo de Warshall](/extra/Programs-C/Data%20Structures/warshall.c)
 
+## SO B
+
+
+## TP
+
 ## [Extra](/extra/)
 Códigos adicionais e/ou utilizados em outras disciplinas.
 * [Programas C](/extra/Programs-C/)
