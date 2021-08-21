@@ -26,6 +26,8 @@ Códigos realizados para as disciplinas de laboratórios de programação durant
 * [Paradigmas de Programação](#PP)
 * [Programação Orientada a Objetos](#POO)
 * [Sistemas Operacionais A](#SO-A)
+* [Sistemas Operacionais B](#SO-B)
+* [Tópicos em Programação](#TP)
 
 ## [APC A](/Exercícios%20APC%20A/)
 Disciplina de **Algoritmos e Programação de Computadores A**, exercida no primeiro semestre de 2019, utilizando ***```linguagem C```***. O [projeto final](https://github.com/h-ssiqueira/Anagrama/blob/master/Trabalho%2BFinal%2BAPC%2BA%2B2019.pdf) da disciplina encontra-se [neste repositório](https://github.com/h-ssiqueira/Anagrama).
@@ -34,7 +36,7 @@ Disciplina de **Algoritmos e Programação de Computadores A**, exercida no prim
 Disciplina de **Algoritmos e Programação de Computadores B**, exercida no segundo semestre de 2019, utilizando ***```linguagem C```***. O [projeto final](https://github.com/h-ssiqueira/Blackjack/blob/master/PROJETO_JOGO_21.pdf) da disciplina encontra-se [neste repositório](https://github.com/h-ssiqueira/Blackjack).
 
 ## [OCLM](/OCLM/)
-Disciplina de **Organização de computadores e Linguagem de Montagem**, exercida no segundo semestre de 2019, utilizando linguagem ***```Assembly X86```***. O [projeto final](https://github.com/h-ssiqueira/Batalha-Naval/blob/master/LOC-Projeto.pdf) da disciplina encontra-se [neste repositório](https://github.com/h-ssiqueira/Batalha-Naval).
+Disciplina de **Organização de Computadores e Linguagem de Montagem**, exercida no segundo semestre de 2019, utilizando linguagem ***```Assembly X86```***. O [projeto final](https://github.com/h-ssiqueira/Batalha-Naval/blob/master/LOC-Projeto.pdf) da disciplina encontra-se [neste repositório](https://github.com/h-ssiqueira/Batalha-Naval).
 
 ## [ERD A](/Estruturas%20A/)
 Disciplina de **Estrutura e Recuperação de Dados A**, exercida no primeiro semestre de 2020, utilizando ***```linguagem C```***. O [projeto final](https://github.com/h-ssiqueira/Quarentena-Cachorro-Quente/blob/master/erd_projeto.pdf) da disciplina encontra-se [neste repositório](https://github.com/h-ssiqueira/Quarentena-Cachorro-Quente).
@@ -63,10 +65,11 @@ Disciplina de **Engenharia de Software**, exercida no primeiro semestre de 2021,
 ## AATG
 Disciplina de **Análise de Algoritmos e Teoria dos Grafos**, exercida no primeiro semestre de 2021, utilizando a ***```linguagem C```***. O [projeto](https://github.com/h-ssiqueira/Rotas_de_viagem/blob/master/) encontra-se [neste repositório](https://github.com/h-ssiqueira/Rotas_de_viagem). Código extra: [Algoritmo de Warshall](/extra/Programs-C/Data%20Structures/warshall.c)
 
-## SO B
+## [SO B](/SO%20B/)
+Disciplina de **Sistemas Operacionais B**, exercida no segundo semestre de 2021m utilizando a ***```linguagem C```*** e ***```Assembly x86```***.
 
-
-## TP
+## [TP](/TP/)
+Disciplina de **Tópicos em Programação**, exercida no segundo semestre de 2021, utilizando as linguagens ***```HTML/CSS```***, ***```JavaScript```***.
 
 ## [Extra](/extra/)
 Códigos adicionais e/ou utilizados em outras disciplinas.
