@@ -1,26 +1,29 @@
 CC = i686-linux-gnu-gcc-10
 CCa = i686-linux-gnu-as
 CFLAGS = -c -ffreestanding -O2 -Wall -Wextra
-LDFLAGS = -T -ffreestanding -O2 -nostdlib -lgcc
+LDFLAGS = -ffreestanding -O2 -nostdlib -lgcc
 
 ###############################################################
-all: myos.iso
+all: bin myos.iso
 
-boot.o : boot.s
-	${CCa} boot.s -o boot.o
+bin:
+	mkdir -p bin
 
-kernel.o : kernel.c
-	${CC} kernel.c -o kernel.o ${CFLAGS}
+boot.o : src/boot.s
+	${CCa} src/boot.s -o bin/boot.o
 
-myos.bin : linker.ld boot.o kernel.o
-	${CC} linker.ld -o myos.bin boot.o kernel.o ${LDFLAGS}
+kernel.o : src/kernel.c
+	${CC} src/kernel.c -o bin/kernel.o ${CFLAGS}
+
+myos.bin : src/linker.ld boot.o kernel.o
+	${CC} -T src/linker.ld -o bin/myos.bin bin/boot.o bin/kernel.o ${LDFLAGS}
 
 myos.iso : myos.bin
 	mkdir -p isodir/boot/grub
-	cp myos.bin isodir/boot/myos.bin
-	cp grub.cfg isodir/boot/grub/grub.cfg
+	cp bin/myos.bin isodir/boot/myos.bin
+	cp src/grub.cfg isodir/boot/grub/grub.cfg
 	grub-mkrescue -o myos.iso isodir
 
 ################################################################
-clear:
-	rm -rf *.o
+clean:
+	rm -rf bin/*.o
