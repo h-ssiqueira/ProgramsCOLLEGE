@@ -1,6 +1,7 @@
 #include <stdbool.h>
 #include <stddef.h>
 #include <stdint.h>
+//#include "driver.h"
 /*
 To compile:
 * Comment the pre processor directives and run the command below:
@@ -20,7 +21,7 @@ i686-linux-gnu-gcc-10 -c kernel.c -o kernel.o -std=gnu99 -ffreestanding -O2 -Wal
 #error "This tutorial needs to be compiled with a ix86-elf compiler"
 #endif
 */
-/* Hardware text mode color constants. */
+/* Hardware text mode color constants.*/
 enum vga_color {
 	VGA_COLOR_BLACK = 0,
 	VGA_COLOR_BLUE = 1,
@@ -109,12 +110,76 @@ uint8_t inb(uint16_t port){
 	return value;
 }
 
+
+unsigned char translate(uint8_t key){
+    switch(key){
+        case 41: return '\'';
+        case 2: return '1';
+        case 3: return '2';
+        case 4: return '3';
+        case 5: return '4';
+        case 6: return '5';
+        case 7: return '6';
+        case 8: return '7';
+        case 9: return '8';
+        case 10: return '9';
+        case 11: return '0';
+        case 12: return '-';
+        case 13: return '=';
+        case 14: return '\b';
+        case 15: return '\t';
+        case 16: return 'q';
+        case 17: return 'w';
+        case 18: return 'e';
+        case 19: return 'r';
+        case 20: return 't';
+        case 21: return 'y';
+        case 22: return 'u';
+        case 23: return 'i';
+        case 24: return 'o';
+        case 25: return 'p';
+        //case 26: return '´';
+        case 27: return '[';
+        case 30: return 'a';
+        case 31: return 's';
+        case 32: return 'd';
+        case 33: return 'f';
+        case 34: return 'g';
+        case 35: return 'h';
+        case 36: return 'j';
+        case 37: return 'k';
+        case 38: return 'l';
+        //case 39: return 'ç';
+        case 40: return '~';
+        case 43: return ']';
+        case 86: return '\\';
+        case 44: return 'z';
+        case 45: return 'x';
+        case 46: return 'c';
+        case 47: return 'v';
+        case 48: return 'b';
+        case 49: return 'n';
+        case 50: return 'm';
+        case 51: return ',';
+        case 52: return '.';
+        case 53: return ';';
+        case 115: return '/';
+        case 57: return ' ';
+        case 169: return '\n';
+        case 170: return '\n';
+		case 78: return '+';
+        case 55: return '*';
+    }
+    return ' ';
+}
+
 void kernel_main(void){
 	/* Initialize terminal interface */
 	terminal_initialize();
 
 	/* Newline support is left as an exercise. */
 	terminal_writestring("Hello, I'm a simple kernel!\n");
-
-	terminal_putchar(inb(0x60));
+	// Get the value of each key of keyboard
+	while(true)
+		terminal_putchar(translate(inb(0x60)));
 }

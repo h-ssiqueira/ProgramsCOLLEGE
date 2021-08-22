@@ -12,11 +12,16 @@ bin:
 boot.o : src/boot.s
 	${CCa} src/boot.s -o bin/boot.o
 
-kernel.o : src/kernel.c
+#drivers : src/video.c src/keyboard.c
+#	${CC} src/video.c -o bin/video.o ${CFLAGS}
+#	${CC} src/keyboard.c -o bin/keyboard.o ${CFLAGS}
+
+kernel.o : src/kernel.c# drivers
 	${CC} src/kernel.c -o bin/kernel.o ${CFLAGS}
+#	${CC} bin/kernel1.o bin/video.o bin/keyboard.o -o bin/kernel.o
 
 myos.bin : src/linker.ld boot.o kernel.o
-	${CC} -T src/linker.ld -o bin/myos.bin bin/boot.o bin/kernel.o ${LDFLAGS}
+	${CC} -T src/linker.ld -o bin/myos.bin bin/kernel.o bin/boot.o ${LDFLAGS}
 
 myos.iso : myos.bin
 	mkdir -p isodir/boot/grub
