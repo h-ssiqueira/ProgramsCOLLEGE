@@ -28,6 +28,8 @@ myos.iso : myos.bin
 	cp bin/myos.bin isodir/boot/myos.bin
 	cp src/grub.cfg isodir/boot/grub/grub.cfg
 	grub-mkrescue -o myos.iso isodir
+	qemu-system-x86_64 -boot d -cdrom myos.iso -m 32
+# sudo apt install qemu-system-x86
 
 ################################################################
 clean:

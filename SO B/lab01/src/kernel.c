@@ -23,12 +23,16 @@ i686-linux-gnu-gcc-10 -c kernel.c -o kernel.o -std=gnu99 -ffreestanding -O2 -Wal
 */
 
 void kernel_main(void){
+	char buffer[80];
 	/* Initialize terminal interface */
 	terminal_initialize();
 
 	/* Newline support is left as an exercise. */
-	terminal_writestring("Hello, I'm a simple kernel!\n");
+	//terminal_writestring("Hello, I'm a simple kernel!\n");
 	/* Get the value of each key of keyboard */
-	while(true)
-		terminal_putchar(translate(inb(0x60)));
+	/*while(true)
+		terminal_putchar(translate(inb(0x60)));*/
+
+	terminal_readString(buffer);
+	terminal_writestring(buffer);
 }

@@ -61,6 +61,8 @@ void terminal_writestring(const char* data);
 
 uint8_t inb(uint16_t port);
 
-unsigned char translate(uint8_t key);
+char translate(uint8_t key);
+
+void terminal_readString(char *buffer);
 
 #endif

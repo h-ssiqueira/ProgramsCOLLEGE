@@ -7,181 +7,223 @@ uint8_t inb(uint16_t port){
 	return value;
 }
 
-/*
-107 teclas
-
-esc = 1
-f1 = 59
-f2 = 60
-f3 = 61
-f4 = 62
-f5 = 63
-f6 = 64
-f7 = 65
-f8 = 66
-f9 = 67
-f10 = 68
-f11 = 87
-f12 = 88
-
-' = 41
-1 = 2
-2 = 3
-3 = 4
-4 = 5
-5 = 6
-6 = 7
-7 = 8
-8 = 9
-9 = 10
-0 = 11
-- = 12
-= = 13
-backspace = 14
-tab = 15
-q = 16
-w = 17
-e = 18
-r = 19
-t = 20
-y = 21
-u = 22
-i = 23
-o = 24
-p = 25
-´ = 26
-[ = 27
-] = 43
-~ = 40
-ç = 39
-l = 38
-k = 37
-j = 36
-h = 35
-g = 34
-f = 33
-d = 32
-s = 31
-a = 30
-capslock = 58
-shift left = 42
-\ = 86
-z = 44
-x = 45
-c = 46
-v = 47
-b = 48
-n = 49
-m = 50
-, = 51
-. = 52
-; = 53
-/ = 115
-ctrl left = 29
-windows left = 91
-alt left = 56
-space = 57
-alt right = 56
-windows right = 92
-options = 93
-ctrl right = 54
-shift right = 42
-
-insert = 82
-del = 83
-home = 71
-end = 79
-pag up = 73
-pag down = 81
-
-up = 72
-left = 75
-right = 77
-down = 80
-
-0 = 82
-, = 83
-1 = 79
-2 = 80
-3 = 81
-4 = 75
-5 = 76
-6 = 77
-7 = 71
-8 = 72
-9 = 73
-. = 126
-+ = 78
-- = 74
-* = 55
-/ = 53
-enter = 169 ou 170
-num lock =
-
-print = 55
-scroll lock = 70
-pause break = 197
-
-*/
-
-unsigned char translate(uint8_t key){
+char translate(uint8_t key){
     switch(key){
-        case 41: return '\'';
-        case 2: return '1';
-        case 3: return '2';
-        case 4: return '3';
-        case 5: return '4';
-        case 6: return '5';
-        case 7: return '6';
-        case 8: return '7';
-        case 9: return '8';
-        case 10: return '9';
-        case 11: return '0';
-        case 12: return '-';
-        case 13: return '=';
-        case 14: return '\b';
-        case 15: return '\t';
-        case 16: return 'q';
-        case 17: return 'w';
-        case 18: return 'e';
-        case 19: return 'r';
-        case 20: return 't';
-        case 21: return 'y';
-        case 22: return 'u';
-        case 23: return 'i';
-        case 24: return 'o';
-        case 25: return 'p';
-        //case 26: return '´';
-        case 27: return '[';
-        case 30: return 'a';
-        case 31: return 's';
-        case 32: return 'd';
-        case 33: return 'f';
-        case 34: return 'g';
-        case 35: return 'h';
-        case 36: return 'j';
-        case 37: return 'k';
-        case 38: return 'l';
-        //case 39: return 'ç';
-        case 40: return '~';
-        case 43: return ']';
-        case 86: return '\\';
-        case 44: return 'z';
-        case 45: return 'x';
-        case 46: return 'c';
-        case 47: return 'v';
-        case 48: return 'b';
-        case 49: return 'n';
-        case 50: return 'm';
-        case 51: return ',';
-        case 52: return '.';
-        case 53: return ';';
-        case 115: return '/';
-        case 57: return ' ';
-        case 169: return '\n';
-        case 170: return '\n';
-        case 78: return '+';
-        case 55: return '*';
+        case 41:
+            while(inb(0x60) != (uint8_t)169) continue;
+                return '\'';
+        case 2:
+            while(inb(0x60) != (uint8_t)130) continue;
+                return '1';
+        case 3:
+            while(inb(0x60) != (uint8_t)131) continue;
+                return '2';
+        case 4:
+            while(inb(0x60) != (uint8_t)132) continue;
+                return '3';
+        case 5:
+            while(inb(0x60) != (uint8_t)133) continue;
+                return '4';
+        case 6:
+            while(inb(0x60) != (uint8_t)134) continue;
+                return '5';
+        case 7:
+            while(inb(0x60) != (uint8_t)135) continue;
+                return '6';
+        case 8:
+            while(inb(0x60) != (uint8_t)136) continue;
+                return '7';
+        case 9:
+            while(inb(0x60) != (uint8_t)137) continue;
+                return '8';
+        case 10:
+            while(inb(0x60) != (uint8_t)138) continue;
+                return '9';
+        case 11:
+            while(inb(0x60) != (uint8_t)139) continue;
+                return '0';
+        case 12:
+            while(inb(0x60) != (uint8_t)140) continue;
+                return '-';
+        case 13:
+            while(inb(0x60) != (uint8_t)141) continue;
+                return '=';
+        case 14:
+            while(inb(0x60) != (uint8_t)142) continue;
+                return '\b';
+        case 15:
+            while(inb(0x60) != (uint8_t)143) continue;
+                return '\t';
+        case 16:
+            while(inb(0x60) != (uint8_t)144) continue;
+                return 'q';
+        case 17:
+            while(inb(0x60) != (uint8_t)145) continue;
+                return 'w';
+        case 18:
+            while(inb(0x60) != (uint8_t)146) continue;
+                return 'e';
+        case 19:
+            while(inb(0x60) != (uint8_t)147) continue;
+                return 'r';
+        case 20:
+            while(inb(0x60) != (uint8_t)148) continue;
+                return 't';
+        case 21:
+            while(inb(0x60) != (uint8_t)149) continue;
+                return 'y';
+        case 22:
+            while(inb(0x60) != (uint8_t)150) continue;
+                return 'u';
+        case 23:
+            while(inb(0x60) != (uint8_t)151) continue;
+                return 'i';
+        case 24:
+            while(inb(0x60) != (uint8_t)152) continue;
+                return 'o';
+        case 25:
+            while(inb(0x60) != (uint8_t)153) continue;
+                return 'p';
+        case 27:
+            while(inb(0x60) != (uint8_t)155) continue;
+                return '[';
+        case 30:
+            while(inb(0x60) != (uint8_t)158) continue;
+                return 'a';
+        case 31:
+            while(inb(0x60) != (uint8_t)159) continue;
+                return 's';
+        case 32:
+            while(inb(0x60) != (uint8_t)160) continue;
+                return 'd';
+        case 33:
+            while(inb(0x60) != (uint8_t)161) continue;
+                return 'f';
+        case 34:
+            while(inb(0x60) != (uint8_t)162) continue;
+                return 'g';
+        case 35:
+            while(inb(0x60) != (uint8_t)163) continue;
+                return 'h';
+        case 36:
+            while(inb(0x60) != (uint8_t)164) continue;
+                return 'j';
+        case 37:
+            while(inb(0x60) != (uint8_t)165) continue;
+                return 'k';
+        case 38:
+            while(inb(0x60) != (uint8_t)166) continue;
+                return 'l';
+        case 40:
+            while(inb(0x60) != (uint8_t)168) continue;
+                return '~';
+        case 43:
+            while(inb(0x60) != (uint8_t)171) continue;
+                return ']';
+        case 86:
+            while(inb(0x60) != (uint8_t)214) continue;
+                return '\\';
+        case 44:
+            while(inb(0x60) != (uint8_t)172) continue;
+                return 'z';
+        case 45:
+            while(inb(0x60) != (uint8_t)173) continue;
+                return 'x';
+        case 46:
+            while(inb(0x60) != (uint8_t)174) continue;
+                return 'c';
+        case 47:
+            while(inb(0x60) != (uint8_t)175) continue;
+                return 'v';
+        case 48:
+            while(inb(0x60) != (uint8_t)176) continue;
+                return 'b';
+        case 49:
+            while(inb(0x60) != (uint8_t)177) continue;
+                return 'n';
+        case 50:
+            while(inb(0x60) != (uint8_t)178) continue;
+                return 'm';
+        case 51:
+            while(inb(0x60) != (uint8_t)179) continue;
+                return ',';
+        case 52:
+            while(inb(0x60) != (uint8_t)180) continue;
+                return '.';
+        case 53:
+            while(inb(0x60) != (uint8_t)181) continue;
+                return ';';
+        case 115:
+            while(inb(0x60) != (uint8_t)243) continue;
+                return '/';
+        case 57:
+            while(inb(0x60) != (uint8_t)185) continue;
+                return ' ';
+        case 28:
+            while(inb(0x60) != (uint8_t)156) continue;
+                return '\n';
+        case 78:
+            while(inb(0x60) != (uint8_t)206) continue;
+                return '+';
+        case 55:
+            while(inb(0x60) != (uint8_t)183) continue;
+                return '*';
     }
     return ' ';
+}
+
+#define MAX 80
+
+// Function to print the digit of key in keyboard
+void printDigit(int N){
+    // To store the digit of the number N
+    int arr[MAX];
+    int i = 0;
+    int j, r;
+
+    // Till N becomes 0
+    while(N != 0){
+
+        // Extract the last digit of N
+        r = N % 10;
+
+        // Put the digit in arr[]
+        arr[i] = r;
+        i++;
+
+        // Update N to N/10 to extract next last digit
+        N /= 10;
+    }
+
+    // Print the digit of N by traversing arr[] reverse
+    for(j = i - 1; j > -1; j--)
+        terminal_putchar('0'+arr[j]);
+}
+
+void terminal_readString(char *buffer){
+    uint8_t i, status, invalue;
+    char c;
+    i ^= i;
+    while(true){
+        status = inb(0x64);
+        if(status & 1){
+            invalue = inb(0x60);
+            /* Code to collect the code of pressed and released keys (P-R)
+            printDigit(invalue);
+            i++;
+            i % 2 == 0 ? terminal_putchar(' ') : terminal_putchar('-');
+            */
+            c = translate(invalue);
+            if(c != '\n')
+                buffer[i++] = c;
+            else{
+                buffer[i++] = 0;
+                break;
+            }
+            if(i == 80){
+                buffer[i] = 0;
+                break;
+            }
+        }
+    }
 }

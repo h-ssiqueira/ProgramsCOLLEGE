@@ -1,0 +1,30 @@
+body{
+    background-color: #255075;
+}
+
+form{
+    border: black;
+    float: left;
+    border-style: groove;
+    border-radius: 1.5%;
+    height: 100%;
+    width: 75%;
+}
+
+input{
+    background-color: steelblue;
+    color: azure;
+    text-align: center;
+    width: 7%;
+    border: 1%;
+    padding: 1%;
+    border-radius: 1%;
+    border-width: 1%;
+    border-color: cornflowerblue;
+    margin: 0.8%;
+    font-size: 125%;
+}
+
+.visor{
+    width: 40%;
+}
