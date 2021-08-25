@@ -4,35 +4,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Calculator</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <script type="text/javascript" charset="utf-8" src="calc.js"></script>
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body onload="onLoad()">
+    <h1>Simple calculator</h1>
     <form name="calc">
+        <br>
         <input class="visor" type="text" name="visor"></input>
-        </br>
-        <input type="button" name="identificador" value="7" onclick="onClick(value)"></input>
-        <input type="button" name="identificador" value="8" onclick="onClick(value)"></input>
-        <input type="button" name="identificador" value="9" onclick="onClick(value)"></input>
-        <input type="button" name="identificador" value="CE" onclick="onClick(value)"></input>
+        <hr>
+
+        <div>
+            <input type="button" name="identificador" value="7" onclick="onClick(value)"></input>
+            <input type="button" name="identificador" value="8" onclick="onClick(value)"></input>
+            <input type="button" name="identificador" value="9" onclick="onClick(value)"></input>
+            <input type="button" name="identificador" value="CE" onclick="onClick(value)"></input>
+        </div>
         <br>
-        <input type="button" name="identificador" value="4" onclick="onClick(value)"></input>
-        <input type="button" name="identificador" value="5" onclick="onClick(value)"></input>
-        <input type="button" name="identificador" value="6" onclick="onClick(value)"></input>
-        <input type="button" name="identificador" value=" * " onclick="onClick(value)"></input>
-        <input type="button" name="identificador" value=" + " onclick="onClick(value)"></input>
+        <div>
+            <input type="button" name="identificador" value="4" onclick="onClick(value)"></input>
+            <input type="button" name="identificador" value="5" onclick="onClick(value)"></input>
+            <input type="button" name="identificador" value="6" onclick="onClick(value)"></input>
+            <input type="button" name="identificador" value=" * " onclick="onClick(value)"></input>
+            <input type="button" name="identificador" value=" + " onclick="onClick(value)"></input>
+        </div>
         <br>
-        <input type="button" name="identificador" value="1" onclick="onClick(value)"></input>
-        <input type="button" name="identificador" value="2" onclick="onClick(value)"></input>
-        <input type="button" name="identificador" value="3" onclick="onClick(value)"></input>
-        <input type="button" name="identificador" value=" / " onclick="onClick(value)"></input>
-        <input type="button" name="identificador" value=" - " onclick="onClick(value)"></input>
+        <div>
+            <input type="button" name="identificador" value="1" onclick="onClick(value)"></input>
+            <input type="button" name="identificador" value="2" onclick="onClick(value)"></input>
+            <input type="button" name="identificador" value="3" onclick="onClick(value)"></input>
+            <input type="button" name="identificador" value=" / " onclick="onClick(value)"></input>
+            <input type="button" name="identificador" value=" - " onclick="onClick(value)"></input>
+        </div>
         <br>
-        <input type="button" name="identificador" value="." onclick="onClick(value)"></input>
-        <input type="button" name="identificador" value="0" onclick="onClick(value)"></input>
-        <input type="button" name="identificador" value="Enter" onclick="onClick(value)"></input>
+        <div>
+            <input type="button" name="identificador" value="." onclick="onClick(value)"></input>
+            <input type="button" name="identificador" value="0" onclick="onClick(value)"></input>
+            <input type="button" name="identificador" value="Enter" onclick="onClick(value)"></input>
+        </div>
+        <br>
     </form>
+    <p>If you get the "Error" message, press CE to clean and try again.</p>
 </body>
 </html>

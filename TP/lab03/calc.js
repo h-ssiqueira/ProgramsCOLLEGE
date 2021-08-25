@@ -4,13 +4,13 @@ function onLoad(){
 
 function errors(str){
     var operator = false;
-    if(!str || str[str.length-1] === ' ') return true; // case no input or start/end with a symbol
+    if(!str || str[str.length-1] === ' ') return true; // case no input or end with a symbol
     for(let i = 0; i < str.length; i++){
-        if(!(str[i] <= 57 || str[i] >= 48) && str[i] !== '-' && str[i] !== '/' && str[i] !== '*' && str[i] !== '+' && str[i] !== '.' && str[i] !== ' ')
+        if(!(str[i] <= 57 || str[i] >= 48) && str[i] !== '-' && str[i] !== '/' && str[i] !== '*' && str[i] !== '+' && str[i] !== '.' && str[i] !== ' ') // check for discrepant characters
             return true;
-        if(str[i] === '-' && (i != 0 || i != 1) || str[i] === '+' || str[i] === '/' || str[i] === '*'){
+        if(str[i] === '-' && (i != 0 || i != 1) || str[i] === '+' || str[i] === '/' || str[i] === '*'){ // Check for operators
             operator = true;
-            if(i+2 < str.length && str[i+2] === ' ' && str[i+3] !== '-')
+            if(i+2 < str.length && str[i+2] === ' ' && str[i+3] !== '-') // Check if has two adjacent operators (excluding -)
                 return true;
         }
     }
@@ -70,7 +70,6 @@ function calculate(str){
         }
         while(str[i] >= '0' && str[i] <= '9' || str[i] === '.' && str[i] !== ' ' && i !== str.length){
             if(str[i] === '.'){
-                console.log(i,str[i])
                 i++;
                 j = 10;
                 while(str[i] !== ' ' && i != str.length){
