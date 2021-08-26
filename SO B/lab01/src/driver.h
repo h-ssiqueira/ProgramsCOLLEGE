@@ -4,6 +4,7 @@
 #include <stdbool.h>
 #include <stddef.h>
 #include <stdint.h>
+#define MAX 80 // Limit of keyboard buffer
 
 /* Functions for video */
 
@@ -36,14 +37,6 @@ static inline uint16_t vga_entry(unsigned char uc, uint8_t color){
 }
 
 size_t strlen(const char* str);
-/*
-static const size_t VGA_WIDTH = 80;
-static const size_t VGA_HEIGHT = 25;
-
-size_t terminal_row;
-size_t terminal_column;
-uint8_t terminal_color;
-uint16_t* terminal_buffer;*/
 
 void terminal_initialize(void);
 
@@ -59,10 +52,16 @@ void terminal_writestring(const char* data);
 
 /* Functions for keyboard */
 
+// Get input from keyboard
 uint8_t inb(uint16_t port);
 
+// Translate the code from keyboard to character (ascii)
 char translate(uint8_t key);
 
+// Function to print the digit of key in keyboard
+void printDigit(int N);
+
+// Read and store input from keyboard in a buffer
 void terminal_readString(char *buffer);
 
 #endif
