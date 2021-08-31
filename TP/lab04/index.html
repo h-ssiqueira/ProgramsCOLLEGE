@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" charset="utf-8" src="agenda.js"></script>
+</head>
+<body>
+    <h1>Agenda</h1>
+    <form name="agenda">
+        <div Class="inputnovo">
+            <p>ID</p>
+            <input type="text" name="identifica"></input>
+            <p>Nome</p>
+            <input type="text" name="nome"></input>
+            <p>Telefone</p>
+            <input type="tel" name="telefone"></input>
+            <br>
+            <input type="button" name="Novo" value="New" onclick="novo()"></input>
+            <input type="reset">
+            <input type="button" name="Buscar" value="Find" onclick="busca()"></input>
+            <input type="button" name="Remover" value="Remove" onclick="remover()"></input>
+            <input type="button" name="Listar" value="List" onclick="lista()"></input>
+            <br>
+            <textarea rows="10" cols="50" name="bloco"></textarea>
+        </div>
+    </form>
+</body>
+</html>
