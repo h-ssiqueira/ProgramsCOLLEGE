@@ -1,3 +1,29 @@
+h1{
+    text-align: center;
+}
+
+hr{
+    background-color: black;
+    border-width: 0px;
+    height: 2px;
+}
+
+body{
+    background-color: bisque;
+}
+
+input{
+    background-color: #e2dbdb;
+}
+
+textarea{
+    background-color: aliceblue;
+}
+
+.botoes{
+    display: inline-block;
+}
+
 .inputnovo{
     text-align: center;
 }

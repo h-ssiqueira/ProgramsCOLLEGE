@@ -11,21 +11,23 @@
 <body>
     <h1>Agenda</h1>
     <form name="agenda">
-        <div Class="inputnovo">
+        <div class="inputnovo">
             <p>ID</p>
             <input type="text" name="identifica"></input>
             <p>Nome</p>
             <input type="text" name="nome"></input>
-            <p>Telefone</p>
-            <input type="tel" name="telefone"></input>
+            <p>Telefone (celular/fixo)</p>
+            <input type="tel" name="telefone" placeholder="(xx) xxxxx-xxxx"></input>
             <br>
-            <input type="button" name="Novo" value="New" onclick="novo()"></input>
-            <input type="reset">
-            <input type="button" name="Buscar" value="Find" onclick="busca()"></input>
-            <input type="button" name="Remover" value="Remove" onclick="remover()"></input>
-            <input type="button" name="Listar" value="List" onclick="lista()"></input>
-            <br>
-            <textarea rows="10" cols="50" name="bloco"></textarea>
+            <div class="botoes">
+                <input type="button" name="Novo" value="New contact" onclick="novo()"></input>
+                <input type="reset" value="Clear boxes" onclick="reset()">
+                <input type="button" name="Buscar" value="Find by id" onclick="busca()"></input>
+                <input type="button" name="Remover" value="Remove contact by id" onclick="remover()"></input>
+                <input type="button" name="Listar" value="List contacts" onclick="lista()"></input>
+            </div>
+            <hr>
+            <textarea rows="10" cols="50" name="bloco" wrap="hard" readonly></textarea>
         </div>
     </form>
 </body>
