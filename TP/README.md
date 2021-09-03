@@ -5,8 +5,10 @@ Códigos dos laboratórios realizados durante o semestre para a disciplina.
 Engloba as linguagens ***```HTML/CSS```***, ***```JavaScript```***.
 
 ## Laboratórios
-[Lab1 - currículo](https://h-ssiqueira.github.io/ProgramsCOLLEGE/TP/lab01)
+[Lab01 - Currículo](https://h-ssiqueira.github.io/ProgramsCOLLEGE/TP/lab01)
 
-[Lab2 - memes](https://h-ssiqueira.github.io/ProgramsCOLLEGE/TP/lab02)
+[Lab02 - Memes](https://h-ssiqueira.github.io/ProgramsCOLLEGE/TP/lab02)
 
-[Lab3 - calculadora](https://h-ssiqueira.github.io/ProgramsCOLLEGE/TP/lab03)
+[Lab03 - Calculadora](https://h-ssiqueira.github.io/ProgramsCOLLEGE/TP/lab03)
+
+[Lab04 - Agenda de contatos](https://h-ssiqueira.github.io/ProgramsCOLLEGE/TP/lab04)
