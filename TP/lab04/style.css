@@ -1,15 +1,27 @@
-h1{
-    text-align: center;
-}
-
 hr{
     background-color: black;
     border-width: 0px;
     height: 2px;
 }
 
+br{
+    display: block;
+    margin: 10px 0;
+}
+
 body{
     background-color: bisque;
+    text-align: center;
+}
+
+form{
+    border: black;
+    border-radius: 5%;
+    border-spacing: 15px 5px;
+    border-style: groove;
+    border-width: 3px;
+    display: inline-table;
+    width: fit-content;
 }
 
 input{
@@ -20,10 +32,17 @@ textarea{
     background-color: aliceblue;
 }
 
-.botoes{
+#botoes{
     display: inline-block;
+    width: fit-content;
 }
 
-.inputnovo{
-    text-align: center;
+#inputcontato{
+    border: black;
+    border-radius: 5%;
+    border-spacing: 15px 5px;
+    border-style: groove;
+    border-width: 3px;
+    display: inline-table;
+    width: fit-content;
 }

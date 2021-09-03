@@ -22,17 +22,17 @@ function Agenda(){
             var rm = _contatos.findIndex(pessoa => pessoa.getId() === id); // Encontra a posição a ser removida
             if(rm !== -1){
                 _contatos.splice(rm,1); // Remove 1 elemento do índice indicado
-                document.agenda.bloco.value = "Contact removed";
+                document.agenda.bloco.value = "Contato removido";
             }
         }
         else
-            document.agenda.bloco.value = "Contact not found";
+            document.agenda.bloco.value = "Contato não encontrado";
     }   
     this.buscar = function(id){
         var found = _contatos.find(pessoa => pessoa.getId() === id);
         document.agenda.bloco.value = "";
         if(found === undefined || found === null){
-            document.agenda.bloco.value = "Contact not found";
+            document.agenda.bloco.value = "Contato não encontrado";
         }
         else{
             document.agenda.bloco.value = found.getId() + ". " + found.getNome() + " -> " + found.getTelefone();
@@ -41,7 +41,7 @@ function Agenda(){
     this.listar = function(){
         document.agenda.bloco.value = "";
         if(_contatos.length === 0)
-            document.agenda.bloco.value = "No contacts found";
+            document.agenda.bloco.value = "Nenhum contato encontrado";
         else{
             _contatos.sort(function (x, y){ // Ordena os contatos alfabeticamente
                 if(x.getNome() > y.getNome())
@@ -94,16 +94,16 @@ function novo(){
         if(!a.check(document.agenda.identifica.value)){ // IDs duplicados
             if(telefone(document.agenda.telefone.value)){ // Formato inválido de telefone
                 a.inserir(new Contato(document.agenda.identifica.value,document.agenda.nome.value,document.agenda.telefone.value))
-                document.agenda.bloco.value = "Contact added";
+                document.agenda.bloco.value = "Contato adicionado";
             }
             else
-                document.agenda.bloco.value = "Wrong phone number format";
+                document.agenda.bloco.value = "Formato de número de telefone inválido";
         }
         else
-            document.agenda.bloco.value = "Contact already exists in database";
+            document.agenda.bloco.value = "Contato já existente na base de dados";
     }
     else
-        document.agenda.bloco.value = "Missing information for new contact";
+        document.agenda.bloco.value = "Informações necessárias ausentes para criar um novo contato";
 }
 
 function busca(){
