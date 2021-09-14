@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Estacionamento</title>
+    <script src="script.js"></script>
+</head>
+<body>
+    <h1>Estacionamento</h1>
+    <form name="entrada">
+        <div id="inputentrada">
+            <p>ID</p>
+            <input type="text" name="identifica" size="5" maxlength="5"></input>
+            <p>Nome do proprietário</p>
+            <input type="text" name="nome" maxlength="50"></input>
+            <p>Tipo</p>
+            <input type="radio" name="tipo1" value="Carro">
+            <label for="Carro">Carro</label><br>
+            <input type="radio" name="tipo2" value="Moto">
+            <label for="Moto">Moto</label><br>
+            <p>Placa</p>
+            <input type="text" name="placa" placeholder="XXX0000 ou XXX0X00" size="16" maxlength="7"></input>
+            <p>Marca</p>
+            <input type="text" name="marca" size="30" maxlength="30"></input>
+            <p>Cor</p>
+            <input type="text" name="cor">
+            <p>Hora de entrada</p>
+            <input type="text" name="horaEntrada" placeholder="HH:MM" size="5" maxlength="5">
+        </div>
+        <br><br>
+        <div class="botoes">
+            <input type="button" name="Estacionar" value="Estacionar" onclick="estacionar()"></input>
+            <hr>
+        </div>
+        <br>
+    </form>
+    <form name="centro">
+        <textarea rows="30" cols="50" name="bloco" wrap="hard" readonly></textarea>
+        <div class="botoes">
+            <input type="button" name="Relatório" value="Relatório" onclick="listar()"></input>
+            <input type="button" name="Saldo" value="Saldo" onclick="saldo()"></input>
+            <input type="reset" value="Limpar" onclick="limpar()">
+            <hr>
+        </div>
+    </form>
+
+    <form name="saida">
+        <div id="inputsaida">
+            <p>ID</p>
+            <input type="text" name="identifica" size="5" maxlength="5"></input>
+            <p>Hora de saída</p>
+            <input type="text" name="horaSaida" placeholder="HH:MM" size="5" maxlength="5">
+        </div>
+        <br><br>
+        <div class="botoes">
+            <input type="button" name="Liberar" value="Liberar veículo" onclick="liberar()"></input>
+            <hr>
+        </div>
+    </form>
+</body>
+</html>
