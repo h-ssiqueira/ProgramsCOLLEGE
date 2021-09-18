@@ -34,51 +34,53 @@ function Veiculo(_id,_placa,_marca,_cor,_nomedoProprietario){
 }
 
 function Moto(_id,_placa,_marca,_cor,_nomedoProprietario){
-    Veiculo.call(this, "Moto");
-    this.calcularValorPago = function(horaEntrada,horaSaida){
+    var veiculo = new Veiculo(_id,_placa,_marca,_cor,_nomedoProprietario);
+    veiculo.calcularValorPago = function(horaEntrada,horaSaida){
         var duracao = calculaMinutos(horaEntrada,horaSaida);
         if(duracao > 0 && duracao < 30)
             return 0;
         if(duracao < 60 && duracao >= 30)
             return 1;
         if(duracao >= 60 && duracao < 240)
-            return duracao/30;
+            return Math.round(duracao/30.0);
         return 10;
         /*
         até 30min - free
-        1h - 2 conto
+        1h - 2 conto (proporcionalmente até um máximo de 8)
         + de 4h - 10 conto
         */
     }
+    return veiculo;
 }
 
 function Carro(_id,_placa,_marca,_cor,_nomedoProprietario){
-    Veiculo.call(this, "Carro");
-    this.calcularValorPago = function(horaEntrada,horaSaida){
+    var veiculo = new Veiculo(_id,_placa,_marca,_cor,_nomedoProprietario);
+    veiculo.calcularValorPago = function(horaEntrada,horaSaida){
         var duracao = calculaMinutos(horaEntrada,horaSaida);
         if(duracao > 0 && duracao < 15)
             return 0;
         if(duracao < 60 && duracao >= 15)
             return 2;
         if(duracao >= 60 && duracao < 240)
-            return duracao/15.0;
+            return Math.round(duracao/15.0);
         return 20;
         /*
         até 15 min - free
-        1h - 4 conto
+        1h - 4 conto (proporcionalmente até um máximo de 16)
         + de 4h - 20 conto
         */
     }
+    return veiculo;
 }
 
 function Estacionamento(_numeroDeVagas=20){
-    let _vagas = new Array(_numeroDeVagas); // Vagas de controle ([veiculo,hora entrada])
+    let _vagas = new Array(_numeroDeVagas).fill(undefined); // Vagas de controle ([veiculo,hora entrada])
     let _saldo = 0; // Saldo ganho
     let _histVagas = []; // Histórico de carros ([veiculo, hora entrada, hora saida])
     this.estacionar = function(veiculo,horaEntrada){ // Entrada de veículo
         let i;
-        for(i ^= i; i < _numeroDeVagas; i++){
-            if(_vagas[i] === null || _vagas[i] === undefined){
+        for(i = 0; i < _numeroDeVagas; i++){
+            if(_vagas[i] === undefined){
                 _vagas[i] = [veiculo,horaEntrada];
                 return true;
             }
@@ -87,11 +89,11 @@ function Estacionamento(_numeroDeVagas=20){
     }
     this.liberar = function(idveiculo,horaSaida){ // Saída de veículo
         let i;
-        for(i ^= i; i < _numeroDeVagas; i++){
-            if(_vagas[i].veiculo.getId() === idveiculo){
-                _saldo += _vagas[i].veiculo.calcularValorPago(_vagas[i].horaEntrada,horaSaida);
-                _histVagas.push([_vagas[i],horaSaida]);
-                _vagas[i] = null;
+        for(i = 0; i < _numeroDeVagas; i++){
+            if(_vagas[i] !== undefined && _vagas[i][0].getId() == idveiculo){
+                _saldo += _vagas[i][0].calcularValorPago(_vagas[i][1],horaSaida);
+                _histVagas.push([_vagas[i][0],_vagas[i][1],horaSaida]);
+                _vagas[i] = undefined;
                 return true;
             }
         }
@@ -99,12 +101,14 @@ function Estacionamento(_numeroDeVagas=20){
     }
     this.gerarRelatorio = function(){ // Hora de entrada e saída de todos os veículos inclusive os estacionados
         let i;
-        var rel = "ID\tEntrada\tSaida\n";
-        for(i ^= i; i < _numeroDeVagas; i++){
-            rel += _vagas[i].veiculo.getId() + "\t" + _vagas[i].horaEntrada + "\t-\n";
+        var rel = "Ocupadas:\nID\tEntrada\t\tSaida\n";
+        for(i = 0; i < _numeroDeVagas; i++){
+            if(_vagas[i] !== undefined)
+                rel += _vagas[i][0].getId() + "\t" + _vagas[i][1] + "\t\t-\n";
         }
-        for(i ^= i; i < _histVagas.length; i++){
-            rel += _histVagas[i].veiculo.getId() + "\t" + _histVagas[i].horaEntrada + "\t" + _histVagas[i].horaSaida + "\n";
+        rel += "\nHistórico:\nID\tEntrada\t\tSaida\n";
+        for(i = 0; i < _histVagas.length; i++){
+            rel += _histVagas[i][0].getId() + "\t" + _histVagas[i][1] + "\t\t" + _histVagas[i][2] + "\n";
         }
         return rel;
     }
@@ -113,14 +117,14 @@ function Estacionamento(_numeroDeVagas=20){
     }
 }
 
-// Função para calcular a diferença da hora de entrada e saída
+// Função para calcular a diferença da hora de entrada e saída (fomato HH:MM)
 function calculaMinutos(horaEntrada,horaSaida){
     return Number(horaSaida.substr(0,2)) * 60 + Number(horaSaida.substr(3,5)) - (Number((horaEntrada.substr(0,2)) * 60 + Number(horaEntrada.substr(3,5))));
 }
 
 // Função para conferir o formato da hora
 function confereHora(hora){
-    var regex = /^([01][0-9]|2[0-3]):([0-5][0-9])$/; // HH:MM
+    var regex = /^([01]\d|2[0-3]):([0-5]\d)$/; // HH:MM
     if(regex.test(hora))
         return true;
     return false;
@@ -135,35 +139,9 @@ function conferePlaca(placa){
 }
 
 let controle = new Estacionamento();
-let Moto = new Moto();
-let Carro = new Carro();
-
-function estacionar(){
-    // TODO
-}
-
-function listar(){
-    document.centro.bloco.value = controle.gerarRelatorio();
-}
-
-function saldo(){
-    document.centro.bloco.value = controle.getSaldo();
-}
-
-function limpar(){
-    document.entrada.identifica.value = "";
-    document.entrada.nome.value = "";
-    document.entrada.tipo1.checked = false;
-    document.entrada.tipo2.checked = false;
-    document.entrada.placa.value = "";
-    document.entrada.marca.value = "";
-    document.entrada.cor.value = "";
-    document.entrada.horaEntrada.value = "";
-    document.centro.bloco.value = "";
-    document.saida.identifica.value = "";
-    document.saida.horaSaida.value = "";
-}
-
-function liberar(){
-    // TODO
-}
+let globalID = 0;
+/*var carro = Carro("2","abc1234","bmw","preto","hss");
+controle.estacionar(carro,"12:31");
+controle.estacionar(Carro("1","abc1234","bmw","preto","hss"),"12:00");
+controle.liberar("1","13:13");
+*/

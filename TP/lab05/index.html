@@ -6,20 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <title>Estacionamento</title>
-    <script src="script.js"></script>
+    <script type="text/javascript" charset="utf-8" src="script.js"></script>
+    <script type="text/javascript" charset="utf-8" src="interface.js"></script>
 </head>
 <body>
     <h1>Estacionamento</h1>
     <form name="entrada">
         <div id="inputentrada">
-            <p>ID</p>
-            <input type="text" name="identifica" size="5" maxlength="5"></input>
             <p>Nome do proprietário</p>
             <input type="text" name="nome" maxlength="50"></input>
             <p>Tipo</p>
             <input type="radio" name="tipo1" value="Carro">
             <label for="Carro">Carro</label><br>
-            <input type="radio" name="tipo2" value="Moto">
+            <input type="radio" name="tipo1" value="Moto">
             <label for="Moto">Moto</label><br>
             <p>Placa</p>
             <input type="text" name="placa" placeholder="XXX0000 ou XXX0X00" size="16" maxlength="7"></input>
@@ -30,15 +29,15 @@
             <p>Hora de entrada</p>
             <input type="text" name="horaEntrada" placeholder="HH:MM" size="5" maxlength="5">
         </div>
+    </form>
         <br><br>
+    <form name="centro">
         <div class="botoes">
             <input type="button" name="Estacionar" value="Estacionar" onclick="estacionar()"></input>
             <hr>
         </div>
         <br>
-    </form>
-    <form name="centro">
-        <textarea rows="30" cols="50" name="bloco" wrap="hard" readonly></textarea>
+        <textarea rows="10" cols="50" name="bloco" id="bloco" wrap="hard" readonly></textarea>
         <div class="botoes">
             <input type="button" name="Relatório" value="Relatório" onclick="listar()"></input>
             <input type="button" name="Saldo" value="Saldo" onclick="saldo()"></input>
