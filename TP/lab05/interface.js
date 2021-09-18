@@ -2,10 +2,10 @@ function estacionar(){
     if(confereHora(document.entrada.horaEntrada.value)){
         if(conferePlaca(document.entrada.placa.value)){
             if(document.entrada.tipo1.value == "Carro"){
-                controle.estacionar(Carro(globalID,document.entrada.placa.value,document.entrada.marca.value,document.entrada.cor.value,document.entrada.nome.value),document.entrada.horaEntrada.value) ? (document.centro.bloco.value = "Carro estacionado.",globalID++) : document.centro.bloco.value = "Estacionamento cheio.";;
+                controle.estacionar(Carro(globalID,document.entrada.placa.value,document.entrada.marca.value,document.entrada.cor.value,document.entrada.nome.value),document.entrada.horaEntrada.value) ? (document.centro.bloco.value = "Carro estacionado.",globalID++) : document.centro.bloco.value = "Estacionamento cheio.";
             }
             else if(document.entrada.tipo1.value == "Moto"){
-                controle.estacionar(Moto(globalID,document.entrada.placa.value,document.entrada.marca.value,document.entrada.cor.value,document.entrada.nome.value),document.entrada.horaEntrada.value) ? (document.centro.bloco.value = "Moto estacionada.",globalID++) : document.centro.bloco.value = "Estacionamento cheio.";;
+                controle.estacionar(Moto(globalID,document.entrada.placa.value,document.entrada.marca.value,document.entrada.cor.value,document.entrada.nome.value),document.entrada.horaEntrada.value) ? (document.centro.bloco.value = "Moto estacionada.",globalID++) : document.centro.bloco.value = "Estacionamento cheio.";
             }
         }
         else
