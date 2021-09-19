@@ -13,8 +13,8 @@
 <body>
     <h1>Estacionamento</h1>
     <div id="contents">
-        <form name="entrada">
-            <div id="inputentrada">
+        <div id="inputentrada">
+            <form name="entrada">
                 <p>Nome do proprietário</p>
                 <input type="text" name="nome" maxlength="50"></input>
                 <p>Tipo</p>
@@ -34,8 +34,8 @@
                 <div class="botoes">
                     <input type="button" name="Estacionar" value="Estacionar" onclick="estacionar()"></input>
                 </div>
-            </div>
-        </form>
+            </form>
+        </div>
         <form name="centro" id="centro">
             <textarea rows="30" cols="50" name="bloco" id="bloco" wrap="hard" readonly></textarea>
             <div class="botoes">
@@ -49,8 +49,8 @@
             </div>
         </form>
 
-        <form name="saida">
-            <div id="inputsaida">
+        <div id="inputsaida">
+            <form name="saida">
                 <p>ID</p>
                 <input type="text" name="identifica" size="5" maxlength="5"></input>
                 <p>Hora de saída</p>
@@ -59,8 +59,8 @@
                 <div class="botoes">
                     <input type="button" name="Liberar" value="Liberar veículo" onclick="liberar()"></input>
                 </div>
-            </div>
-        </form>
-    </div>>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

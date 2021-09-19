@@ -12,3 +12,7 @@ Engloba as linguagens ***```HTML/CSS```***, ***```JavaScript```***.
 [Lab03 - Calculadora](https://h-ssiqueira.github.io/ProgramsCOLLEGE/TP/lab03)
 
 [Lab04 - Agenda de contatos](https://h-ssiqueira.github.io/ProgramsCOLLEGE/TP/lab04)
+
+[Lab05 - Estacionamento](https://h-ssiqueira.github.io/ProgramsCOLLEGE/TP/lab05)
+
+[Lab06 - Banco](https://h-ssiqueira.github.io/ProgramsCOLLEGE/TP/lab06)

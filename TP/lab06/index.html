@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="interface.js"></script>
+    <script src="banco.js"></script>
+</head>
+<body>
+    <h1>Banco</h1>
+    <div id="pag">
+        <div id="esquerda">
+        <details open>
+            <summary>Criar conta</summary>
+            <div id="novaconta">
+                <form name="novo">
+                    <p>Nome do proprietário</p>
+                    <input type="text" name="nome" maxlength="50"></input>
+                    <p>Tipo</p>
+                    <input type="radio" name="tipo" value="Premium">
+                    <label for="Premium">Premium</label>
+                    <input type="radio" name="tipo" value="Básica">
+                    <label for="Básica">Básica</label>
+                    <input type="radio" name="tipo" value="Estudante">
+                    <label for="Estudante">Estudante</label>
+                    <br><br>
+                    <div class="botoes">
+                        <input type="button" name="Criar" value="Criar conta" onclick="novaConta()"></input>
+                    </div>
+                </form>
+            </div>
+        </details>
+        <br>
+        <details>
+            <summary>Transferência</summary>
+            <div id="transferencia">
+                <form name="transferencia">
+                    <p>Conta</p>
+                    <input type="text" name="contaRem" size="5" maxlength="5"></input>
+                    <p>Valor</p>
+                    <input type="text" name="valor" size="8" maxlength="8">
+                    <p>Transferir para conta</p>
+                    <input type="text" name="contaDest" size="5" maxlength="5">
+                    <br><br>
+                    <div class="botoes">
+                        <input type="button" name="Transferir" value="Transferir" onclick="transferencia()"></input>
+                    </div>
+                </form>
+            </div>
+        </details>
+        <br>
+        <details>
+            <summary>Saque/Depósito</summary>
+            <div id="saqueEdeposito">
+                <form name="saqueEdeposito">
+                    <p>Conta</p>
+                    <input type="text" name="conta" size="5" maxlength="5"></input>
+                    <p>Valor</p>
+                    <input type="text" name="valor" size="8" maxlength="8">
+                    <br><br>
+                    <div class="botoes">
+                        <input type="button" name="Saque" value="Saque" onclick="saque()"></input>
+                    </div>
+                    <div class="botoes">
+                        <input type="button" name="Deposito" value="Depósito" onclick="deposito()"></input>
+                    </div>
+                </form>
+            </div>
+        </details>
+        <br>
+        <details>
+            <summary>Extrato</summary>
+            <div id="extrato">
+                <form name="extrato">
+                    <p>Conta</p>
+                    <input type="text" name="conta" size="5" maxlength="5"></input>
+                    <br><br>
+                    <div class="botoes">
+                        <input type="button" name="Extrato" value="Extrato" onclick="extrato()"></input>
+                    </div>
+                </form>
+            </div>
+        </details>
+    </div>
+        <br>
+        <form name="saida" id="saida">
+            <textarea rows="40" cols="70" name="bloco" id="bloco" wrap="hard" readonly></textarea>
+            <div class="botoes">
+                <input type="button" name="Lsitar" value="Listar contas" onclick="listar()"></input>
+            </div>
+            <div class="botoes">
+                <input type="reset" value="Limpar" onclick="limpar()">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

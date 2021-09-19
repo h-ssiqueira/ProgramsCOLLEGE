@@ -1,0 +1,41 @@
+h1{
+    text-align: center;
+}
+
+#pag{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#esquerda{
+    float: left;
+    text-align: center;
+    width: 50%;
+}
+
+#novaconta{
+
+}
+
+#transferencia{
+
+}
+
+#saqueEdeposito{
+
+}
+
+#extrato{
+
+}
+
+#saida{
+    float: right;
+    text-align: center;
+    width: 50%;
+}
+
+.botoes{
+
+}
