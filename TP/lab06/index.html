@@ -37,12 +37,12 @@
         <br>
         <details>
             <summary>Transferência</summary>
-            <div id="transferencia">
-                <form name="transferencia">
+            <div id="transf">
+                <form name="transf">
                     <p>Conta</p>
                     <input type="text" name="contaRem" size="5" maxlength="5"></input>
                     <p>Valor</p>
-                    <input type="text" name="valor" size="8" maxlength="8">
+                    <input type="number" name="valor" size="8" maxlength="8" min="0.01">
                     <p>Transferir para conta</p>
                     <input type="text" name="contaDest" size="5" maxlength="5">
                     <br><br>
@@ -60,7 +60,7 @@
                     <p>Conta</p>
                     <input type="text" name="conta" size="5" maxlength="5"></input>
                     <p>Valor</p>
-                    <input type="text" name="valor" size="8" maxlength="8">
+                    <input type="number" name="valor" size="8" maxlength="8" min="0.01">
                     <br><br>
                     <div class="botoes">
                         <input type="button" name="Saque" value="Saque" onclick="saque()"></input>
@@ -75,7 +75,7 @@
         <details>
             <summary>Extrato</summary>
             <div id="extrato">
-                <form name="extrato">
+                <form name="extrat">
                     <p>Conta</p>
                     <input type="text" name="conta" size="5" maxlength="5"></input>
                     <br><br>
@@ -88,9 +88,12 @@
     </div>
         <br>
         <form name="saida" id="saida">
-            <textarea rows="40" cols="70" name="bloco" id="bloco" wrap="hard" readonly></textarea>
+            <textarea rows="35" cols="70" name="bloco" id="bloco" wrap="hard" readonly></textarea>
             <div class="botoes">
                 <input type="button" name="Lsitar" value="Listar contas" onclick="listar()"></input>
+            </div>
+            <div class="botoes">
+                <input type="button" name="proxmes" value="Avançar mês" onclick="avancar()"></input>
             </div>
             <div class="botoes">
                 <input type="reset" value="Limpar" onclick="limpar()">
