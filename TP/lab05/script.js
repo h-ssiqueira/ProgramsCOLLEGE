@@ -139,7 +139,7 @@ function conferePlaca(placa){
 }
 
 let controle = new Estacionamento();
-let globalID = 0;
+let globalID = 1;
 /*var carro = Carro("2","abc1234","bmw","preto","hss");
 controle.estacionar(carro,"12:31");
 controle.estacionar(Carro("1","abc1234","bmw","preto","hss"),"12:00");

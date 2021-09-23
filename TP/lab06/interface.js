@@ -1,11 +1,13 @@
 function novaConta(){
-    if(document.novo.nome.value !== "" && document.novo.tipo.checked !== false){
+    if(document.novo.nome.value !== "" && document.novo.tipo.value !== ''){
         if(document.novo.tipo.value === "Premium")
             banco.novaConta(1,document.novo.nome.value,contaN++);
         else if(document.novo.tipo.value === "Básica")
             banco.novaConta(2,document.novo.nome.value,contaN++);
         else if(document.novo.tipo.value === "Estudante")
             banco.novaConta(3,document.novo.nome.value,contaN++);
+        else
+            document.saida.bloco.value = "Selecione um tipo.";
         document.saida.bloco.value = "Conta criada.";
     }
     else
@@ -32,7 +34,7 @@ function saque(){
         if(banco.saque(document.saqueEdeposito.conta.value,document.saqueEdeposito.valor.value))
             document.saida.bloco.value = "Saque efetuado.";
         else
-            document.saida.bloco.value = "Saque recusado: Limite atingido.";
+            document.saida.bloco.value = "Saque recusado: Limite atingido ou conta não encontrada.";
     }
     else
         document.saida.bloco.value = "Informações ausentes para sacar valores de uma conta.";
@@ -40,8 +42,10 @@ function saque(){
 
 function deposito(){
     if(document.saqueEdeposito.conta.value !== "" && document.saqueEdeposito.valor.value !== ""){
-        banco.deposito(document.saqueEdeposito.conta.value,document.saqueEdeposito.valor.value);
-        document.saida.bloco.value = "Deposito efetuado.";
+        if(banco.deposito(document.saqueEdeposito.conta.value,document.saqueEdeposito.valor.value))
+            document.saida.bloco.value = "Depósito efetuado.";
+        else
+            document.saida.bloco.value = "Conta não encontrada.";
     }
     else
         document.saida.bloco.value = "Informações ausentes para depositar valores em uma conta.";
