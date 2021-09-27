@@ -31,4 +31,10 @@ function Veiculo(_id,_placa,_marca,_cor,_nomedoProprietario){
     this.getNomeDoProprietario = function(){
         return _nomedoProprietario;
     }
+    this.calcularValorPago = function(horaEntrada,horaSaida){
+        var duracao = calculaMinutos(horaEntrada,horaSaida);
+        if(duracao > 10)
+            return 50;
+        return 0;
+    }
 }
