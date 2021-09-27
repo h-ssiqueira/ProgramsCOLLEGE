@@ -73,7 +73,7 @@ class Banco{
     avancarmes(){
         for(let i = 0; i < this._contas.length; i++){
             if(this._contas[i] instanceof Basica || this._contas[i] instanceof Estudante)
-                this.contas[i].novoMes();
+                this._contas[i].novoMes();
         }
     }
 }
