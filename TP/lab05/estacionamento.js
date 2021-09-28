@@ -44,7 +44,7 @@ function Estacionamento(_numeroDeVagas=20){
 
 // Função para calcular a diferença da hora de entrada e saída (fomato HH:MM)
 function calculaMinutos(horaEntrada,horaSaida){
-    return Number(horaSaida.substr(0,2)) * 60 + Number(horaSaida.substr(3,5)) - (Number((horaEntrada.substr(0,2)) * 60 + Number(horaEntrada.substr(3,5))));
+    return Number(horaSaida.substr(0,2)) * 60 + Number(horaSaida.substr(3,5)) - (Number(horaEntrada.substr(0,2)) * 60 + Number(horaEntrada.substr(3,5)));
 }
 
 // Função para conferir o formato da hora
