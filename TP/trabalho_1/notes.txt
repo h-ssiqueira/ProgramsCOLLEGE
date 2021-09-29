@@ -1,0 +1,5 @@
+torre + bispo = rainha
+!rainha = cavalo
+
+peão -> le passant e promoção
+rei -> roque

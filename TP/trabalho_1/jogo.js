@@ -86,16 +86,23 @@ function JogoXadrez(){
 		// Não pode mover uma peça para fora do tabuleiro e nem para o mesmo lugar
 		if(i > 7 || i < 0 || j > 7 || j < 0 || (peca.posI == i && peca.posJ == j))
 			return false;
-		if(peca.mover(tabuleiro,i,j)){
-			if(tabuleiro.rmPeca(peca.posI,peca.posJ))
-				console.log("Removido da posição antiga");
-			else
-				console.log("Não foi possível remover");
-			peca.posI = i;
-			peca.posJ = j;
-			tabuleiro.addPeca(peca);
-			return true;
+		if(peca.tipo == "branca" && jogadorW || peca.tipo == "preta" && !jogadorW){
+			// TODO rei removido -> finaliza jogo
+			if(peca.mover(tabuleiro,i,j)){
+				if(tabuleiro.rmPeca(peca.posI,peca.posJ)){
+					//console.log("Removido da posição antiga");
+					peca.posI = i;
+					peca.posJ = j;
+					tabuleiro.addPeca(peca);
+					jogadorW = !jogadorW;
+					return true;
+				}
+				else
+					console.log("Não foi possível remover");
+			}
 		}
 		return false;
 	}
 }
+
+let jogadorW = true;

@@ -3,7 +3,6 @@ var jogo = new JogoXadrez();
 function init(){
 	gerar_tabuleiro();
 	reiniciar_jogo();
-	atualizar_jogo();
 }
 
 function select(i,j){
@@ -24,6 +23,8 @@ function select(i,j){
 		atualizar_jogo();
 	}
 	else{
+		select.obj_clicado.style.backgroundColor = select.obj_bgcolor;
+		select.obj_clicado = null;
 		alert("Movimento invalido!");
 	}
 }

@@ -1,13 +1,16 @@
 function Peao(tipo, posI, posJ, id){
     Peca.call(this, tipo, posI, posJ, id);
+    tipo == "branca" ? this.acres = false : this.acres = true;
+    this.enPassant = false;
 }
 
 Peao.prototype = Object.create(Peca.prototype);
 Peao.prototype.mover = function(tabuleiro,i,j){
     var destino = tabuleiro.getPeca(i,j);
+    return true;
     /*if(this.posI - i <= 1 && this.posI - i >= -1 && this.posJ - j <= 1 && this.posJ - j >= -1 && destino.tipo != this.tipo){
         console.log("entrou");
-        return true;
+        
     }
     return false;*/
 }

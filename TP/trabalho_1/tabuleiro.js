@@ -31,11 +31,11 @@ function Tabuleiro(){
     this.addPeca = function(peca){
         if(peca.id == 0){
             tabuleiro[peca.posI][peca.posJ] = 0;
-            console.log("Posição liberada");
+            //console.log("Posição liberada");
         }
         else{
             tabuleiro[peca.posI][peca.posJ] = peca;
-            console.log("Peça movida para nova posição");
+            //console.log("Peça movida para nova posição");
         }
     }
 
