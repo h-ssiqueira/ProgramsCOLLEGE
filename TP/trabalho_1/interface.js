@@ -8,7 +8,13 @@ function init(){
 function select(i,j){
 	var tabuleiro = document.getElementById('tabuleiro');
 	var obj = tabuleiro.rows[i].cells[j]
-	if(select.obj_clicado === undefined || select.obj_clicado === null){
+	var vitoria = jogo.confereFinal();
+	var id;
+	if(vitoria == 2)
+		alert("Vitória do jogador com as peças pretas. Reinicie o jogo para mais uma partida!");
+	else if(vitoria == 1)
+		alert("Vitória do jogador com as peças brancas. Reinicie o jogo para mais uma partida!");
+	else if(select.obj_clicado === undefined || select.obj_clicado === null){
 		var peca = jogo.getPeca(i, j);
 		if(peca == null)
 			return;
@@ -20,6 +26,16 @@ function select(i,j){
 	else if(jogo.moverPeca(select.peca, i, j)){
 		select.obj_clicado.style.backgroundColor = select.obj_bgcolor;
 		select.obj_clicado = null;
+		vitoria = jogo.confereFinal();
+		if(vitoria == 2)
+			alert("Vitória do jogador com as peças pretas. Reinicie o jogo para mais uma partida!");
+		else if(vitoria == 1)
+			alert("Vitória do jogador com as peças brancas. Reinicie o jogo para mais uma partida!");
+		else if(jogo.conferePromocao(select.peca)){
+			do{
+				id = prompt("Digite o número para escolher a promoção do peão:\n1 - Dama\n2 - Cavalo \n3 - Bispo\n4 - Torre");
+			}while(!jogo.promocao(select.peca,id));
+		}
 		atualizar_jogo();
 	}
 	else{

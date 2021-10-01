@@ -16,3 +16,5 @@ Engloba as linguagens ***```HTML/CSS```***, ***```JavaScript```***.
 [Lab05 - Estacionamento](https://h-ssiqueira.github.io/ProgramsCOLLEGE/TP/lab05)
 
 [Lab06 - Banco](https://h-ssiqueira.github.io/ProgramsCOLLEGE/TP/lab06)
+
+[P1 - Xadrez](https://h-ssiqueira.github.io/ProgramsCOLLEGE/TP/trabalho_1)

@@ -5,8 +5,8 @@ function Rei(tipo, posI, posJ, id){
 Rei.prototype = Object.create(Peca.prototype);
 Rei.prototype.mover = function(tabuleiro,i,j){
     var destino = tabuleiro.getPeca(i,j);
-    if((Math.abs(this.posI - i) == 1 || this.posI - i == 0) && (Math.abs(this.posJ - j) == 1 || this.posJ - j == 0)){ // Validade do movimento
-        if(destino == null || destino.tipo != this.tipo) // Caso não tenha peça do mesmo tipo ou espaço vazio
+    if((Math.abs(this.getPosI() - i) == 1 || this.getPosI() - i == 0) && (Math.abs(this.getPosJ() - j) == 1 || this.getPosJ() - j == 0)){ // Validade do movimento
+        if(destino == null || destino.getTipo() != this.getTipo()) // Caso não tenha peça do mesmo tipo ou espaço vazio
             return true;
     }
     return false;

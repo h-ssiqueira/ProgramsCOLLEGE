@@ -5,8 +5,8 @@ function Cavalo(tipo, posI, posJ, id){
 Cavalo.prototype = Object.create(Peca.prototype);
 Cavalo.prototype.mover = function(tabuleiro,i,j){
     var destino = tabuleiro.getPeca(i,j);
-    if(!(this.posI == i || this.posJ == j || Math.abs(this.posI - i) === Math.abs(this.posJ-j)) && Math.abs(this.posI - i) < 3 && Math.abs(this.posJ - j) < 3){ // Validade do movimento
-        if(destino == null || destino.tipo != this.tipo) // Caso não tenha peça do mesmo tipo ou espaço vazio
+    if(!(this.getPosI() == i || this.getPosJ() == j || Math.abs(this.getPosI() - i) === Math.abs(this.getPosJ()-j)) && Math.abs(this.getPosI() - i) < 3 && Math.abs(this.getPosJ() - j) < 3){ // Validade do movimento
+        if(destino == null || destino.getTipo() != this.getTipo()) // Caso não tenha peça do mesmo tipo ou espaço vazio
             return true;
     }
     return false;

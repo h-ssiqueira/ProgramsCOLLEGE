@@ -9,6 +9,8 @@ function JogoXadrez(){
 	// Esse método reinicia o jogo.
 	this.reiniciar = function(){
 		var j = 0;
+		jogadorW = true;
+		vitoriaB = vitoriaW = false;
 		while(j < 8){
 			switch(j){
 				case 0: // Colocando as torres pretas
@@ -84,16 +86,21 @@ function JogoXadrez(){
 	// Sempre que esse método for executado com sucesso (retornando true) o turno deve ser atualizado, passando o controle para o outro jogador. Obs: não é permitido que o usuário mova uma peça de outro jogador.
 	this.moverPeca = function(peca, i, j){
 		// Não pode mover uma peça para fora do tabuleiro e nem para o mesmo lugar
-		if(i > 7 || i < 0 || j > 7 || j < 0 || (peca.posI == i && peca.posJ == j))
+		if(i > 7 || i < 0 || j > 7 || j < 0 || (peca.getPosI() == i && peca.getPosJ() == j))
 			return false;
-		if(peca.tipo == "branca" && jogadorW || peca.tipo == "preta" && !jogadorW){
-			// TODO rei removido -> finaliza jogo
+		var anterior = this.getPeca(i,j);
+		if((!vitoriaB || !vitoriaW) && peca.getTipo() == "branca" && jogadorW || peca.getTipo() == "preta" && !jogadorW){
 			if(peca.mover(tabuleiro,i,j)){
-				if(tabuleiro.rmPeca(peca.posI,peca.posJ)){
-					//console.log("Removido da posição antiga");
-					peca.posI = i;
-					peca.posJ = j;
+				if(tabuleiro.rmPeca(peca.getPosI(),peca.getPosJ())){
+					peca.setPosI(i);
+					peca.setPosJ(j);
 					tabuleiro.addPeca(peca);
+					if(anterior != null){
+						if(anterior.getId() == B_KING)
+							vitoriaW = true;
+						else if(anterior.getId() == W_KING)
+							vitoriaB = true;
+					}
 					jogadorW = !jogadorW;
 					return true;
 				}
@@ -103,6 +110,56 @@ function JogoXadrez(){
 		}
 		return false;
 	}
+
+	// Confere se houve vitória para algum jogador
+	this.confereFinal = function(){
+		if(vitoriaB)
+			return 2;
+		else if(vitoriaW)
+			return 1;
+		return 0;
+	}
+
+	this.conferePromocao = function(peca){
+		if(peca.getTipo() == "branca" && peca.getPosI() == 0 || peca.getTipo() == "preta" && peca.getPosI() == 7)
+			return true;
+		return false;
+	}
+
+	this.promocao = function(peca,id){
+		if(id == 1){
+			if(peca.getId() == W_PAWN)
+				tabuleiro.addPeca(new Dama(peca.getTipo(),peca.getPosI(),peca.getPosJ(),W_QUEEN));
+			else if(peca.getId() == B_PAWN)
+				tabuleiro.addPeca(new Dama(peca.getTipo(),peca.getPosI(),peca.getPosJ(),B_QUEEN));
+			return true;
+		}
+		else if(id == 2){
+			if(peca.getId() == W_PAWN)
+				tabuleiro.addPeca(new Cavalo(peca.getTipo(),peca.getPosI(),peca.getPosJ(),W_KNIGHT));
+			else if(peca.getId() == B_PAWN)
+				tabuleiro.addPeca(new Cavalo(peca.getTipo(),peca.getPosI(),peca.getPosJ(),B_KNIGHT));
+			return true;
+		}
+		else if(id == 3){
+			if(peca.getId() == W_PAWN)
+				tabuleiro.addPeca(new Bispo(peca.getTipo(),peca.getPosI(),peca.getPosJ(),W_BISHOP));
+			else if(peca.getId() == B_PAWN)
+				tabuleiro.addPeca(new Bispo(peca.getTipo(),peca.getPosI(),peca.getPosJ(),B_BISHOP));
+			return true;
+		}
+		else if(id == 4){
+			if(peca.getId() == W_PAWN)
+				tabuleiro.addPeca(new Torre(peca.getTipo(),peca.getPosI(),peca.getPosJ(),W_ROOK));
+			else if(peca.getId() == B_PAWN)
+				tabuleiro.addPeca(new Torre(peca.getTipo(),peca.getPosI(),peca.getPosJ(),B_ROOK));
+			return true;
+		}
+		return false;
+	}
 }
 
-let jogadorW = true;
+
+
+let jogadorW = true; // booleano para a vez do jogador das peças brancas
+let vitoriaB = false, vitoriaW = false; // booleanos para vitória de algum dos jogadores

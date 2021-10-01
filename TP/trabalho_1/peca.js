@@ -6,6 +6,40 @@ function Peca(tipo, posI, posJ, id){
     this.id = id;
 }
 
+// Getters
+Peca.prototype.getTipo = function(){
+    return this.tipo;
+}
+
+Peca.prototype.getPosI = function(){
+    return this.posI;
+}
+
+Peca.prototype.getPosJ = function(){
+    return this.posJ;
+}
+
+Peca.prototype.getId = function(){
+    return this.id;
+}
+
+// Setters
+Peca.prototype.setTipo = function(tipo){
+    this.tipo = tipo;
+}
+
+Peca.prototype.setPosI = function(i){
+    this.posI = i;
+}
+
+Peca.prototype.setPosJ = function(j){
+    this.posJ = j;
+}
+
+Peca.prototype.setId = function(id){
+    this.id = id;
+}
+
 Peca.prototype.mover = function(tabuleiro, i, j){
     console.log("Movendo peça...\n");
 }

@@ -24,17 +24,18 @@ function Tabuleiro(){
         if(i > 7 || i < 0 || j > 7 || j < 0)
             return false;
         tabuleiro[i][j] = 0;
+        //console.log("Removido da posição antiga");
         return true;
     }
 
     // Adiciona um peça ao tabuleiro
     this.addPeca = function(peca){
-        if(peca.id == 0){
-            tabuleiro[peca.posI][peca.posJ] = 0;
+        if(peca.getId() == 0){
+            tabuleiro[peca.getPosI()][peca.getPosJ()] = 0;
             //console.log("Posição liberada");
         }
         else{
-            tabuleiro[peca.posI][peca.posJ] = peca;
+            tabuleiro[peca.getPosI()][peca.getPosJ()] = peca;
             //console.log("Peça movida para nova posição");
         }
     }

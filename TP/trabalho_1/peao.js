@@ -1,18 +1,53 @@
 function Peao(tipo, posI, posJ, id){
     Peca.call(this, tipo, posI, posJ, id);
-    tipo == "branca" ? this.acres = false : this.acres = true;
-    this.enPassant = false;
+    this.primeira = true;
 }
 
 Peao.prototype = Object.create(Peca.prototype);
+Peao.prototype.getPrimeira = function(){
+    return this.primeira;
+}
+
+Peao.prototype.setPrimeira = function(bool){
+    this.primeira = bool;
+}
+
 Peao.prototype.mover = function(tabuleiro,i,j){
     var destino = tabuleiro.getPeca(i,j);
-    return true;
-    /*if(this.posI - i <= 1 && this.posI - i >= -1 && this.posJ - j <= 1 && this.posJ - j >= -1 && destino.tipo != this.tipo){
-        console.log("entrou");
-        
+    if(this.getTipo() == "preta"){
+        if(this.getPrimeira() && this.getPosI() == i-2 && j == this.getPosJ() && destino == null){
+            this.setPrimeira(false);
+            return true;
+        }
+        else if(this.getPosI() == i-1 && j == this.getPosJ() && destino == null){
+            if(this.getPrimeira())
+                this.setPrimeira(false);
+            return true;
+        }
+        else if(this.getPosI() == i-1 && 1 == Math.abs(this.getPosJ() - j) && destino != null && destino.getTipo() == "branca"){
+            if(this.getPrimeira())
+                this.setPrimeira(false);
+            return true;
+        }
     }
-    return false;*/
+    else if(this.getTipo() == "branca"){
+        if(this.getPrimeira() && this.getPosI() == i+2 && j == this.getPosJ() && destino == null){
+            if(this.getPrimeira())
+                this.setPrimeira(false);
+            return true;
+        }
+        else if(this.getPosI() == i+1 && j == this.getPosJ() && destino == null){
+            if(this.getPrimeira())
+                this.setPrimeira(false);
+            return true;
+        }
+        else if(this.getPosI() == i+1 && 1 == Math.abs(this.getPosJ() - j) && destino != null && destino.getTipo() == "preta"){
+            if(this.getPrimeira())
+                this.setPrimeira(false);
+            return true;
+        }
+    }
+    return false;
 }
 /*
 Checagem de mesma posição é realizada na função chamadora

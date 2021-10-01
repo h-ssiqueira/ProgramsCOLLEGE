@@ -83,4 +83,5 @@ Códigos adicionais e/ou utilizados em outras disciplinas.
 	* [Mínimos quadrados](extra/Programs-C/mínimos%20Quadrados%20simplificado.c) (Disciplina de Laboratório de Física B)
 	* [Estatística dados brutos](extra/Programs-C/freq.c) (Disciplina de Probabilidade e Estatística)
 	* [Identificador de palavras terminadas em ing](extra/Programs-C/ing.c) (Disciplina de Linguagens Formais e Autômatos)
+	* [Expressão regular de valores monetários em real](extra/Programs-C/valor.c) (Disciplina de Linguagens Formais e Autômatos)
 * [Programas Python](extra/Programs-Python/)
