@@ -16,7 +16,7 @@ Checagem de mesma posição é realizada na função chamadora
   -2-1 0 1 2
 -2|X|_|X|_|X|
 -1|_|X|X|X|_|
- 0|X|X|P|X|X|
+ 0|X|X|C|X|X|
  1|_|X|X|X|_|
  2|X|_|X|_|X|
 */

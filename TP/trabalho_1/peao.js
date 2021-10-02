@@ -28,7 +28,7 @@ Peao.prototype.mover = function(tabuleiro,i,j){
             destino = tabuleiro.getPeca(i-1,j);
             if(destino == null){
                 this.setPrimeira(false);
-                this.getLePassant(true);
+                this.setLePassant(true);
                 return true;
             }
         }
@@ -42,18 +42,18 @@ Peao.prototype.mover = function(tabuleiro,i,j){
                 this.setPrimeira(false);
             return true;
         }
-        /*else if(this.getPosI() == i-1 && 1 == Math.abs(this.getPosJ() - j) && destino == null){
+        else if(this.getPosI() == i-1 && 1 == Math.abs(this.getPosJ() - j) && destino == null){ // Le passant
             destino = tabuleiro.getPeca(this.getPosI(),j);
             if(destino != null && destino.getId() == W_PAWN && destino.getLePassant())
                 return true;
-        }*/
+        }
     }
     else if(this.getTipo() == "branca"){
         if(this.getPrimeira() && this.getPosI() == i+2 && j == this.getPosJ() && destino == null){
             destino = tabuleiro.getPeca(i+1,j);
             if(destino == null){
                 this.setPrimeira(false);
-                this.getLePassant(true);
+                this.setLePassant(true);
                 return true;
             }
         }
@@ -67,11 +67,11 @@ Peao.prototype.mover = function(tabuleiro,i,j){
                 this.setPrimeira(false);
             return true;
         }
-        /*else if(this.getPosI() == i+1 && 1 == Math.abs(this.getPosJ() - j) && destino == null){
+        else if(this.getPosI() == i+1 && 1 == Math.abs(this.getPosJ() - j) && destino == null){ // Le passant
             destino = tabuleiro.getPeca(this.getPosI(),j);
             if(destino != null && destino.getId() == B_PAWN && destino.getLePassant())
                 return true;
-        }*/
+        }
     }
     return false;
 }

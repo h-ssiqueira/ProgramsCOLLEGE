@@ -89,31 +89,46 @@ function JogoXadrez(){
 		if(i > 7 || i < 0 || j > 7 || j < 0 || (peca.getPosI() == i && peca.getPosJ() == j))
 			return false;
 		var anterior = tabuleiro.getPeca(i,j);
+		var roque;
 		if((!vitoriaB || !vitoriaW) && peca.getTipo() == "branca" && jogadorW || peca.getTipo() == "preta" && !jogadorW){
 			if(peca.mover(tabuleiro,i,j)){
+				if((peca.getId() == W_KING || peca.getId() == B_KING) && Math.abs(peca.getPosJ() - j) == 2){
+					if(j > peca.getPosJ()){ // Roque menor
+						roque = tabuleiro.getPeca(i,j+1);
+						roque.setPrimeira(false);
+						roque.setPosJ(peca.getPosJ()+1);
+						tabuleiro.rmPeca(i,j+1);
+						tabuleiro.addPeca(roque);
+					}
+					else{ // Roque maior
+						roque = tabuleiro.getPeca(i,j-2);
+						roque.setPrimeira(false);
+						roque.setPosJ(peca.getPosJ()-1);
+						tabuleiro.rmPeca(i,j-2);
+						tabuleiro.addPeca(roque);
+					}
+				}
 				if(tabuleiro.rmPeca(peca.getPosI(),peca.getPosJ())){
 					peca.setPosI(i);
 					peca.setPosJ(j);
 					tabuleiro.addPeca(peca);
-					if(anterior != null){
+					if(anterior != null){ // Conferência de vitória
 						if(anterior.getId() == B_KING)
 							vitoriaW = true;
 						else if(anterior.getId() == W_KING)
 							vitoriaB = true;
 					}
-					/*if(i == 2 || i == 5){ // Problema de não capturar no lepassant -> setar false no peão movido anteriormente
-						peca.getId() == W_PAWN ? anterior = tabuleiro.getPeca(i+1,j) : anterior = tabuleiro.getPeca(i-1,j);
-						if(anterior != null && (anterior.getId() == B_PAWN || anterior.getId() == W_PAWN) && anterior.getLePassant()){
-							anterior.setLePassant(false);
-							if(peca.getPosJ() == anterior.getPosJ()){
-								if(peca.getPosI() == 2 && anterior.getPosI() == 3 || peca.getPosI() == 5 && anterior.getPosI() == 4)
-									tabuleiro.rmPeca(anterior);
-							}
-							else
-								tabuleiro.addPeca(anterior);
+					if(movimentoant != null && (movimentoant.getId() == B_PAWN || movimentoant.getId() == W_PAWN) && movimentoant.getLePassant()){ // Conferência de le passant
+						movimentoant.setLePassant(false);
+						if(peca.getPosJ() == movimentoant.getPosJ() && (peca.getId() == B_PAWN || peca.getId() == W_PAWN) && peca.getId() != movimentoant.getId()){
+							if(peca.getPosI() == 2 && movimentoant.getPosI() == 3 || peca.getPosI() == 5 && movimentoant.getPosI() == 4)
+								tabuleiro.rmPeca(movimentoant.getPosI(),movimentoant.getPosJ());
 						}
-					}*/
+						else
+							tabuleiro.addPeca(movimentoant);
+					}
 					jogadorW = !jogadorW;
+					movimentoant = peca;
 					return true;
 				}
 				else
@@ -175,3 +190,4 @@ function JogoXadrez(){
 
 let jogadorW = true; // booleano para a vez do jogador das peças brancas
 let vitoriaB = false, vitoriaW = false; // booleanos para vitória de algum dos jogadores
+var movimentoant = null;
