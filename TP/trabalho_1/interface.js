@@ -52,10 +52,7 @@ function atualizar_jogo(){
 	for(var i = 0, n = tabuleiro.rows.length; i < n; i++){
 		for(var j = 0, m = tabuleiro.rows[i].cells.length; j < m; j++){
 			obj = tabuleiro.rows[i].cells[j]
-			if(tabData[i][j] != 0)
-				obj.innerHTML = pecas[tabData[i][j].id];
-			else
-				obj.innerHTML = pecas[0];
+			obj.innerHTML = pecas[tabData[i][j]];
 		}
 	}
 }

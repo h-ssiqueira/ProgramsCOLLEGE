@@ -8,7 +8,13 @@ function Tabuleiro(){
 
     // Esse método retorna um array 8x8 contendo o estado do tabuleiro.
 	this.getRepresentacao = function(){
-		return tabuleiro;
+        var tab = new Array(8);
+        for(var i = 0; i < 8; i++){
+            tab[i] = new Array(8);
+            for(j = 0; j < 8; j++)
+                tabuleiro[i][j] != 0 ? tab[i][j] = tabuleiro[i][j].getId() : tab[i][j] = 0;
+        }
+        return tab;
 	}
 
     // Esse método retorna uma referência para o objeto peça que está na posição i,j do tabuleiro.

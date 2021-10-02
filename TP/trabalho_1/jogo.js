@@ -88,7 +88,7 @@ function JogoXadrez(){
 		// Não pode mover uma peça para fora do tabuleiro e nem para o mesmo lugar
 		if(i > 7 || i < 0 || j > 7 || j < 0 || (peca.getPosI() == i && peca.getPosJ() == j))
 			return false;
-		var anterior = this.getPeca(i,j);
+		var anterior = tabuleiro.getPeca(i,j);
 		if((!vitoriaB || !vitoriaW) && peca.getTipo() == "branca" && jogadorW || peca.getTipo() == "preta" && !jogadorW){
 			if(peca.mover(tabuleiro,i,j)){
 				if(tabuleiro.rmPeca(peca.getPosI(),peca.getPosJ())){
@@ -101,6 +101,18 @@ function JogoXadrez(){
 						else if(anterior.getId() == W_KING)
 							vitoriaB = true;
 					}
+					/*if(i == 2 || i == 5){ // Problema de não capturar no lepassant -> setar false no peão movido anteriormente
+						peca.getId() == W_PAWN ? anterior = tabuleiro.getPeca(i+1,j) : anterior = tabuleiro.getPeca(i-1,j);
+						if(anterior != null && (anterior.getId() == B_PAWN || anterior.getId() == W_PAWN) && anterior.getLePassant()){
+							anterior.setLePassant(false);
+							if(peca.getPosJ() == anterior.getPosJ()){
+								if(peca.getPosI() == 2 && anterior.getPosI() == 3 || peca.getPosI() == 5 && anterior.getPosI() == 4)
+									tabuleiro.rmPeca(anterior);
+							}
+							else
+								tabuleiro.addPeca(anterior);
+						}
+					}*/
 					jogadorW = !jogadorW;
 					return true;
 				}
@@ -121,7 +133,7 @@ function JogoXadrez(){
 	}
 
 	this.conferePromocao = function(peca){
-		if(peca.getTipo() == "branca" && peca.getPosI() == 0 || peca.getTipo() == "preta" && peca.getPosI() == 7)
+		if(peca.getId() == W_PAWN && peca.getPosI() == 0 || peca.getId() == B_PAWN && peca.getPosI() == 7)
 			return true;
 		return false;
 	}
