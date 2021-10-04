@@ -46,7 +46,7 @@ function select(i,j){
 }
 
 function atualizar_jogo(){
-	const pecas = ["", "♔", "♕", "♖", "♗", "♘", "♙", "♚", "♛", "♜", "♝", "♞", "♟"];
+	const pecas = [" ", "♔", "♕", "♖", "♗", "♘", "♙", "♚", "♛", "♜", "♝", "♞", "♟"];
 	let tabuleiro = document.getElementById('tabuleiro');
 	let tabData = jogo.getTabuleiro();
 	for(var i = 0, n = tabuleiro.rows.length; i < n; i++){

@@ -40,8 +40,8 @@ function JogoXadrez(){
 			j++;
 		}
 		for(var i = 2; i < 6; i++){
-			for(j = 0; j < 8; j++)
-				tabuleiro.addPeca(new Peao("",i,j,0)); // ID_1 = 0
+			for(j = 0; j < 8; j++) // Retira as peças do meio
+				tabuleiro.rmPeca(i,j);
 		}
 		j = 0;
 		while(j < 8){
@@ -88,20 +88,20 @@ function JogoXadrez(){
 		// Não pode mover uma peça para fora do tabuleiro e nem para o mesmo lugar
 		if(i > 7 || i < 0 || j > 7 || j < 0 || (peca.getPosI() == i && peca.getPosJ() == j))
 			return false;
-		var anterior = tabuleiro.getPeca(i,j);
+		var anterior = this.getPeca(i,j);
 		var roque;
 		if((!vitoriaB || !vitoriaW) && peca.getTipo() == "branca" && jogadorW || peca.getTipo() == "preta" && !jogadorW){
 			if(peca.mover(tabuleiro,i,j)){
 				if((peca.getId() == W_KING || peca.getId() == B_KING) && Math.abs(peca.getPosJ() - j) == 2){
 					if(j > peca.getPosJ()){ // Roque menor
-						roque = tabuleiro.getPeca(i,j+1);
+						roque = this.getPeca(i,j+1);
 						roque.setPrimeira(false);
 						roque.setPosJ(peca.getPosJ()+1);
 						tabuleiro.rmPeca(i,j+1);
 						tabuleiro.addPeca(roque);
 					}
 					else{ // Roque maior
-						roque = tabuleiro.getPeca(i,j-2);
+						roque = this.getPeca(i,j-2);
 						roque.setPrimeira(false);
 						roque.setPosJ(peca.getPosJ()-1);
 						tabuleiro.rmPeca(i,j-2);
@@ -186,8 +186,7 @@ function JogoXadrez(){
 	}
 }
 
-
-
 let jogadorW = true; // booleano para a vez do jogador das peças brancas
 let vitoriaB = false, vitoriaW = false; // booleanos para vitória de algum dos jogadores
-var movimentoant = null;
+var movimentoant = null; // Var para armazenar o movimento da peça anterior
+
