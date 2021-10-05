@@ -11,6 +11,10 @@ function JogoXadrez(){
 		var j = 0;
 		jogadorW = true;
 		vitoriaB = vitoriaW = false;
+		KWJ = KBJ = 4;
+		KWI = 7;
+		KBI = 0;
+		movimentoant = null;
 		while(j < 8){
 			switch(j){
 				case 0: // Colocando as torres pretas
@@ -118,13 +122,21 @@ function JogoXadrez(){
 						else if(anterior.getId() == W_KING)
 							vitoriaB = true;
 					}
+					if(peca.getId() == B_KING){
+						KBI = peca.getPosI();
+						KBJ = peca.getPosJ();
+					}
+					else if(peca.getId() == W_KING){
+						KWI = peca.getPosI();
+						KWJ = peca.getPosJ();
+					}
 					if(movimentoant != null && (movimentoant.getId() == B_PAWN || movimentoant.getId() == W_PAWN) && movimentoant.getLePassant()){ // Conferência de le passant
 						movimentoant.setLePassant(false);
 						if(peca.getPosJ() == movimentoant.getPosJ() && (peca.getId() == B_PAWN || peca.getId() == W_PAWN) && peca.getId() != movimentoant.getId()){
 							if(peca.getPosI() == 2 && movimentoant.getPosI() == 3 || peca.getPosI() == 5 && movimentoant.getPosI() == 4)
 								tabuleiro.rmPeca(movimentoant.getPosI(),movimentoant.getPosJ());
 						}
-						else
+						else if(this.getPeca(movimentoant.getPosI(),movimentoant.getPosJ()).getId() == movimentoant.getId()) // Confere se o peão não foi comido
 							tabuleiro.addPeca(movimentoant);
 					}
 					jogadorW = !jogadorW;
@@ -184,9 +196,62 @@ function JogoXadrez(){
 		}
 		return false;
 	}
+
+	this.confereCheque = function(peca){
+		/*if(peca.getTipo() == "branca" && peca.mover(tabuleiro,KBI,KBJ))
+			return true;
+		else if(peca.getTipo() == "preta" && peca.mover(tabuleiro,KWI,KWJ))
+			return true;
+		return false;
+			*/
+			/*
+			1 - cheque
+			2 - cheque mate
+			0 - sem cheque
+			*/
+		if(peca.getTipo() == "branca" && peca.mover(tabuleiro,KBI,KBJ)){
+			if(KBI-1 >= 0 && KBJ-1 >= 0 && this.getPeca(KBI,KBJ).mover(tabuleiro,KBI-1,KBJ-1) && !this.getPeca(KWI,KWJ).checkCheque(tabuleiro,KWI-1,KWJ-1))
+				return 1;
+			if(KBI-1 >= 0 && this.getPeca(KBI,KBJ).mover(tabuleiro,KBI-1,KBJ) && !this.getPeca(KWI,KWJ).checkCheque(tabuleiro,KWI-1,KWJ))
+				return 1;
+			if(KBI-1 >= 0 && KBJ+1 <= 7 && this.getPeca(KBI,KBJ).mover(tabuleiro,KBI-1,KBJ+1) && !this.getPeca(KWI,KWJ).checkCheque(tabuleiro,KWI-1,KWJ+1))
+				return 1;
+			if(KBJ-1 >= 0 && this.getPeca(KBI,KBJ).mover(tabuleiro,KBI,KBJ-1) && !this.getPeca(KWI,KWJ).checkCheque(tabuleiro,KWI,KWJ-1))
+				return 1;
+			if(KBJ+1 <= 7 && this.getPeca(KBI,KBJ).mover(tabuleiro,KBI,KBJ+1) && !this.getPeca(KWI,KWJ).checkCheque(tabuleiro,KWI,KWJ+1))
+				return 1;
+			if(KBI+1 <= 7 && KBJ-1 >= 0 && this.getPeca(KBI,KBJ).mover(tabuleiro,KBI+1,KBJ-1) && !this.getPeca(KWI,KWJ).checkCheque(tabuleiro,KWI+1,KWJ-1))
+				return 1;
+			if(KBI+1 <= 7 && this.getPeca(KBI,KBJ).mover(tabuleiro,KBI+1,KBJ) && !this.getPeca(KWI,KWJ).checkCheque(tabuleiro,KWI+1,KWJ))
+				return 1;
+			if(KBI+1 <= 7 && KBJ+1 <= 7 && this.getPeca(KBI,KBJ).mover(tabuleiro,KBI+1,KBJ+1) && !this.getPeca(KWI,KWJ).checkCheque(tabuleiro,KWI+1,KWJ+1))
+				return 1;
+			return 2;
+		}
+		else if(peca.getTipo() == "preta" && peca.mover(tabuleiro,KWI,KWJ)){
+			if(KWI-1 >= 0 && KWJ-1 >= 0 && this.getPeca(KWI,KWJ).mover(tabuleiro,KWI-1,KWJ-1) && !this.getPeca(KWI,KWJ).checkCheque(tabuleiro,KWI-1,KWJ-1))
+				return 1;
+			if(KWI-1 >= 0 && this.getPeca(KWI,KWJ).mover(tabuleiro,KWI-1,KWJ) && !this.getPeca(KWI,KWJ).checkCheque(tabuleiro,KWI-1,KWJ))
+				return 1;
+			if(KWI-1 >= 0 && KWJ+1 <= 7 && this.getPeca(KWI,KWJ).mover(tabuleiro,KWI-1,KWJ+1) && !this.getPeca(KWI,KWJ).checkCheque(tabuleiro,KWI-1,KWJ+1))
+				return 1;
+			if(KWJ-1 >= 0 && this.getPeca(KWI,KWJ).mover(tabuleiro,KWI,KWJ-1) && !this.getPeca(KWI,KWJ).checkCheque(tabuleiro,KWI,KWJ-1))
+				return 1;
+			if(KWJ+1 <= 7 && this.getPeca(KWI,KWJ).mover(tabuleiro,KWI,KWJ+1) && !this.getPeca(KWI,KWJ).checkCheque(tabuleiro,KWI,KWJ+1))
+				return 1;
+			if(KWI+1 <= 7 && KWJ-1 >= 0 && this.getPeca(KWI,KWJ).mover(tabuleiro,KWI+1,KWJ-1) && !this.getPeca(KWI,KWJ).checkCheque(tabuleiro,KWI+1,KWJ-1))
+				return 1;
+			if(KWI+1 <= 7 && this.getPeca(KWI,KWJ).mover(tabuleiro,KWI+1,KWJ) && !this.getPeca(KWI,KWJ).checkCheque(tabuleiro,KWI+1,KWJ))
+				return 1;
+			if(KWI+1 <= 7 && KWJ+1 <= 7 && this.getPeca(KWI,KWJ).mover(tabuleiro,KWI+1,KWJ+1) && !this.getPeca(KWI,KWJ).checkCheque(tabuleiro,KWI+1,KWJ+1))
+				return 1;
+			return 2;
+		}
+		return 0;
+	}
 }
 
 let jogadorW = true; // booleano para a vez do jogador das peças brancas
 let vitoriaB = false, vitoriaW = false; // booleanos para vitória de algum dos jogadores
 var movimentoant = null; // Var para armazenar o movimento da peça anterior
-
+var KWI,KWJ,KBI,KBJ; // Posições dos reis

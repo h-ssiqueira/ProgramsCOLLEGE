@@ -2,8 +2,8 @@ function Tabuleiro(){
 	var tabuleiro = new Array(8);
 	for(var i = 0; i < 8; i++){
 		tabuleiro[i] = new Array(8);
-		for(j = 0; j < 8; j++)
-			tabuleiro[i][j] = 0; // ID_1 = 0
+		for(var j = 0; j < 8; j++)
+			tabuleiro[i][j] = 0;
 	}
 
     // Esse método retorna um array 8x8 contendo o estado do tabuleiro.
@@ -11,7 +11,7 @@ function Tabuleiro(){
         var tab = new Array(8);
         for(var i = 0; i < 8; i++){
             tab[i] = new Array(8);
-            for(j = 0; j < 8; j++)
+            for(var j = 0; j < 8; j++)
                 tabuleiro[i][j] != 0 ? tab[i][j] = tabuleiro[i][j].getId() : tab[i][j] = 0;
         }
         return tab;
@@ -30,7 +30,7 @@ function Tabuleiro(){
         if(i > 7 || i < 0 || j > 7 || j < 0)
             return false;
         tabuleiro[i][j] = 0;
-        //console.log("Removido da posição antiga");
+        //console.log("Removido da posição antiga" + i + " " + j);
         return true;
     }
 
@@ -42,7 +42,7 @@ function Tabuleiro(){
         }
         else{
             tabuleiro[peca.getPosI()][peca.getPosJ()] = peca;
-            //console.log("Peça movida para nova posição");
+            //console.log("Peça movida para nova posição " + peca.getId());
         }
     }
 

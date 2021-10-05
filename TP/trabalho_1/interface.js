@@ -10,6 +10,7 @@ function select(i,j){
 	var obj = tabuleiro.rows[i].cells[j]
 	var vitoria = jogo.confereFinal();
 	var id;
+	var cheque;
 	if(vitoria == 2)
 		alert("Vitória do jogador com as peças pretas. Reinicie o jogo para mais uma partida!");
 	else if(vitoria == 1)
@@ -27,6 +28,7 @@ function select(i,j){
 		select.obj_clicado.style.backgroundColor = select.obj_bgcolor;
 		select.obj_clicado = null;
 		vitoria = jogo.confereFinal();
+		//cheque = jogo.confereCheque(select.peca);
 		if(vitoria == 2)
 			alert("Vitória do jogador com as peças pretas. Reinicie o jogo para mais uma partida!");
 		else if(vitoria == 1)
@@ -36,6 +38,10 @@ function select(i,j){
 				id = prompt("Digite o número para escolher a promoção do peão:\n1 - Dama\n2 - Cavalo \n3 - Bispo\n4 - Torre");
 			}while(!jogo.promocao(select.peca,id));
 		}
+		/*else if(cheque == 1)
+			alert("Cheque");
+		else if(cheque == 2)
+			alert("Cheque mate");*/
 		atualizar_jogo();
 	}
 	else{
