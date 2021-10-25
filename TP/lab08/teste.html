@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <body>
+
+    <img id="scream" width="0" height="0" src="https://spicyyoghurt.com/img/tutorials/develop_a_html5_game/sprite_animation.png" alt="The Scream">
+    <canvas id="myCanvas" width="240" height="297" style="border:1px solid #d3d3d3;">
+    Your browser does not support the HTML5 canvas tag.
+    </canvas>
+
+    <script>
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        var img = document.getElementById("scream");
+
+        function DrawSprite(ctx, img, row, col, frameWidth, frameHeight) {
+            ctx.drawImage(img, col*frameWidth, row*frameHeight, frameWidth, frameHeight, 10, 30, frameWidth, frameHeight);
+        }
+
+        var i = 0;
+        function Update() {
+            if (i == 4)
+                i = 0;
+            DrawSprite(ctx, img, 0, i, 50, 61);
+            i++;
+        }
+
+        setInterval(Update, 100);
+    </script>
+
+    </body>
+</html>

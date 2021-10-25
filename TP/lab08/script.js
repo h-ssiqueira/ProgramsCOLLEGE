@@ -3,13 +3,16 @@ var y = 230;
 var teclar = "";
 var playing = true;
 var i = 0;
-
+var sxr = 0,syr = 0;
+var sxj = 0, syj = 0;
 var c = document.getElementById("myCanvas");
 var ctx = c.getContext("2d");
 
 // Objects
-var img = document.getElementById("doge");
-var img1 = document.getElementById("dogecry");
+var dead = document.getElementById("dead");
+var run = document.getElementById("run");
+var jump = document.getElementById("jump");
+var idle = document.getElementById("idle");
 var object1 = document.getElementById("obj1");
 var object2 = document.getElementById("obj2");
 var ground = document.getElementById("ground");
@@ -33,8 +36,8 @@ function OnKeyUp(event){
 
 // Objects move according with the time
 function updateObjPos(){
-    xObj1 -= 0.4;
-    xObj2 -= 0.4;
+    xObj1 -= 5;
+    xObj2 -= 5;
     if(xObj1 < 0){
         do{
             xObj1 = Math.random() * (600 - 500) + 500;
@@ -60,12 +63,20 @@ function clear(){
     ctx.clearRect(0, 0, 600, 350);
 }
 
-function drawObjects(){
+function drawObjects(jumping){
     drawGround();
-    if(gameover)
-        ctx.drawImage(img1, x, y, 80, 80);
-    else
-        ctx.drawImage(img, x, y, 80, 80);
+    if(jumping){
+        ctx.drawImage(jump,sxj,syj,400,472,x,y,80,80);
+        sxj += 510;
+        if(sxj > 3923)
+            sxj = 0;
+    }
+    else{
+        ctx.drawImage(run,sxr,syr,400,472,x,y,80,80);
+        sxr += 510;
+        if(sxr > 3923)
+            sxr = 0;
+    }
     updateObjPos();
     ctx.drawImage(object1, xObj1, yObj1, 70, 70);
     ctx.drawImage(object2, xObj2, yObj2, 70, 70);
@@ -92,16 +103,16 @@ function Update(){
         gameover = false;
     }
     if(y < 230)
-        y += 1;
-    if((teclar == "w" || teclar == " ") && y == 230)
+        y += 15;
+    if((teclar == "w" || teclar == " ") && y > 200)
         y -= 200;
     updateObjPos();
     if(checkCollision()){
         gameover = true;
         alert("Game Over. Play again?");
     }
-    drawObjects();
+    drawObjects(y > 200 ? false:true);
 }
 
 // Updates on each ms
-setInterval(Update, 1);
+setInterval(Update, 100);
