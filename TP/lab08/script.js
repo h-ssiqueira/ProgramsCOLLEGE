@@ -1,9 +1,9 @@
-var x = 0;
-var y = 230;
+var x = 0, y = 230;
 var teclar = "";
 var playing = true;
 var i = 0;
 var sxr = 0,syr = 0;
+var sxd = 0,syd = 0;
 var sxj = 0, syj = 0;
 var c = document.getElementById("myCanvas");
 var ctx = c.getContext("2d");
@@ -88,6 +88,23 @@ function checkCollision(){
     return false;
 }
 
+function deadFinal(){
+    i++;
+    clear();
+    drawGround();
+    ctx.drawImage(dead,sxd,syd,400,472,x,y,80,80);
+    sxd += 680;
+    if(sxd > 3923)
+        sxd = 0;
+    ctx.drawImage(object1, xObj1, yObj1, 70, 70);
+    ctx.drawImage(object2, xObj2, yObj2, 70, 70);
+    if(i == 9){
+        clearInterval(interval);
+        alert("Game Over. Play again?");
+        interval = setInterval(Update, 100);
+    }
+}
+
 function Update(){
     clear();
     if(gameover){
@@ -107,12 +124,13 @@ function Update(){
     if((teclar == "w" || teclar == " ") && y > 200)
         y -= 200;
     updateObjPos();
+    drawObjects(y > 200 ? false:true);
     if(checkCollision()){
         gameover = true;
-        alert("Game Over. Play again?");
+        clearInterval(interval);
+        interval = setInterval(deadFinal,100);
     }
-    drawObjects(y > 200 ? false:true);
 }
 
 // Updates on each ms
-setInterval(Update, 100);
+var interval = setInterval(Update, 100);
