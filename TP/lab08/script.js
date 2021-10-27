@@ -3,7 +3,7 @@ var teclar = "";
 var playing = true;
 var i = 0;
 var sxr = 0,syr = 0;
-var sxd = 0,syd = 0;
+var sxd = 10,syd = 0;
 var sxj = 0, syj = 0;
 var c = document.getElementById("myCanvas");
 var ctx = c.getContext("2d");
@@ -66,15 +66,15 @@ function clear(){
 function drawObjects(jumping){
     drawGround();
     if(jumping){
-        ctx.drawImage(jump,sxj,syj,400,472,x,y,80,80);
-        sxj += 510;
-        if(sxj > 3923)
+        ctx.drawImage(jump,sxj,syj,440,472,x,y,80,80);
+        sxj += 680;
+        if(sxj > 8000)
             sxj = 0;
     }
     else{
-        ctx.drawImage(run,sxr,syr,400,472,x,y,80,80);
-        sxr += 510;
-        if(sxr > 3923)
+        ctx.drawImage(run,sxr,syr,440,472,x,y,80,80);
+        sxr += 680;
+        if(sxr > 5000)
             sxr = 0;
     }
     updateObjPos();
@@ -92,13 +92,13 @@ function deadFinal(){
     i++;
     clear();
     drawGround();
-    ctx.drawImage(dead,sxd,syd,400,472,x,y,80,80);
+    ctx.drawImage(dead,sxd,syd,650,550,x,y,80,80);
     sxd += 680;
-    if(sxd > 3923)
+    if(sxd > 5000)
         sxd = 0;
     ctx.drawImage(object1, xObj1, yObj1, 70, 70);
     ctx.drawImage(object2, xObj2, yObj2, 70, 70);
-    if(i == 9){
+    if(i == 8){
         clearInterval(interval);
         alert("Game Over. Play again?");
         interval = setInterval(Update, 100);
