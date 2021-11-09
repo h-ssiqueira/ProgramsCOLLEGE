@@ -1,0 +1,35 @@
+td {
+	/*width:24pt;
+	height:24pt;*/
+	width: 50px;
+	height: 50px;
+	border-collapse:collapse;
+	border-color: black;
+	border-style: solid;
+	/*border-width: 1pt 1pt 1pt 1pt;*/
+	font-size:150%;
+}
+
+table {
+	min-width: 400px;
+	text-align:center;
+	border-spacing:0pt;
+	font-family:'Arial Unicode MS';
+	border-collapse:collapse;
+	border-color: black;
+	border-style: solid;
+	/*border-width: 1pt 1pt 1pt 1pt;*/
+}
+
+button{
+	min-width: 553px;
+}
+
+body{
+	font-size: 135%;
+	background-color: #e2dcdce0;
+}
+
+.tables{
+	display: inline-block;
+}
