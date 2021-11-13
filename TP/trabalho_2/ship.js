@@ -1,42 +1,42 @@
 class Ship{
     constructor(iS,jS,iE,jE){
-        this.posIS = iS;
-        this.posJS = jS;
-        this.posIE = iE;
-        this.posJE = jE;
-        this.destroyed = false;
+        this._posIS = iS;
+        this._posJS = jS;
+        this._posIE = iE;
+        this._posJE = jE;
+        this._destroyed = false;
         if(iS == iE && jS == jE)
-            this.type = "submarine";
-        else if(Math.abs(iS-iE) == 1 || Math.abs(jS-jE) == 1)
-            this.type = "destroyer";
-        else if(Math.abs(iS-iE) == 2 || Math.abs(jS-jE) == 2)
-            this.type = "cruiser";
-        else if(Math.abs(iS-iE) == 3 || Math.abs(jS-jE) == 3)
-            this.type = "battleship";
-        iS == iE ? this.horizontal = true : this.horizontal = false;
+            this._type = "submarine";
+        else if(iE-iS == 1 || jE-jS == 1)
+            this._type = "destroyer";
+        else if(iE-iS == 2 || jE-jS == 2)
+            this._type = "cruiser";
+        else if(iE-iS == 3 || jE-jS == 3)
+            this._type = "battleship";
+        iS == iE ? this._horizontal = true : this._horizontal = false;
     }
     set destroyed(bool){
-        this.destroyed = bool;
+        this._destroyed = bool;
     }
     get destroyed(){
-        return this.destroyed;
+        return this._destroyed;
     }
     get type(){
-        return this.type;
+        return this._type;
     }
     get horizontal(){
-        return this.horizontal;
+        return this._horizontal;
     }
     get posIS(){
-        return this.posIS;
+        return this._posIS;
     }
     get posIE(){
-        return this.posIE;
+        return this._posIE;
     }
     get posJS(){
-        return this.posJS;
+        return this._posJS;
     }
     get posJE(){
-        return this.posJE;
+        return this._posJE;
     }
 }
