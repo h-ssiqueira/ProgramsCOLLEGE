@@ -4,6 +4,11 @@ class BattleShip{
         this._tab2 = new Table();
         this._playerTurn = true;
         this._positioning = true;
+        // variables for computer shots
+        this._lastI = 0;
+        this._lastJ = 0;
+        this._totalDestroyed = 0;
+        this._lastShot = -1;
     }
     set playerTurn(bool){
         this._playerTurn = bool;
@@ -23,6 +28,11 @@ class BattleShip{
         this._tab2.restart();
         this._positioning = true;
         this._playerTurn = true;
+        // For computer player
+        this.lastI = 0;
+        this.lastJ = 0;
+        this.totalDestroyed = 0;
+        this.lastShot = -1;
     }
 
     checkWinner(){
@@ -33,6 +43,14 @@ class BattleShip{
         return 0;
     }
 
+    shipsDestroyedP1(){
+        return this._tab1.shipsDestroyed();
+    }
+
+    shipsDestroyedP2(){
+        return this._tab2.shipsDestroyed();
+    }
+
     getTab1(){
         return this._tab1.representation;
     }
@@ -41,13 +59,24 @@ class BattleShip{
         return this._tab2.representation;
     }
 
-    shot(i,j){
-        if(this._playerTurn && this._tab1.shot(i,j)){
-            this._playerTurn = false;
+    shotTab(i,j,pc){
+        var ret;
+        if(this._playerTurn && !pc){
+            ret = this._tab2.shot(i,j);
+            if(ret == -1)
+                this._playerTurn = false;
+            if(ret == 0)
+                return false;
             return true;
         }
-        else if(!this._playerTurn && this._tab2.shot(i,j)){
-            this._playerTurn = true;
+        else if(!this._playerTurn && pc){
+            ret = this._tab1.shot(i,j);
+            if(this.shipsDestroyedP1 == 10)
+                return false;
+            if(ret == -1)
+                this._playerTurn = true;
+            if(ret == 0)
+                return false;
             return true;
         }
         return false;
@@ -95,6 +124,38 @@ class BattleShip{
                 }
             }
         }
+    }
+
+    get lastI(){
+        return this._lastI;
+    }
+    get lastJ(){
+        return this._lastJ;
+    }
+    get totalDestroyed(){
+        return this._totalDestroyed;
+    }
+    get lastShot(){
+        return this._lastShot;
+    }
+    set lastI(i){
+        this._lastI = i;
+    }
+    set lastJ(j){
+        this._lastJ = j;
+    }
+    set totalDestroyed(n){
+        this._totalDestroyed = n;
+    }
+    set lastShot(val){
+        this._lastShot = val;
+    }
+    computerShot(){
+        var i,j;
+        do{ // TODO -> improve shots when hit a ship
+            i = randomPos();
+            j = randomPos();
+        }while(this.shotTab(i,j,true));
     }
 }
 

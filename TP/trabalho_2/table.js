@@ -49,36 +49,41 @@ class Table{
         return this._submarine;
     }
 
+    // -1 -> water
+    //  0 -> invalid
+    //  1 -> ship
     shot(i,j){
         if(this._tab[i][j] == -1){ // Case shot in water
             this._tab[i][j] = 1;
-            return true;
+            return -1;
         }
-        else if(this._tab[i][j] instanceof Object && this._tab[i][j].destroyed == false){ // Case shot in ship
+        else if(this._tab[i][j] instanceof Ship && !this._tab[i][j].destroyed){ // Case shot in ship
             this._tab[i][j].destroyed = true;
-            if(this._tab[i][j].type == "submarine"){ // Add one to submarines counter
+            if(this._tab[i][j].type === "submarine"){ // Add one to submarines counter
                 this._submarine++;
             }
             else{
                 if(this._tab[i][j].horizontal){ // Check all other positions (horizontally) checking if the ship is totally destroyed
                     var index = this._tab[i][j].posJS;
-                    while(index <= this._tab[i][j].posJE){
+                    var limit = this._tab[i][j].posJE;
+                    while(index <= limit){
                         if(!this._tab[i][index].destroyed) // If one position is not destroyed yet, return true
-                            return true;
+                            return 1;
                         index++;
                     }
-                    if(this._tab[i][j].type == "cruiser") // Case all positions are already destroyed, increment the counter of corresponding ship
+                    if(this._tab[i][j].type === "cruiser") // Case all positions are already destroyed, increment the counter of corresponding ship
                         this._cruiser++;
-                    else if(this._tab[i][j].type == "destroyer")
+                    else if(this._tab[i][j].type === "destroyer")
                         this._destroyer++;
                     else
                         this._bShip = true;
                 }
                 else{ // Case the ship is positioned vertically
                     var index = this._tab[i][j].posIS;
-                    while(index <= this._tab[i][j].posIE){
+                    var limit = this._tab[i][j].posIE;
+                    while(index <= limit){
                         if(!this._tab[index][j].destroyed) // If one position is not destroyed yet, return true
-                            return true;
+                            return 1;
                         index++;
                     }
                     if(this._tab[i][j].type == "cruiser") // Case all positions are already destroyed, increment the counter of corresponding ship
@@ -89,9 +94,9 @@ class Table{
                         this._bShip = true;
                 }
             }
-            return true;
+            return 1;
         }
-        return false; // Neither shot in water nor ship -> shot already done
+        return 0; // Neither shot in water nor ship -> shot already done
     }
 
     restart(){
@@ -113,54 +118,54 @@ class Table{
     }
 
     shipsDestroyed(){
-        if(this._bShip){
-            return 1 + this._destroyer + this._cruiser + this._bShip;
-        }
-        return this._destroyer + this._cruiser + this._bShip;
+        if(this._bShip)
+            return 1 + this._destroyer + this._cruiser + this._submarine;
+        return this._destroyer + this._cruiser + this._submarine;
     }
 
     setShip(ship){
-        var i,j;
-        switch(ship.type){
-            case "submarine":
-                if(this._tab[ship.posIS][ship.posJS] == -1){ // Check if position is clear
-                    this._tab[ship.posIS][ship.posJS] = ship;
-                    return true;
-                }
-                return false;
-            case "destroyer":
-            case "cruiser":
-            case "battleship":
-                if(ship.horizontal){
-                    j = ship.posJS;
-                    while(j <= ship.posJE){ // Check if all positions are clear
-                        if(this._tab[ship.posIS][j] != -1)
-                            return false;
-                        j++;
-                    }
-                    j = ship.posJS;
-                    while(j <= ship.posJE){ // To put the ship
-                        this._tab[ship.posIS][j] = ship;
-                        j++;
-                    }
-                    return true;
-                }
-                else{
-                    i = ship.posIS;
-                    while(i <= ship.posIE){ // Check if all positions are clear
-                        if(this._tab[i][ship.posJE] != -1)
-                            return false;
-                        i++;
-                    }
-                    i = ship.posIS;
-                    while(i <= ship.posIE){ // To put the ship
-                        this._tab[i][ship.posJE] = ship;
-                        i++;
-                    }
-                    return true;
-                }
+        var i,j,limit;
+        if(ship.type === "submarine"){
+            if(this._tab[ship.posIS][ship.posJS] == -1){ // Check if position is clear
+                this._tab[ship.posIS][ship.posJS] = ship;
+                return true;
+            }
+            return false;
         }
-        return false;
+        else{
+            if(ship.horizontal){
+                j = ship.posJS;
+                i = ship.posIS;
+                limit = ship.posJE;
+                while(j <= limit){ // Check if all positions are clear
+                    if(this._tab[i][j] != -1)
+                        return false;
+                    j++;
+                }
+                j = ship.posJS;
+                while(j <= limit){ // To put the ship
+                    this._tab[i][j] = new Ship(ship.posIS,ship.posJS,ship.posIE,ship.posJE);
+                    j++;
+                }
+                return true;
+            }
+            else{
+                i = ship.posIS;
+                j = ship.posJE;
+                limit = ship.posIE;
+                while(i <= limit){ // Check if all positions are clear
+                    if(this._tab[i][j] != -1)
+                        return false;
+                    i++;
+                }
+                i = ship.posIS;
+                while(i <= limit){ // To put the ship
+                    this._tab[i][j] = new Ship(ship.posIS,ship.posJS,ship.posIE,ship.posJE);
+                    i++;
+                }
+                return true;
+            }
+        }
     }
 
     setShipRandom(pos){
