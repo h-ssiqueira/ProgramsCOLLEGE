@@ -20,7 +20,7 @@ function finished(){
 // Choose a position to make the shot
 function shotOpponent(i,j){
 	if(!game.positioning && !finish && game.playerTurn){
-		if(game.shotTab(i, j, false)){
+		if(game.shotTab(i, j, false) != 0){
 			finished();
 			update_game();
 			if(finish)
@@ -41,35 +41,123 @@ function shotOpponent(i,j){
 }
 
 // For organizing the ships
-function select(i,j){ // TODO -> let player organize the ships
+function select(i,j){
 	if(game.positioning){
-	var table = document.getElementById('table1');
-	var obj = table.rows[i].cells[j];
-	/*if(select.obj_clicado === undefined || select.obj_clicado === null){
-		var peca = game.getPeca(i, j);
-		if(peca == null)
+		var table = document.getElementById('table1');
+		var obj = table.rows[i].cells[j];
+		var position1 = game.getShip(i, j);
+		if(select.previousObj === undefined || select.previousObj === null){ // Case a ship is not selected yet
+			if(position1 == -1) // Position selected is not a ship
+				return;
+			select.previousObj = obj;
+			select.position1 = position1;
+			// Highlight the selected ship
+			if(position1.type == "submarine")
+				obj.style.backgroundColor = "yellow";
+			else if(position1.horizontal){
+				var column = position1.posJS;
+				while(column <= position1.posJE){
+					table.rows[position1.posIS].cells[column].style.backgroundColor = "yellow";
+					column++;
+				}
+			}
+			else{
+				var row = position1.posIS;
+				while(row <= position1.posIE){
+					table.rows[row].cells[position1.posJS].style.backgroundColor = "yellow";
+					row++;
+				}
+			}
 			return;
-		select.obj_clicado = obj;
-		select.obj_bgcolor = obj.style.backgroundColor;
-		select.peca = peca;
-		obj.style.backgroundColor = "yellow";
-	}
-	else if(game.moverPeca(select.peca, i, j)){
-		select.obj_clicado.style.backgroundColor = select.obj_bgcolor;
-		select.obj_clicado = null;
-		win = game.confereFinal();
-		if(win == 2)
-			alert("Vitória do jogador 2. Reinicie o game para mais uma partida!");
-		else if(win == 1)
-			alert("Vitória do jogador 1. Reinicie o game para mais uma partida!");
-		atualizar_game();
-	}
-	else{
-		select.obj_clicado.style.backgroundColor = select.obj_bgcolor;
-		select.obj_clicado = null;
-		alert("Movimento invalido!");
-	}
-*/
+		}
+		else if(select.position1 == position1 && position1.type != "submarine"){ // Case the ship is the same, rotate
+			if(position1.horizontal){ // Horizontal -> vertical
+				var dif = position1.posJE - position1.posJS;
+				game.removeShip(position1);
+				if(select.position1.posIS+dif <= 9){
+					if(!game.setShip(new Ship(select.position1.posIS,select.position1.posJS,select.position1.posIS+dif,select.position1.posJS)))
+						game.setShip(select.position1);
+				}
+				else
+					game.setShip(select.position1);
+			}
+			else{ // Vertical -> horizontal
+				var dif = position1.posIE - position1.posIS;
+				game.removeShip(position1);
+				if(select.position1.posJS+dif <= 9){
+					if(!game.setShip(new Ship(select.position1.posIS,select.position1.posJS,select.position1.posIS,select.position1.posJS+dif)))
+						game.setShip(select.position1);
+				}
+				else
+					game.setShip(select.position1);
+			}
+		}
+		else if(position1 == -1){ // New position for the ship
+			game.removeShip(select.position1);
+			position1 = select.position1;
+			if(position1.type == "submarine")
+				game.setShip(new Ship(i,j,i,j));
+			else if(position1.horizontal){
+				switch(position1.type){
+					case "destroyer":
+						if(j+1 <= 9){
+							if(!game.setShip(new Ship(i,j,i,j+1)))
+								game.setShip(select.position1);
+						}
+						else
+							game.setShip(select.position1);
+						break;
+					case "cruiser":
+						if(j+2 <= 9){
+							if(!game.setShip(new Ship(i,j,i,j+2)))
+								game.setShip(select.position1);
+						}
+						else
+							game.setShip(select.position1);
+						break;
+					case "battleship":
+						if(j+3 <= 9){
+							if(!game.setShip(new Ship(i,j,i,j+3)))
+								game.setShip(select.position1);
+						}
+						else
+							game.setShip(select.position1);
+						break;
+				}
+			}
+			else{
+				switch(position1.type){
+					case "destroyer":
+						if(i+1 <= 9){
+							if(!game.setShip(new Ship(i,j,i+1,j)))
+								game.setShip(select.position1);
+						}
+						else
+							game.setShip(select.position1);
+						break;
+					case "cruiser":
+						if(i+2 <= 9){
+							if(!game.setShip(new Ship(i,j,i+2,j)))
+								game.setShip(select.position1);
+						}
+						else
+							game.setShip(select.position1);
+						break;
+					case "battleship":
+						if(i+3 <= 9){
+							if(!game.setShip(new Ship(i,j,i+3,j)))
+								game.setShip(select.position1);
+						}
+						else
+							game.setShip(select.position1);
+						break;
+				}
+			}
+		}
+		else // Ship has been selected but tried to move to another ship position
+			alert("Invalid movement!");
+		select.previousObj = null;
+		update_game();
 	}
 }
 
@@ -100,8 +188,8 @@ function update_game(){
                 obj.style.backgroundColor = "aqua";
             else if(tabData[i][j] instanceof Object && tabData[i][j].destroyed) // Shot in ship
                 obj.style.backgroundColor = "red";
-			else if(tabData[i][j] instanceof Object) /*DEBUG*/
-				obj.style.backgroundColor = "white";
+			//else if(tabData[i][j] instanceof Object) /*DEBUG*/
+			//	obj.style.backgroundColor = "white";
             else // Position not shotted yet
                 obj.style.backgroundColor = "grey";
 		}
@@ -131,7 +219,7 @@ function generate_table(){
 	for(var i = 0; i < 10; i++){
 		table += "<tr>";
 		for(var j = 0; j < 10; j++){
-			table += "<td id=\"i" + i + "j" + j + "\" draggable=\"true\" bgcolor=\"grey\" onclick=\"select(" + i + "," + j + ");\"></td>";
+			table += "<td id=\"i" + i + "j" + j + "\" bgcolor=\"grey\" onclick=\"select(" + i + "," + j + ");\"></td>";
 		}
 		table += "</tr>";
 	}

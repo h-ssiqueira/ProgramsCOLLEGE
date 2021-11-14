@@ -11,6 +11,7 @@ class Table{
         this._cruiser = 0;
         this._destroyer = 0;
         this._submarine = 0;
+        this._totalHits = 0;
     }
 
     get representation(){
@@ -49,6 +50,14 @@ class Table{
         return this._submarine;
     }
 
+    set totalHits(n){
+        this._totalHits = n;
+    }
+
+    get totalHits(){
+        return this._totalHits;
+    }
+
     // -1 -> water
     //  0 -> invalid
     //  1 -> ship
@@ -59,6 +68,7 @@ class Table{
         }
         else if(this._tab[i][j] instanceof Ship && !this._tab[i][j].destroyed){ // Case shot in ship
             this._tab[i][j].destroyed = true;
+            this._totalHits++;
             if(this._tab[i][j].type === "submarine"){ // Add one to submarines counter
                 this._submarine++;
             }
@@ -108,6 +118,7 @@ class Table{
         this._cruiser = 0
         this._destroyer = 0;
         this._bShip = false;
+        this._totalHits = 0;
     }
 
     // Method that check if the game has already a winner
@@ -186,6 +197,10 @@ class Table{
                 return true;
         }
         return false;
+    }
+
+    getPos(i,j){
+        return this._tab[i][j];
     }
 
     removeShip(ship){

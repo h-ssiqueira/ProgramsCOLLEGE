@@ -4,11 +4,8 @@ class BattleShip{
         this._tab2 = new Table();
         this._playerTurn = true;
         this._positioning = true;
-        // variables for computer shots
-        this._lastI = 0;
-        this._lastJ = 0;
-        this._totalDestroyed = 0;
-        this._lastShot = -1;
+        // Queue for computer movements
+        this._queue = [];
     }
     set playerTurn(bool){
         this._playerTurn = bool;
@@ -51,6 +48,10 @@ class BattleShip{
         return this._tab2.shipsDestroyed();
     }
 
+    getShip(i,j){
+        return this._tab1.getPos(i,j);
+    }
+
     getTab1(){
         return this._tab1.representation;
     }
@@ -65,21 +66,17 @@ class BattleShip{
             ret = this._tab2.shot(i,j);
             if(ret == -1)
                 this._playerTurn = false;
-            if(ret == 0)
-                return false;
-            return true;
+            return ret;
         }
         else if(!this._playerTurn && pc){
             ret = this._tab1.shot(i,j);
             if(this.shipsDestroyedP1 == 10)
-                return false;
+                return -1;
             if(ret == -1)
                 this._playerTurn = true;
-            if(ret == 0)
-                return false;
-            return true;
+            return ret;
         }
-        return false;
+        return 0;
     }
 
     randomize(player){
@@ -126,36 +123,39 @@ class BattleShip{
         }
     }
 
-    get lastI(){
-        return this._lastI;
+    removeShip(ship){
+        return this._tab1.removeShip(ship);
     }
-    get lastJ(){
-        return this._lastJ;
+
+    setShip(ship){
+        return this._tab1.setShip(ship);
     }
-    get totalDestroyed(){
-        return this._totalDestroyed;
-    }
-    get lastShot(){
-        return this._lastShot;
-    }
-    set lastI(i){
-        this._lastI = i;
-    }
-    set lastJ(j){
-        this._lastJ = j;
-    }
-    set totalDestroyed(n){
-        this._totalDestroyed = n;
-    }
-    set lastShot(val){
-        this._lastShot = val;
-    }
+
     computerShot(){
-        var i,j;
-        do{ // TODO -> improve shots when hit a ship
-            i = randomPos();
-            j = randomPos();
-        }while(this.shotTab(i,j,true));
+        var i,j, hit = 0, before;
+        do{
+            if(this._queue.length == 0){
+                i = randomPos();
+                j = randomPos();
+            }
+            else{
+                var next = this._queue.shift();
+                i = next[0];
+                j = next[1];
+            }
+            before = this._tab1.totalHits;
+            hit = this.shotTab(i,j,true);
+            if(before != this._tab1.totalHits){ // Enqueue the possible adjacent movements as the computer have been hit a ship
+                if(i != 9)
+                    this._queue.push([i+1,j]);
+                if(j != 9)
+                    this._queue.push([i,j+1]);
+                if(i != 0)
+                    this._queue.push([i-1,j]);
+                if(j != 0)
+                    this._queue.push([i,j-1]);
+            }
+        }while(hit != -1); // Finish computers turn when hits water
     }
 }
 
