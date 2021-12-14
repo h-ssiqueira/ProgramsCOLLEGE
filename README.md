@@ -8,6 +8,9 @@
 
 ![C](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 
 # Descrição
 Códigos realizados para as disciplinas de laboratórios de programação durante o curso de graduação de Engenharia de Computação.
@@ -22,6 +25,7 @@ Códigos realizados para as disciplinas de laboratórios de programação durant
 * [Estruturas e Recuperação de Dados A](#ERD-A)
 * [Estruturas e Recuperação de Dados B](#ERD-B)
 * [Extra](#Extra)
+* [Linguagens Formais e Autômatos](#LFA)
 * [Organização de Computadores e Linguagem de Montagem](#OCLM)
 * [Paradigmas de Programação](#PP)
 * [Programação Orientada a Objetos](#POO)
@@ -63,13 +67,16 @@ Disciplina de **Sistemas Operacionais A**, exercida no primeiro semestre de 2021
 Disciplina de **Engenharia de Software**, exercida no primeiro semestre de 2021, utilizando as linguagens de programação ***```JAVA```***, ***```SQL```*** e ***```C```***. O [projeto](https://github.com/h-ssiqueira/Academia_Cobra_Kai/blob/main/PROJETO.pdf) encontra-se [neste repositório](https://github.com/h-ssiqueira/Academia_Cobra_Kai).
 
 ## AATG
-Disciplina de **Análise de Algoritmos e Teoria dos Grafos**, exercida no primeiro semestre de 2021, utilizando a ***```linguagem C```***. O [projeto](https://github.com/h-ssiqueira/Rotas_de_viagem/blob/master/) encontra-se [neste repositório](https://github.com/h-ssiqueira/Rotas_de_viagem). Código extra: [Algoritmo de Warshall](extra/Programs-C/Data%20Structures/warshall.c)
+Disciplina de **Análise de Algoritmos e Teoria dos Grafos**, exercida no primeiro semestre de 2021, utilizando a ***```linguagem C```***. O projeto encontra-se [neste repositório](https://github.com/h-ssiqueira/Rotas_de_viagem). Código extra: [Algoritmo de Warshall](extra/Programs-C/Data%20Structures/warshall.c)
+
+## LFA
+Disciplina de **Linguagens Formais e Autômatos**, exercida no segundo semestre de 2021, utilizando a ***```linguagem C```***. O [projeto final](https://github.com/h-ssiqueira/LFA---Gram-tica-Identificadora-de-Linguagem/blob/main/Trabalho%20LFA%202021.pdf) encontra-se [neste repositório](https://github.com/h-ssiqueira/LFA---Gram-tica-Identificadora-de-Linguagem). Códigos extras: [Identificador de palavras terminadas em ing](extra/Programs-C/ing.c) e [Expressão regular de valores monetários em real](extra/Programs-C/valor.c).
 
 ## SO B
-Disciplina de **Sistemas Operacionais B**, exercida no segundo semestre de 2021, utilizando a ***```linguagem C```*** e ***```Assembly x86```***. Projeto: [sistema operacional](https://github.com/h-ssiqueira/MyOS).
+Disciplina de **Sistemas Operacionais B**, exercida no segundo semestre de 2021, utilizando a ***```linguagem C```*** e ***```Assembly x86```***. Projeto: [Sistema Operacional](https://github.com/h-ssiqueira/MyOS).
 
 ## [TP](TP/)
-Disciplina de **Tópicos em Programação**, exercida no segundo semestre de 2021, utilizando as linguagens ***```HTML/CSS```***, ***```JavaScript```***.
+Disciplina de **Tópicos em Programação**, exercida no segundo semestre de 2021, utilizando as linguagens ***```HTML/CSS```*** e ***```JavaScript```***. O [projeto final](https://github.com/h-ssiqueira/Sistema_Empresa/blob/main/TrabalhoFinal.pdf) encontra-se [neste repositório](https://github.com/h-ssiqueira/Sistema_Empresa).
 
 ## [Extra](extra/)
 Códigos adicionais e/ou utilizados em outras disciplinas.
@@ -82,6 +89,4 @@ Códigos adicionais e/ou utilizados em outras disciplinas.
 	* [Soma de Riemann](extra/Programs-C/Soma%20de%20Riemann.c) (Disciplina de Cálculo B)
 	* [Mínimos quadrados](extra/Programs-C/mínimos%20Quadrados%20simplificado.c) (Disciplina de Laboratório de Física B)
 	* [Estatística dados brutos](extra/Programs-C/freq.c) (Disciplina de Probabilidade e Estatística)
-	* [Identificador de palavras terminadas em ing](extra/Programs-C/ing.c) (Disciplina de Linguagens Formais e Autômatos)
-	* [Expressão regular de valores monetários em real](extra/Programs-C/valor.c) (Disciplina de Linguagens Formais e Autômatos)
 * [Programas Python](extra/Programs-Python/)
