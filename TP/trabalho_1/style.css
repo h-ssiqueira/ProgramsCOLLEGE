@@ -1,16 +1,44 @@
 td {
 	/*width:24pt;
 	height:24pt;*/
-	width: 50px;
-	height: 50px;
+	min-width: 50px;
+	min-height: 50px;
+	max-width: 200px;
+	max-height: 200px;
+	width: 15mm;
+	height: 15mm;
 	border-collapse:collapse;
 	border-color: black;
 	border-style: solid;
 	/*border-width: 1pt 1pt 1pt 1pt;*/
-	font-size:150%;
+	font-size:250%;
+}
+
+@media (max-width: 1000px) {
+	table{
+		width: 100%;
+	}
+	td{
+		font-size: 450%;
+		width: 100px;
+		height: 100px;
+	}
+	button{
+		min-width: 400px;
+		min-height: 100px;
+		max-width: 1600px;
+		max-height: 1600px;
+		width: 100%;
+		height: 100px;
+		font-size: 200%;
+	}
+	a{
+		font-size: 200%;
+	}
 }
 
 table {
+	overflow-x: auto;
 	min-width: 400px;
 	text-align:center;
 	border-spacing:0pt;
@@ -22,7 +50,8 @@ table {
 }
 
 button{
-	min-width: 443px;
+	min-width: 495px;
+	overflow-x: auto;
 }
 
 body{
