@@ -25,6 +25,7 @@ Códigos realizados para as disciplinas de laboratórios de programação durant
 * [Estruturas e Recuperação de Dados A](#ERD-A)
 * [Estruturas e Recuperação de Dados B](#ERD-B)
 * [Extra](#Extra)
+* [Inteligência Artificial](#IA)
 * [Linguagens Formais e Autômatos](#LFA)
 * [Organização de Computadores e Linguagem de Montagem](#OCLM)
 * [Paradigmas de Programação](#PP)
@@ -77,6 +78,9 @@ Disciplina de **Sistemas Operacionais B**, exercida no segundo semestre de 2021,
 
 ## [TP](TP/)
 Disciplina de **Tópicos em Programação**, exercida no segundo semestre de 2021, utilizando as linguagens ***```HTML/CSS```*** e ***```JavaScript```***. O [projeto final](https://github.com/h-ssiqueira/Sistema_Empresa/blob/main/TrabalhoFinal.pdf) encontra-se [neste repositório](https://github.com/h-ssiqueira/Sistema_Empresa).
+
+## [IA](IA/)
+Disciplina de **Inteligência Artificial**, exercida no primeiro semestre de 2022, utilizando as linguagens ***```Python```*** e ***```R```***. O primeiro projeto encontra-se [neste repositório](https://github.com/h-ssiqueira/pathfinding-BFS-AI).
 
 ## [Extra](extra/)
 Códigos adicionais e/ou utilizados em outras disciplinas.
