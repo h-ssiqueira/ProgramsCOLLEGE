@@ -48,7 +48,7 @@ for(i in 1:Tam){ #27_vértices
         V(Grafo)[names(GrCGrauD[i])]$color <- c(colors[cor])
         # Atualiza na exibição do grafo
         plot.igraph(Grafo)
-        # Usado para debug e também para observar o passo a passo na coloração do grafo
+        # Usado para debug e também para observar o passo a passo na coloração do grafo, pressione enter para continuar a execução
         browser()
         # Coleta o nome da cor que será usada
         cc <- V(Grafo)[names(GrCGrauD[i])]$color
@@ -75,7 +75,7 @@ for(i in 1:Tam){ #27_vértices
                     V(Grafo)[VerticeProx]$color <- cc
                     # Atualiza a exibição do grafo
                     plot.igraph(Grafo)
-                    # Usado para debug e também para observar o passo a passo na coloração do grafo
+                    # Usado para debug e também para observar o passo a passo na coloração do grafo, pressione enter para continuar a execução
                     browser()
                 }
             }
