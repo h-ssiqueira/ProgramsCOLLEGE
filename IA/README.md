@@ -2,7 +2,7 @@
 
 Códigos dos laboratórios realizados durante o semestre para a disciplina.
 
-Engloba as linguagens ***```Python```*** e ***```R```***.
+Engloba as linguagens ***```Python```***, ***```R```*** e ***```Prolog```***.
 
 ## Laboratórios
 
@@ -12,3 +12,5 @@ Engloba as linguagens ***```Python```*** e ***```R```***.
 
 [Lab03 - Coloração mapa do Brasil](lab3/Coloracao.R)
 ![Resultado](/lab3/Brasil.png)
+
+[Lab04 - Lógica de predicados](lab4/ex2.pl)
