@@ -2,7 +2,7 @@
 
 Códigos dos exercícios das listas e mini projetos realizados durante o semestre para a disciplina com o auxílio da IDE Code Blocks.
 
-Engloba os conceitos básicos da ***```linguagem C```***.
+Engloba os conceitos básicos da ***`linguagem C`***.
 
 ## Listas
 * [Lista 1](/Exercícios%20APC%20A/Lista%201%20Variáveis/Laboratorio+-+APC+A+-+tipos+variaveis+E+e+S+v02.pdf) - [Variáveis](/Exercícios%20APC%20A/Lista%201%20Variáveis/)

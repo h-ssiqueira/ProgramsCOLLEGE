@@ -2,7 +2,7 @@
 
 Códigos dos laboratórios realizados durante o semestre para a disciplina.
 
-Engloba as linguagens ***```HTML/CSS```***, ***```JavaScript```***.
+Engloba as linguagens ***`HTML/CSS`***, ***`JavaScript`***.
 
 ## Laboratórios
 [Lab01 - Currículo](https://h-ssiqueira.github.io/ProgramsCOLLEGE/TP/lab01)

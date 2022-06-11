@@ -2,7 +2,7 @@
 
 Códigos e executáveis dos exercícios das listas e atividades realizadas durante o semestre para a disciplina com o auxílio do software DOSBox com o compilador (TASM - Turbo Assembler), linker (TLINK - Turbo Linker) e debugger (TD - Turbo Debugger).
 
-Engloba os conceitos básicos da linguagem ***```Assembly X86```***.
+Engloba os conceitos básicos da linguagem ***`Assembly X86`***.
 
 Para executar algum programa é necessário o software DOSBox com os seguintes comandos:
 

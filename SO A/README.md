@@ -2,7 +2,7 @@
 
 Códigos dos laboratórios realizados durante o semestre para a disciplina com o auxílio do software VirtualBox (Xubuntu).
 
-Engloba as linguagens ***```Assembly X86```*** e ***```C```***.
+Engloba as linguagens ***`Assembly X86`*** e ***`C`***.
 
 ## Laboratórios
 * [Lab 1](/SO%20A/lab01/) - [Comandos do sistema](/SO%20A/lab01/SO%20-%20LAB_1.pdf)

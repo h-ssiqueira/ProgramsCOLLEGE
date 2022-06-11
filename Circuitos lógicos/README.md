@@ -2,7 +2,7 @@
 
 Códigos dos laboratórios e suas respectivas imagens e anotações realizados para a disciplina com o auxílio do software Intel Quartus e ModelSim.
 
-Engloba os conceitos da linguagem ***```VHDL```***.
+Engloba os conceitos da linguagem ***`VHDL`***.
 
 * [Laboratório 1](/Circuitos%20lógicos/exp_1/) - [Lógica digital](/Circuitos%20lógicos/exp_1/Lab_CL-2020_exp1.pdf)
 * [Laboratório 2](/Circuitos%20lógicos/exp_2/) - [Lógica digital](/Circuitos%20lógicos/exp_2/Lab_ED-2019_exp2_CL.pdf)

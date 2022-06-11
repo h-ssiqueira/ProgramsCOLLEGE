@@ -2,7 +2,7 @@
 
 Códigos dos exercícios das listas, provas práticas e exércicios de aulas realizadas durante o semestre para a disciplina com o auxílio da IDE Code Blocks.
 
-Engloba os conceitos básicos da ***```linguagem C```***.
+Engloba os conceitos básicos da ***`linguagem C`***.
 
 ## [Provas Práticas](/Exercícios%20APC%20B/ativ%20nota/)
 Duas provas práticas realizadas durante o período das aulas.

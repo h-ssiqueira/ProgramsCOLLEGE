@@ -2,7 +2,7 @@
 
 Códigos dos laboratórios realizados para a disciplina com o auxílio do software Eclipse.
 
-Engloba os conceitos da linguagem ***```JAVA```***.
+Engloba os conceitos da linguagem ***`JAVA`***.
 
 ## Laboratórios
 * [Laboratório 1](/POO/Aula03-Laboratorio1.pdf)

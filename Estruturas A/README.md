@@ -2,7 +2,7 @@
 
 Códigos dos exercícios das listas e teóricos realizados durante o semestre para a disciplina com o auxílio da IDE Code Blocks (primeiros exercícios/listas, via Windows) e com a utilização do compilador diretamente na linha de comando (exercícios teoria/nota, via Linux-Ubuntu).
 
-Engloba os conceitos da ***```linguagem C```*** e estruturas de dados: pilha, fila, listas e árvore binária.
+Engloba os conceitos da ***`linguagem C`*** e estruturas de dados: pilha, fila, listas e árvore binária.
 
 ## Bibliotecas
 * [Fila](/Estruturas%20A/FILA.h)

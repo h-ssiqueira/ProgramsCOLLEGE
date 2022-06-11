@@ -2,7 +2,7 @@
 
 Códigos dos laboratórios e exercícios realizados durante o semestre para a disciplina com o auxílio do software Mars (MIPS), Intel Quartus e ModelSim (VHDL).
 
-Engloba as linguagens ***```Assembly MIPS```*** e ***```VHDL```***.
+Engloba as linguagens ***`Assembly MIPS`*** e ***`VHDL`***.
 
 ## [Assembly MIPS](/Arquitetura/MIPS/)
 * [Exercícios](/Arquitetura/MIPS/Exs/)
