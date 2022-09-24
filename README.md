@@ -31,6 +31,7 @@ Códigos realizados para as disciplinas de laboratórios de programação durant
 * [Paradigmas de Programação](#PP)
 * [Programação Orientada a Objetos](#POO)
 * [Redes de Computadores A](#RC-A)
+* [Redes de Computadores B](#RC-B)
 * [Sistema de Informação](#SI)
 * [Sistemas Operacionais A](#SO-A)
 * [Sistemas Operacionais B](#SO-B)
@@ -89,6 +90,9 @@ Disciplina de **Redes de Computadores A**, exercida no primeiro semestre de 2022
 
 ## SI
 Disciplina de **Sistemas de Informação**, exercida no primeiro semestre de 2022, utilizando a linguagem ***`JavaScript`***. O projeto da disciplina encontra-se separado em dois repositórios, sendo o [frontend](https://github.com/h-ssiqueira/Sades-backend) e o [backend](https://github.com/h-ssiqueira/Front-SADES).
+
+## [RC B](RC%20B/)
+Disciplina de **Redes de Computadores B**, exercida no segundo semestre de 2022.
 
 ## [Extra](extra/)
 Códigos adicionais e/ou utilizados em outras disciplinas.
