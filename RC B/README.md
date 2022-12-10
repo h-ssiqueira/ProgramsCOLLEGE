@@ -14,9 +14,16 @@ Engloba o software `Cisco Packet Tracer`.
 
 [Aula04 - VLAN](Aula4)
 
+[Aula05 - HSRP](Aula5)
+
+[Aula06 - OSPF](Aula6)
+
 [Atividade - port-channel](atividade%20port-channel/)
 
 [Atividade - HSRP](atividade%20HSRP/)
 
 [Projeto 1 - VLANs](Projeto1)
 ![topologia](Projeto1/topologia.png)
+
+[Projeto 2 - HSRP e OSPF](Projeto2)
+![topologia](Projeto1/topologiap2.png)

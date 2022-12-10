@@ -11,6 +11,7 @@
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=white)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 
 # Descrição
 Códigos realizados para as disciplinas de laboratórios de programação durante o curso de graduação de Engenharia de Computação.
@@ -21,6 +22,7 @@ Códigos realizados para as disciplinas de laboratórios de programação durant
 * [Análise de Algoritmos e Teoria dos Grafos](#AATG)
 * [Arquitetura de Computadores](#AC)
 * [Circuitos Lógicos](#CL)
+* [Compiladores](#Compiladores)
 * [Engenharia de Software](#ES)
 * [Estruturas e Recuperação de Dados A](#ERD-A)
 * [Estruturas e Recuperação de Dados B](#ERD-B)
@@ -90,6 +92,9 @@ Disciplina de **Redes de Computadores A**, exercida no primeiro semestre de 2022
 
 ## SI
 Disciplina de **Sistemas de Informação**, exercida no primeiro semestre de 2022, utilizando a linguagem ***`JavaScript`***. O projeto da disciplina encontra-se separado em dois repositórios, sendo o [frontend](https://github.com/h-ssiqueira/Sades-backend) e o [backend](https://github.com/h-ssiqueira/Front-SADES).
+
+## Compiladores
+Disciplina de **Compiladores**, exercida no segundo semestre de 2022, utilizando a linguagem **`C`**. O compilador encontra-se [neste repositório](https://github.com/h-ssiqueira/Compilador).
 
 ## [RC B](RC%20B/)
 Disciplina de **Redes de Computadores B**, exercida no segundo semestre de 2022.
