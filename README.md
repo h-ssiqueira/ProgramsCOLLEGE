@@ -38,6 +38,7 @@ Códigos realizados para as disciplinas de laboratórios de programação durant
 * [Sistemas Operacionais A](#SO-A)
 * [Sistemas Operacionais B](#SO-B)
 * [Tópicos em Programação](#TP)
+* [Trabalho de Conclusão de Curso](#TCC)
 
 ## [APC A](Exercícios%20APC%20A/)
 Disciplina de **Algoritmos e Programação de Computadores A**, exercida no primeiro semestre de 2019, utilizando ***`linguagem C`***. O [projeto final](https://github.com/h-ssiqueira/Anagrama/blob/master/Trabalho%2BFinal%2BAPC%2BA%2B2019.pdf) da disciplina encontra-se [neste repositório](https://github.com/h-ssiqueira/Anagrama).
@@ -97,7 +98,10 @@ Disciplina de **Sistemas de Informação**, exercida no primeiro semestre de 202
 Disciplina de **Compiladores**, exercida no segundo semestre de 2022, utilizando a linguagem **`C`**. O compilador encontra-se [neste repositório](https://github.com/h-ssiqueira/Compilador).
 
 ## [RC B](RC%20B/)
-Disciplina de **Redes de Computadores B**, exercida no segundo semestre de 2022.
+Disciplina de **Redes de Computadores B**, exercida no segundo semestre de 2022, utilizando o software **Cisco Packet Tracer**.
+
+## TCC
+Disciplina de **Trabalho de Conclusão de Curso**, exercida no primeiro e segundo semestre de 2023, utilizando a linguagem **`Python`**. Um estudo acerca de três modelos de redes neurais convolucionais e um de vision transformer para classificação de lesão de pele utilizando técnicas como aumento de dados, segmentação e transferência de aprendizado. Mais detalhes acerca do projeto encontram-se [neste repositório](https://github.com/h-ssiqueira/SkinLesionAI).
 
 ## [Extra](extra/)
 Códigos adicionais e/ou utilizados em outras disciplinas.
